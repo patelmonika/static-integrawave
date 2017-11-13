@@ -204,7 +204,7 @@
                 var recordId = clickedEle.getAttribute("data-met-id");
                 var name = clickedEle.getAttribute("data-met-name");
 
-                var myParam = {name: name, id:recordId};
+                var myParam = {action: name, id:recordId};
 
                 postMethod(myParam);
             }

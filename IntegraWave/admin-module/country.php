@@ -22,7 +22,7 @@ if(isset($_POST['delete'])){
     $requestStatus = deleteData($controller,$param);
 }
 
-if(isset($_POST['name']) == "edit"){
+if(isset($_POST['action']) == "edit"){
     $controller = "country";
     $param = $_POST['id'];
     $requestStatus = getData($controller,$param);
