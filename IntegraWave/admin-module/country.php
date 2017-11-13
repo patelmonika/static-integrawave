@@ -65,23 +65,25 @@ if(isset($_POST['name']) == "update"){
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form class="form-horizontal">
+
                     <div class="box-body">
                         <div class="box-body">
-                            <input type="hidden" id="hidId" name="id" value=<?php if(isset($requestStatus['id'])) echo $requestStatus['id']; ?> >
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Country</label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="name" id="txtName" placeholder="Add New Country" class="form-control"
-                                        value='<?php if(isset($requestStatus['name'])) echo $requestStatus['name'];?>'>
+                            <form class="form-horizontal">
+                                <input type="hidden" id="hidId" name="id" value=<?php if(isset($requestStatus['id'])) echo $requestStatus['id']; ?> >
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Country</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="name" id="txtName" placeholder="Add New Country" class="form-control"
+                                            value='<?php if(isset($requestStatus['name'])) echo $requestStatus['name'];?>'>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="box-footer">
-                            <button class="btn btn-primary pull-right" type="submit"
-                                    name='<?php if(isset($requestStatus['id'])){echo 'update';}else{ echo 'add';} ?>'>Add</button>
-                            <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
-                        </div>
+                            <div class="box-footer">
+                                <button class="btn btn-primary pull-right" type="submit"
+                                        name='<?php if(isset($requestStatus['id'])){echo 'update';}else{ echo 'add';} ?>'>Add</button>
+                                <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
+                            </div>
+                        </form>
                         <table id="cat1" class="table table-bordered table-striped table-responsive">
                             <thead>
                             <tr>
@@ -115,7 +117,7 @@ if(isset($_POST['name']) == "update"){
                         </table>
                     </div>
                     <!-- /.box-body -->
-                </form>
+
 
                 <form class="form-horizontal" method="POST">
                     <div id="delete" class="modal fade" role="dialog">
@@ -131,7 +133,7 @@ if(isset($_POST['name']) == "update"){
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-link btn-grey" data-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-primary" data-dismiss="modal" name="delete">OK</button>
+                                    <button type="submit" class="btn btn-primary" name="delete">OK</button>
                                 </div>
                             </div>
                         </div>
