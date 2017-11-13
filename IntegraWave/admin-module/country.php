@@ -103,7 +103,7 @@ if(isset($_POST['name']) == "update"){
                                     $returnResponse = $returnResponse . "<td name='id'>" . $value['id'] . "</td>";
                                     $returnResponse = $returnResponse . "<td>" . $value['name'] . "</td>";
                                     $returnResponse = $returnResponse . "<td>";
-                                    $returnResponse = $returnResponse . "<button type='submit' data-met-id=" . $value['id'] . " name='edit' onclick='setRequestParam(this);'>Edit</button>";
+                                    $returnResponse = $returnResponse . "<button type='submit' data-met-name='edit' data-met-id=" . $value['id'] . " name='edit' onclick='setRequestParam(this);'>Edit</button>";
                                     $returnResponse = $returnResponse . " / <button type='button' data-toggle='modal' data-target='#delete' data-met-id=" . $value['id'] . " onclick='setIdOnDelete(this);'>Delete</button>";
                                     $returnResponse = $returnResponse . "</td></tr>";
                                 }
