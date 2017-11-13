@@ -287,6 +287,7 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Country</th>
+                                    <th>Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
