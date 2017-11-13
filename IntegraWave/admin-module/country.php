@@ -13,26 +13,26 @@ $requestStatus;
 if(isset($_POST['add'])){
     $controller = "country";
     $data = array('name' => $_POST['name']);
-    insertData($controller, $data);
+    $requestStatus = insertData($controller, $data);
 }
 
 if(isset($_POST['delete'])){
     $controller = "country";
     $param = $_POST['id'];
-    deleteData($controller,$param);
+    $requestStatus = deleteData($controller,$param);
 }
 
 if(isset($_POST['name']) == "edit"){
     $controller = "country";
     $param = $_POST['id'];
-    getData($controller,$param);
+    $requestStatus = getData($controller,$param);
 }
 
 if(isset($_POST['name']) == "update"){
     $controller = "country";
     $param = $_POST['id'];
     $data = array('name' => $_POST['name']);
-    updateData($controller, $param, $data);
+    $requestStatus = updateData($controller, $param, $data);
 }
 
 ?>
