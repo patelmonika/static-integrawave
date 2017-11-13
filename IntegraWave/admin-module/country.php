@@ -113,6 +113,10 @@ if(isset($_POST['name']) == "update"){
                             ?>
                         </table>
                     </div>
+                    <!-- /.box-body -->
+                </form>
+
+                <form class="form-horizontal" method="POST">
                     <div id="delete" class="modal fade" role="dialog">
                         <div class="modal-dialog">
                             <!-- Modal content-->
@@ -131,7 +135,6 @@ if(isset($_POST['name']) == "update"){
                             </div>
                         </div>
                     </div>
-                    <!-- /.box-body -->
                 </form>
             </div>
             <!-- /.box -->
