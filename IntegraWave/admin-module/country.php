@@ -23,9 +23,10 @@ if(isset($_POST['delete'])){
 }
 
 if(isset($_POST['action']) == "edit"){
-    $controller = "country";
-    $param = $_POST['id'];
-    $requestStatus = getData($controller,$param);
+    echo "in edit";
+//    $controller = "country";
+//    $param = $_POST['id'];
+//    $requestStatus = getData($controller,$param);
 }
 
 if(isset($_POST['name']) == "update"){
