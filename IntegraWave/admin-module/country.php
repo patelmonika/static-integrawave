@@ -23,10 +23,10 @@ if(isset($_POST['delete'])){
 }
 
 if(isset($_POST['action']) == "edit"){
-    echo "in edit";
-//    $controller = "country";
-//    $param = $_POST['id'];
-//    $requestStatus = getData($controller,$param);
+    $controller = "country";
+    $param = $_POST['id'];
+    $requestStatus = getData($controller,$param);
+    var_dump($requestStatus);
 }
 
 if(isset($_POST['name']) == "update"){
@@ -43,8 +43,8 @@ if(isset($_POST['name']) == "update"){
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Cover Letter Wizard
-            <small>Customize your Cover letter</small>
+            Country
+            <small>Country Details</small>
         </h1>
         <ol class="breadcrumb">
             <li> </li>
@@ -70,12 +70,12 @@ if(isset($_POST['name']) == "update"){
                     <div class="box-body">
                         <div class="box-body">
                             <form class="form-horizontal">
-                                <input type="hidden" id="hidId" name="id" value=<?php if(isset($requestStatus['id'])) echo $requestStatus['id']; ?> >
+                                <input type="hidden" id="hidId" name="id" value='<?php if(isset($requestStatus['id'])) echo $requestStatus['id']; ?>' >
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Country</label>
                                     <div class="col-sm-9">
                                         <input type="text" name="name" id="txtName" placeholder="Add New Country" class="form-control"
-                                            value='<?php if(isset($requestStatus['name'])) echo $requestStatus['name'];?>'>
+                                            value='<?php if(isset($requestStatus['name'])) echo $requestStatus['name'];?>' >
                                     </div>
                                 </div>
                             </div>
@@ -99,6 +99,7 @@ if(isset($_POST['name']) == "update"){
                             require_once "../Private/functions.php";
 
                             $response = getAll("country");
+                            $returnResponse = "";
 
                             if(count($response)>0) {
                                 foreach ($response as $key => $value) {

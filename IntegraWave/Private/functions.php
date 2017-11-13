@@ -55,16 +55,16 @@ function getAll($controller){
 }
 
 function getData($controller,$param){
-
     $url = "http://php-integrawave.azurewebsites.net/$controller/$param";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $request = curl_exec($ch);
-
-    $assoc = true;
-    $response = json_decode($request, $assoc);
+    $response = curl_exec($ch);
+//    $request = curl_exec($ch);
+//
+//    $assoc = true;
+//    $response = json_decode($request, $assoc);
 
     return $response;
 }
