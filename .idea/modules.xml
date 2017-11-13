@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/WorkerModule.iml" filepath="$PROJECT_DIR$/.idea/WorkerModule.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/myDesign.iml" filepath="$PROJECT_DIR$/.idea/myDesign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/static-integrawave.iml" filepath="$PROJECT_DIR$/.idea/static-integrawave.iml" />
     </modules>
   </component>
 </project>
