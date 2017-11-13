@@ -269,6 +269,55 @@
                     <!-- /.box-header -->
                     <!-- form start -->
                     <form class="form-horizontal">
+                        <div class="box-body">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Country</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="activity1" id="activity1" placeholder="Add New Activity Here" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <button class="btn btn-primary pull-right" type="submit">Add</button>
+                                <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
+                            </div>
+                            <table id="cat1" class="table table-bordered table-striped table-responsive">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Country</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Lab1</td>
+                                    <td>
+                                        <a href="#" data-toggle="modal" data-target="#edit-activity">Edit</a>/
+                                        <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="delete" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Delete</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Are you sure you want to delete it?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-link btn-grey" data-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div id="edit-activity" class="modal fade" role="dialog">
                             <div class="modal-dialog">
                                 <!-- Modal content-->
@@ -288,55 +337,6 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-link btn-grey" data-dismiss="modal">Cancel</button>
                                         <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box-body">
-                            <table id="cat1" class="table table-bordered table-striped table-responsive">
-                                <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Country</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Lab1</td>
-                                    <td>
-                                        <a href="#" data-toggle="modal" data-target="#edit-activity">Edit</a>/
-                                        <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                                    </td>
-                                </tr>
-                            </table>
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">Country</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" name="activity1" id="activity1" placeholder="Add New Activity Here" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-footer">
-                                <button class="btn btn-primary pull-right" type="submit">Add</button>
-                                <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
-                            </div>
-                        </div>
-                        <div id="delete" class="modal fade" role="dialog">
-                            <div class="modal-dialog">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Delete</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Are you sure you want to delete it?</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-link btn-grey" data-dismiss="modal">Cancel</button>
-                                        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
                                     </div>
                                 </div>
                             </div>
