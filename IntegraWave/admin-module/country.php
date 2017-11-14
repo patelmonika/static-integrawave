@@ -83,7 +83,7 @@ if(isset($_POST['action'])) {
                                     <label class="col-sm-3 control-label">Country</label>
                                     <div class="col-sm-9">
                                         <input type="text" name="name" id="txtName" placeholder="Add New Country" class="form-control"
-                                               value='<?php if(isset($requestStatus['id'])) echo $requestStatus['name'];?>' >
+                                               value='<?php if(isset($requestStatus['name'])) echo $requestStatus['name'];?>' >
                                     </div>
                                 </div>
                             </div>
