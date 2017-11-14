@@ -60,13 +60,12 @@ function getData($controller,$param){
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $response = curl_exec($ch);
-//    $request = curl_exec($ch);
-//
-//    $assoc = true;
-//    $response = json_decode($request, $assoc);
+    $request = curl_exec($ch);
 
-    return $response;
+    $assoc = true;
+    $response = json_decode($request, $assoc);
+
+    return $response[0];
 }
 
 function uploadImage($actionType){

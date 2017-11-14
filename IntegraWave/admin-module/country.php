@@ -26,7 +26,6 @@ if(isset($_POST['action']) == "edit"){
     $controller = "country";
     $param = $_POST['id'];
     $requestStatus = getData($controller,$param);
-    var_dump($requestStatus);
 }
 
 if(isset($_POST['name']) == "update"){
@@ -70,21 +69,21 @@ if(isset($_POST['name']) == "update"){
                     <div class="box-body">
                         <div class="box-body">
                             <form class="form-horizontal">
-                                <input type="hidden" id="hidId" name="id" value='<?php if(isset($requestStatus['id'])) echo $requestStatus['id']; ?>' >
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">Country</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" name="name" id="txtName" placeholder="Add New Country" class="form-control"
-                                            value='<?php if(isset($requestStatus['name'])) echo $requestStatus['name'];?>' >
-                                    </div>
+                            <input type="hidden" id="hidId" name="id" value='<?php if(isset($requestStatus['id'])) echo $requestStatus['id']; ?>' >
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Country</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="name" id="txtName" placeholder="Add New Country" class="form-control"
+                                           value='<?php if(isset($requestStatus['name'])) echo $requestStatus['name'];?>' >
                                 </div>
                             </div>
-                            <div class="box-footer">
-                                <button class="btn btn-primary pull-right" type="submit"
-                                        name='<?php if(isset($requestStatus['id'])){echo 'update';}else{ echo 'add';} ?>'>Add</button>
-                                <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
-                            </div>
-                        </form>
+                        </div>
+                        <div class="box-footer">
+                            <button class="btn btn-primary pull-right" type="submit"
+                                    name='<?php echo isset($requestStatus['id']) ? 'update' : 'add' ?>'><?php echo isset($requestStatus['id']) ? 'Update' : 'Add' ?></button>
+                            <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
+                        </div>
+                </form>
                         <table id="cat1" class="table table-bordered table-striped table-responsive">
                             <thead>
                             <tr>
@@ -95,8 +94,6 @@ if(isset($_POST['name']) == "update"){
                             </thead>
                             <tbody>
                             <?php
-
-                            require_once "../Private/functions.php";
 
                             $response = getAll("country");
                             $returnResponse = "";
