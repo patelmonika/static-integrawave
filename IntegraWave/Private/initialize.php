@@ -16,7 +16,8 @@
     // * Can set a hardcoded value:
     // * Can dynamically find everything in URL up to "/public"
 
-    $public_end = strpos($_SERVER['SCRIPT_NAME'], '/IntegraWave') + 12;
+    //$public_end = strpos($_SERVER['SCRIPT_NAME'], '/IntegraWave') + 12;
+    $public_end = "";
     $doc_root = substr($_SERVER['SCRIPT_NAME'], 0, $public_end);
     define("WWW_ROOT", $doc_root);
 
