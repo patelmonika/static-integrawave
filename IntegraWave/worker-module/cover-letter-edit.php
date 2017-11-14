@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Integra wave | Resume Wizard</title>
+    <title>Integra Wave | Cover Letter Wizard</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
@@ -212,24 +212,24 @@
                 </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="treeview active"><a href="resume.html"><span>Resume</span><span class="pull-right-container">
+                        <li class="treeview"><a href="resume.html"> <span>Resume</span> <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                </span></a>
+                            <ul class="treeview-menu">
+                                <li><a href="resume-template.php">Templates</a> </li>
+                                <li><a href="resume-edit.php">Customize Resume</a> </li>
+                            </ul>
+                        </li>
+                        <li class="treeview active"><a href="resume.html"> <span>Cover Letter</span> <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
                 </span> </a>
                             <ul class="treeview-menu">
-                                <li><a href="resumeTemplate.html">Templates</a> </li>
-                                <li class="active"><a href="editResume.html">Customize Resume</a> </li>
+                                <li><a href="cover-letter-template.php">Templates</a> </li>
+                                <li class="active"><a href="resume-edit.php">Customize Cover Letter</a> </li>
                             </ul>
                         </li>
-                        <li class="treeview"><a href="resume.html"><span>Cover Letter</span><span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-                </span> </a>
-                            <ul class="treeview-menu">
-                                <li><a href="cvTemplate.html">Templates</a> </li>
-                                <li><a href="editCV.html">Customize Cover Letter</a> </li>
-                            </ul>
-                        </li>
-                        <li class="treeview"><a href="rankCity.html">Ranking of Cities </a></li>
-                        <li class="treeview"><a href="marketTrends.html">Job Market Trends </a></li>
+                        <li class="treeview"><a href="ranking-of-cities.php">Ranking of Cities </a></li>
+                        <li class="treeview"><a href="market-trends.php">Job Market Trends </a></li>
                     </ul>
                 </li>
 
@@ -244,12 +244,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Resume Wizard
-                <small>Customize your Resume</small>
+                Cover Letter Wizard
+                <small>Customize your Cover letter</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="printResume.html">
-                    <button class="btn btn-primary pull-right" type="submit">Print Resume</button></a> </li>
+                <li><a href="cover-letter-print.php">
+                    <button class="btn btn-primary pull-right" type="submit">Print Cover Letter</button></a> </li>
             </ol>
         </section>
         <!-- Main content -->
@@ -376,145 +376,92 @@
                     <form class="form-horizontal">
                         <div class="box-body">
                             <div class="form-group">
-                                <form class="form-horizontal">
-                                    <div class="box-body">
+                                <label class="col-sm-3 control-label">Education</label>
+                                <div class="col-sm-9">
+                                 <textarea class="form-control small-textarea" rows="5" cols="10" >
+                                    Post Graduation
+                                    Humber college
+                                    Graduating : October 2017
+                                 </textarea>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-primary pull-right" type="submit">Edit</button>
+                                            <button type="button"  data-toggle="modal" data-target="#delete-device" class="btn btn-primary pull-right margin-r-5">Delete</button>
 
-                                        <table id="schedule" class="table table-bordered table-striped table-responsive">
-                                            <thead>
-                                            <tr>
-                                                <th>Degree or Major</th>
-                                                <th>School</th>
-                                                <th>Status</th>
-                                                <th>Location</th>
-                                                <th>Completion Date</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>Post Graduation</td>
-                                                <td>Humber College</td>
-                                                <td>Graduating</td>
-                                                <td>Toronto</td>
-                                                <td>30 April, 2018</td>
-                                                <td>
-                                                    <a href="#" data-toggle="modal" data-target="#edit-education">Edit</a>/
-                                                    <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-
-                                        <div class="box-body">
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Degree or Major</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" name="degree" id="degree" placeholder="" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">School</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" name="school" id="school" placeholder="" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Status</label>
-                                                <div class="col-sm-6">
-                                                    <select class="form-control">
-                                                        <option>Graduated</option>
-                                                        <option>Graduating</option>
-                                                        <option>Enrolled</option>
-                                                        <option>Deferred</option>
-                                                        <option>Transferred</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Completion Date</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" name="date" id="date" placeholder="" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="box-footer">
-                                            <button class="btn btn-primary pull-right" type="submit">Add</button>
-                                            <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
                                         </div>
                                     </div>
-                                    <div id="delete" class="modal fade" role="dialog">
-                                        <div class="modal-dialog">
-                                            <!-- Modal content-->
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    <h4 class="modal-title">Delete</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p>Are you sure you want to delete it?</p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-link btn-grey" data-dismiss="modal">Cancel</button>
-                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="edit-education" class="modal fade" role="dialog">
-                                        <div class="modal-dialog">
-                                            <!-- Modal content-->
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    <h4 class="modal-title">Edit Education</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="form-group">
-                                                        <label class="col-sm-3 control-label">Degree or Major</label>
-                                                        <div class="col-sm-6">
-                                                            <input type="text" name="degree" id="deg" placeholder="" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-sm-3 control-label">School</label>
-                                                        <div class="col-sm-6">
-                                                            <input type="text" name="school" id="sch" placeholder="" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-sm-3 control-label">Status</label>
-                                                        <div class="col-sm-6">
-                                                            <select class="form-control">
-                                                                <option>Graduated</option>
-                                                                <option>Graduating</option>
-                                                                <option>Enrolled</option>
-                                                                <option>Deferred</option>
-                                                                <option>Transferred</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-sm-3 control-label">Completion Date</label>
-                                                        <div class="col-sm-6">
-                                                            <input type="text" name="date" id="com-date" placeholder="" class="form-control">
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-link btn-grey" data-dismiss="modal">Cancel</button>
-                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /.box-body -->
-                                </form>
-
+                                </div>
                             </div>
 
                         </div>
                         <!-- /.box-body -->
+                        <div class="box-footer">
+                            <div class="box box-solid">
+                                <div class="box-header with-border">
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <div class="box-group" id="accordion">
+                                        <div class="panel box box-primary">
+                                            <div class="box-header with-border">
+                                                <h4 class="box-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                                        <button class="btn btn-primary" type="submit">Add Education</button>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseOne" class="panel-collapse collapse">
+                                                <div class="box-body">
+                                                    <form class="form-horizontal">
+                                                        <div class="box-body">
+                                                            <div class="form-group">
 
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" placeholder="High School, Degree and Major" class="form-control" disabled>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" placeholder="School" class="form-control" disabled>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-sm-9">
+                                                                    <select class="form-control">
+                                                                        <option>Graduated</option>
+                                                                        <option>Graduating</option>
+                                                                        <option>Enrolled</option>
+                                                                        <option>Deferred</option>
+                                                                        <option>Transferred</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" placeholder="Location" class="form-control" disabled>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" placeholder="Completion Date" class="form-control" disabled>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.box-body -->
+                                                        <div class="box-footer">
+                                                            <button class="btn btn-primary pull-right" type="submit">Add</button>
+                                                        </div>
+                                                        <!-- /.box-footer -->
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- /.box-footer -->
                     </form>
                 </div>
                 <!-- /.box -->

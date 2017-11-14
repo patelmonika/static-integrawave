@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Integra Wave | Resume Wizard</title>
+    <title>Integra Wave | Cover Letter Wizard</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
@@ -212,26 +212,25 @@
                 </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="treeview active" ><a href="resume.html"><span>Resume</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span> </a>
+                        <li class="treeview"><a href="resume.html"><span>Resume</span><span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                </span> </a>
                             <ul class="treeview-menu">
-                                <li class="active"><a href="./resumeTemplate.html">Templates</a> </li>
-                                <li><a href="editResume.html">Customize Resume</a> </li>
+                                <li><a href="resume-template.php">Templates</a> </li>
+                                <li><a href="resume-edit.php">Customize Resume</a> </li>
                             </ul>
                         </li>
-                        <li class="treeview"><a href="resume.html"><span>Cover Letter</span>
+                        <li class="treeview active"><a href="resume.html"><span>Cover Letter</span>
                             <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
+                                    <i class="fa fa-angle-left pull-right"></i>
                             </span></a>
                             <ul class="treeview-menu">
-                                <li><a href="cvTemplate.html">Templates</a> </li>
-                                <li><a href="editCV.html">Customize Cover Letter</a> </li>
+                                <li class="active"><a href="cover-letter-template.html">Templates</a> </li>
+                                <li><a href="resume-edit.php">Customize Cover Letter</a> </li>
                             </ul>
                         </li>
-                        <li class="treeview"><a href="rankCity.html">Ranking of Cities </a></li>
-                        <li class="treeview"><a href="marketTrends.html">Job Market Trends </a></li>
+                        <li class="treeview"><a href="ranking-of-cities.php">Ranking of Cities </a></li>
+                        <li class="treeview"><a href="market-trends.php">Job Market Trends </a></li>
                     </ul>
                 </li>
 
@@ -246,7 +245,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Resume Wizard
+                Cover Letter Wizard
                 <small>Select your template</small>
             </h1>
             <ol class="breadcrumb">
@@ -310,7 +309,7 @@
     •	Experienced at virus detection and removal
         </textarea>
                         </div>
-                        <a href="editResume.html" class="small-box-footer">Select <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="cover-letter-edit.php" class="small-box-footer">Select <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -365,7 +364,7 @@
     •	Experienced at virus detection and removal
         </textarea>
                         </div>
-                        <a href="editResume.html" class="small-box-footer">Select <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="cover-letter-edit.php" class="small-box-footer">Select <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -420,7 +419,7 @@
     •	Experienced at virus detection and removal
         </textarea>
                         </div>
-                        <a href="editResume.html" class="small-box-footer">Select <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="cover-letter-edit.php" class="small-box-footer">Select <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -475,7 +474,7 @@
     •	Experienced at virus detection and removal
         </textarea>
                         </div>
-                        <a href="editResume.html" class="small-box-footer">Select <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="cover-letter-edit.php" class="small-box-footer">Select <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -530,7 +529,7 @@
     •	Experienced at virus detection and removal
         </textarea>
                         </div>
-                        <a href="editResume.html" class="small-box-footer">Select <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="cover-letter-edit.php" class="small-box-footer">Select <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->

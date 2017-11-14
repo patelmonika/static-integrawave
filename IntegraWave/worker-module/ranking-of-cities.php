@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Integra Wave | Cover Letter Wizard</title>
+    <title>Integra Wave | Canada's Best Places to Live</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
@@ -213,23 +213,23 @@
                     </a>
                     <ul class="treeview-menu">
                         <li class="treeview"><a href="resume.html"><span>Resume</span><span class="pull-right-container">
-                     <i class="fa fa-angle-left pull-right"></i>
-                     </span> </a>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span> </a>
                             <ul class="treeview-menu">
-                                <li><a href="resumeTemplate.html">Templates</a> </li>
-                                <li><a href="editResume.html">Customize Resume</a> </li>
+                                <li><a href="resume-template.php">Templates</a> </li>
+                                <li><a href="resume-edit.php">Customize Resume</a> </li>
                             </ul>
                         </li>
-                        <li class="treeview active"><a href="resume.html"><span>Cover Letter</span><span class="pull-right-container">
-                     <i class="fa fa-angle-left pull-right"></i>
-                     </span> </a>
+                        <li class="treeview"><a href="resume.html"><span>Cover Letter</span><span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span> </a>
                             <ul class="treeview-menu">
-                                <li ><a href="cvTemplate.html">Templates</a> </li>
-                                <li class="active"><a href="editCV.html">Customize Cover Letter</a> </li>
+                                <li><a href="cover-letter-template.php">Templates</a> </li>
+                                <li><a href="cover-letter-edit.php">Customize Cover Letter</a> </li>
                             </ul>
                         </li>
-                        <li class="treeview"><a href="rankCity.html">Ranking of Cities </a></li>
-                        <li class="treeview"><a href="marketTrends.html">Job Market Trends </a></li>
+                        <li class="treeview active"><a href="ranking-of-cities.php">Ranking of Cities </a></li>
+                        <li class="treeview"><a href="market-trends.php">Job Market Trends </a></li>
                     </ul>
                 </li>
 
@@ -244,7 +244,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Cover Letter Wizard
+                Canada's Best Places To Live
+
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-mobile"></i>Devices</a></li>
@@ -255,51 +256,63 @@
         <section class="content">
             <!-- Your Page Content Here -->
             <!-- Small boxes (Stat box) -->
-            <div class="row">
-                <div class="col-lg-3 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-aqua">
-                        <div class="inner small-box-footer">
-                            <a href="editCV.html"><p style="color: #fff">Edit Cover Letter</p></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-aqua">
-                        <div class="inner small-box-footer">
-                            <p>Proof Read</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-aqua">
-                        <div class="inner small-box-footer">
-                            <p>Share</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-aqua">
-                        <div class="inner small-box-footer">
-                            <p>Download</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./col -->
-            </div>
+
             <!-- /.row -->
             <div class="row">
-                <div class="form-group">
-               <textarea style="width: 50%; margin: 0 auto;" class="form-control" rows="30" cols="10" >
-                                                                                   Jane Doe
-                                                                 email - phone - address-LinkedIn
-               </textarea>
+                <div class="col-xs-12">
+                    <div class="box">
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table id="example1" class="table table-bordered table-striped table-responsive">
+                                <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>City</th>
+                                    <th>Top Features</th>
+                                    <th>More Info</th></tr>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Ottawa,Ont</td>
+                                    <td>Transit, Health assecibility</td>
+                                    <td><a href="#">More Info</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Oak Bay,B.C</td>
+                                    <td>Transit, High Wealth </td>
+                                    <td><a href="#">More Info</a></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Weyburn, Sask</td>
+                                    <td>Home Affordability, Robust Economy</td>
+                                    <td><a href="#">More Info</a></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Levis,Que</td>
+                                    <td>Low Taxes, Robust economy</td>
+                                    <td><a href="#">More Info</a></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>startford,Ont</td>
+                                    <td>Transit, Health assecibility</td>
+                                    <td><a href="#">More Info</a></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Ottawa,Ont</td>
+                                    <td>Transit, Health assecibility</td>
+                                    <td><a href="#">More Info</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
                 </div>
             </div>
         </section>

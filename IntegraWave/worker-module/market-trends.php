@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Integra Wave | Canada's Best Places to Live</title>
+    <title>Integra Wave | Job Market Trends</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
@@ -213,23 +213,23 @@
                     </a>
                     <ul class="treeview-menu">
                         <li class="treeview"><a href="resume.html"><span>Resume</span><span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span> </a>
+                <i class="fa fa-angle-left pull-right"></i>
+                </span> </a>
                             <ul class="treeview-menu">
-                                <li><a href="resumeTemplate.html">Templates</a> </li>
-                                <li><a href="editResume.html">Customize Resume</a> </li>
+                                <li><a href="resume-template.php">Templates</a> </li>
+                                <li><a href="resume-edit.php">Customize Resume</a> </li>
                             </ul>
                         </li>
                         <li class="treeview"><a href="resume.html"><span>Cover Letter</span><span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span> </a>
+                <i class="fa fa-angle-left pull-right"></i>
+                </span> </a>
                             <ul class="treeview-menu">
-                                <li><a href="cvTemplate.html">Templates</a> </li>
-                                <li><a href="editCV.html">Customize Cover Letter</a> </li>
+                                <li><a href="cover-letter-template.php">Templates</a> </li>
+                                <li><a href="cover-letter-edit.php">Customize Cover Letter</a> </li>
                             </ul>
                         </li>
-                        <li class="treeview active"><a href="rankCity.html">Ranking of Cities </a></li>
-                        <li class="treeview"><a href="marketTrends.html">Job Market Trends </a></li>
+                        <li class="treeview"><a href="ranking-of-cities.php">Ranking of Cities </a></li>
+                        <li class="treeview active"><a href="market-trends.php">Job Market Trends </a></li>
                     </ul>
                 </li>
 
@@ -244,7 +244,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Canada's Best Places To Live
+                Job Market and Trends
 
             </h1>
             <ol class="breadcrumb">
@@ -261,53 +261,187 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Statistics </h3>
+                        </div>
                         <!-- /.box-header -->
                         <div class="box-body">
                             <table id="example1" class="table table-bordered table-striped table-responsive">
-                                <thead>
-                                <tr>
-                                    <th>Rank</th>
-                                    <th>City</th>
-                                    <th>Top Features</th>
-                                    <th>More Info</th></tr>
-                                </tr>
-                                </thead>
-                                <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Ottawa,Ont</td>
-                                    <td>Transit, Health assecibility</td>
+                                    <td>Unemployment Ratio (sep 2017)</td>
+                                    <td>6.2 &minus;</td>
                                     <td><a href="#">More Info</a></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Oak Bay,B.C</td>
-                                    <td>Transit, High Wealth </td>
+                                    <td>Employment(sep 2017)</td>
+                                    <td>18,454,100 &uarr;</td>
                                     <td><a href="#">More Info</a></td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
-                                    <td>Weyburn, Sask</td>
-                                    <td>Home Affordability, Robust Economy</td>
+                                    <td>Avg. Weekly Eaning:(July 2017)</td>
+                                    <td>970.47 &darr;</td>
                                     <td><a href="#">More Info</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Unemploment Ratio </h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table id="example2" class="table table-bordered table-striped table-responsive">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Province</th>
+                                    <th>Unemployment rate</th>
+                                </tr>
+                                </thead>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Alberta</td>
+                                    <td>8.1% &uarr;</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>British Columbia</td>
+                                    <td>4.9% &darr; </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Manitoba</td>
+                                    <td>9.9% &uarr;</td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
-                                    <td>Levis,Que</td>
-                                    <td>Low Taxes, Robust economy</td>
-                                    <td><a href="#">More Info</a></td>
+                                    <td>New brunswick</td>
+                                    <td>7.9% &uarr;</td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
-                                    <td>startford,Ont</td>
-                                    <td>Transit, Health assecibility</td>
-                                    <td><a href="#">More Info</a></td>
+                                    <td>Newfoundland and Labrador</td>
+                                    <td>7.9% &uarr;</td>
                                 </tr>
                                 <tr>
                                     <td>6</td>
                                     <td>Ottawa,Ont</td>
-                                    <td>Transit, Health assecibility</td>
-                                    <td><a href="#">More Info</a></td>
+                                    <td>7.9% &uarr;</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Employment Ratio </h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table id="example3" class="table table-bordered table-striped table-responsive">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Province</th>
+                                    <th>Employment rate</th>
+                                </tr>
+                                </tr>
+                                </thead>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Alberta</td>
+                                    <td>8.1% &uarr;</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>British Columbia</td>
+                                    <td>4.9% &darr; </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Manitoba</td>
+                                    <td>9.9% &uarr;</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>New brunswick</td>
+                                    <td>7.9% &uarr;</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Newfoundland and Labrador</td>
+                                    <td>7.9% &uarr;</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Ottawa,Ont</td>
+                                    <td>7.9% &uarr;</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Average Weekly Earnings </h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table id="example4" class="table table-bordered table-striped table-responsive">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Province</th>
+                                    <th>Average Earning</th>
+                                </tr>
+                                </tr>
+                                </thead>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Alberta</td>
+                                    <td>8.1% &uarr;</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>British Columbia</td>
+                                    <td>4.9% &darr; </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Manitoba</td>
+                                    <td>9.9% &uarr;</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>New brunswick</td>
+                                    <td>7.9% &uarr;</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Newfoundland and Labrador</td>
+                                    <td>7.9% &uarr;</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Ottawa,Ont</td>
+                                    <td>7.9% &uarr;</td>
                                 </tr>
                             </table>
                         </div>

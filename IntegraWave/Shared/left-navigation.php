@@ -33,16 +33,16 @@
                      </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="treeview"><a href="<?php echo url_for('/StudentModule/category.html'); ?>">Courses</a>
+                    <li class="treeview"><a href="<?php echo url_for('/student-module/category.php'); ?>">Courses</a>
                         <ul class="treeview-menu">
-                            <li><a href="<?php echo url_for('/StudentModule/category.html'); ?>">ASP</a></li>
-                            <li><a href="<?php echo url_for('/StudentModule/category.html'); ?>">PHP</a></li>
+                            <li><a href="<?php echo url_for('/student-module/category.php'); ?>">ASP</a></li>
+                            <li><a href="<?php echo url_for('/student-module/category.php'); ?>">PHP</a></li>
                         </ul>
                     </li>
-                    <li class="treeview"><a href="<?php echo url_for('/StudentModule/category.html'); ?>">Important Dates</a>
+                    <li class="treeview"><a href="<?php echo url_for('/student-module/category.php'); ?>">Important Dates</a>
                         <ul class="treeview-menu">
-                            <li><a href="<?php echo url_for('/StudentModule/dates.html'); ?>">Schedule</a></li>
-                            <li><a href="<?php echo url_for('/StudentModule/dates.html'); ?>">Fees Deadlines</a></li>
+                            <li><a href="<?php echo url_for('/student-module/dates.php'); ?>">Schedule</a></li>
+                            <li><a href="<?php echo url_for('/student-module/dates.php'); ?>">Fees Deadlines</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -58,22 +58,22 @@
                 <i class="fa fa-angle-left pull-right"></i>
                 </span></a>
                         <ul class="treeview-menu">
-                            <li><a href="<?php echo url_for('/workerModule/resumeTemplate.html'); ?>">Templates</a> </li>
-                            <li><a href="<?php echo url_for('/workerModule/editResume.html'); ?>">Customize Resume</a> </li>
+                            <li><a href="<?php echo url_for('/worker-module/resume-template.php'); ?>">Templates</a> </li>
+                            <li><a href="<?php echo url_for('/worker-module/resume-edit.php'); ?>">Customize Resume</a> </li>
                         </ul>
                     </li>
                     <li class="treeview active"><a href="#"> <span>Cover Letter</span> <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
                 </span> </a>
                         <ul class="treeview-menu">
-                            <li><a href="<?php echo url_for('/workerModule/cvTemplate.html'); ?>">Templates</a> </li>
-                            <li class="active"><a href="<?php echo url_for('/workerModule/editResume.html'); ?>">
+                            <li><a href="<?php echo url_for('/worker-module/cover-letter-template.php'); ?>">Templates</a> </li>
+                            <li class="active"><a href="<?php echo url_for('/worker-module/resume-edit.php'); ?>">
                                     Customize Cover Letter</a> </li>
                         </ul>
                     </li>
-                    <li class="treeview"><a href="<?php echo url_for('/workerModule/rankCity.html'); ?>">
+                    <li class="treeview"><a href="<?php echo url_for('/worker-module/ranking-of-cities.php'); ?>">
                             Ranking of Cities </a></li>
-                    <li class="treeview"><a href="<?php echo url_for('/workerModule/marketTrends.html'); ?>">
+                    <li class="treeview"><a href="<?php echo url_for('/worker-module/market-trends.php'); ?>">
                             Job Market Trends </a></li>
                 </ul>
             </li>

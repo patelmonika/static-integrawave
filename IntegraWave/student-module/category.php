@@ -263,7 +263,7 @@
             <div class="box-header with-border">
                     <h3 class="box-title">Add New</h3>
                     <div class="box-tools pull-right">
-                        <a href="student.html"><i class="fa fa-plus"></i>
+                        <a href="student.php"><i class="fa fa-plus"></i>
                         </a>
                     </div>
                 </div>
