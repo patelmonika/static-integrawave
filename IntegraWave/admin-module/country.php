@@ -81,7 +81,10 @@ if(isset($_POST['update'])){
                             <div class="box-footer">
                                 <button class="btn btn-primary pull-right" type="submit"
                                         name='<?php echo isset($requestStatus['id']) ? 'update' : 'add' ?>'><?php echo isset($requestStatus['id']) ? 'Update' : 'Add' ?></button>
-                                <button class="btn btn-link btn-grey pull-right" type="reset">Cancel</button>
+                                <?php echo isset($requestStatus['id']) ?
+                                    "<button class='btn btn-link btn-grey pull-right' type='submit' name='reset'>Cancel</button>" :
+                                    "<button class='btn btn-link btn-grey pull-right' type='reset'>Cancel</button>" ?>
+
                             </div>
                         </form>
                         <table id="tblDisplay" class="table table-bordered table-striped table-responsive">
