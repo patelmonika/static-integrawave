@@ -13,7 +13,7 @@ $requestStatus;
 if(isset($_POST['add'])){
     $controller = "country";
     $data = array('name' => $_POST['name']);
-    $requestStatus = insertData($controller, $data);
+    insertData($controller, $data);
 }
 
 if(isset($_POST['delete'])){
@@ -22,7 +22,7 @@ if(isset($_POST['delete'])){
     $requestStatus = deleteData($controller,$param);
 }
 
-if(isset($_POST['name']) == "edit"){
+if(isset($_POST['edit'])){
     $controller = "country";
     $param = $_POST['id'];
     $requestStatus = getData($controller,$param);
@@ -74,7 +74,7 @@ if(isset($_POST['update'])){
                                     <label class="col-sm-3 control-label">Country</label>
                                     <div class="col-sm-9">
                                         <input type="text" name="name" id="txtName" placeholder="Add New Country" class="form-control"
-                                               value='<?php if(isset($requestStatus['name'])) echo $requestStatus['name'];?>' >
+                                               value='<?php if(isset($requestStatus['id'])) echo $requestStatus['name'];?>' >
                                     </div>
                                 </div>
                             </div>

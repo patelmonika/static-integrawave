@@ -3,6 +3,12 @@ function postMethod(params) {
     var form = document.createElement("form");
     form.setAttribute("method", method);
 
+    var hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("name", "edit");
+
+    form.appendChild(hiddenField);
+
     for(var key in params) {
         if(params.hasOwnProperty(key)) {
             var hiddenField = document.createElement("input");
@@ -22,7 +28,7 @@ function setRequestParam(clickedEle){
     var recordId = clickedEle.getAttribute("data-met-id");
     var name = clickedEle.getAttribute("data-met-name");
 
-    var myParam = {name: name, id:recordId};
+    var myParam = {id:recordId};
 
     postMethod(myParam);
 }
