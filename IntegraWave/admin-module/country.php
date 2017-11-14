@@ -10,31 +10,38 @@ include_once "../Shared/header.php";
 include_once "../Shared/left-navigation.php";
 
 $requestStatus;
+if(isset($_POST['action'])) {
+    $action = $_POST['action'];
 
-if(isset($_POST['add'])){
-    $controller = "country";
-    $data = array('name' => $_POST['name']);
-    insertData($controller, $data);
+    $requestStatus = requestOperation("country", $_POST, $action);
 }
 
-if(isset($_POST['delete'])){
-    $controller = "country";
-    $param = $_POST['id'];
-    $requestStatus = deleteData($controller,$param);
-}
-
-if(isset($_POST['edit'])){
-    $controller = "country";
-    $param = $_POST['id'];
-    $requestStatus = getData($controller,$param);
-}
-
-if(isset($_POST['update'])){
-    $controller = "country";
-    $param = $_POST['id'];
-    $data = array('name' => $_POST['name']);
-    $requestStatus = updateData($controller, $param, $data);
-}
+//if($_POST['action'] == "add"){
+//    unset($_POST['action']);
+//    unset($_POST['id']);
+//    $requestStatus = insertData($controller, $_POST);
+//}
+//
+//if($_POST['action'] == "delete"){
+//    $param = $_POST['id'];
+//    unset($_POST['action']);
+//    unset($_POST['id']);
+//    $requestStatus = deleteData($controller,$_POST);
+//}
+//
+//if($_POST['action'] == "edit"){
+//    $param = $_POST['id'];
+//    unset($_POST['action']);
+//    unset($_POST['id']);
+//    $requestStatus = getData($controller,$param);
+//}
+//
+//if($_POST['action'] == "update"){
+//    $param = $_POST['id'];
+//    unset($_POST['action']);
+//    unset($_POST['id']);
+//    $requestStatus = updateData($controller, $param, $_POST);
+//}
 
 ?>
 
@@ -70,7 +77,8 @@ if(isset($_POST['update'])){
                     <div class="box-body">
                         <form class="form-horizontal" method="POST">
                             <div class="box-body">
-                                <input type="hidden" id="hidId" name="id" value='<?php if(isset($requestStatus['id'])) echo $requestStatus['id']; ?>' >
+                                <input type="hidden" id="hidId" name="id"
+                                       value='<?php if(isset($requestStatus['id'])) echo $requestStatus['id']; ?>' >
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Country</label>
                                     <div class="col-sm-9">
@@ -81,7 +89,8 @@ if(isset($_POST['update'])){
                             </div>
                             <div class="box-footer">
                                 <button class="btn btn-primary pull-right" type="submit"
-                                        name='<?php echo isset($requestStatus['id']) ? 'update' : 'add' ?>'><?php echo isset($requestStatus['id']) ? 'Update' : 'Add' ?></button>
+                                        value='<?php echo isset($requestStatus['id']) ? 'update' : 'add' ?>' name="action">
+                                     <?php echo isset($requestStatus['id']) ? 'Update' : 'Add' ?></button>
                                 <?php echo isset($requestStatus['id']) ?
                                     "<button class='btn btn-link btn-grey pull-right' type='submit' name='reset'>Cancel</button>" :
                                     "<button class='btn btn-link btn-grey pull-right' type='reset'>Cancel</button>" ?>
@@ -136,7 +145,7 @@ if(isset($_POST['update'])){
                                 <input type="hidden" id="hidElementId" name="id"/>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-link btn-grey" data-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-primary" name="delete">OK</button>
+                                    <button type="submit" class="btn btn-primary" name="action" value="delete">OK</button>
                                 </div>
                             </div>
                         </div>

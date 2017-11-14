@@ -5,7 +5,8 @@ function postMethod(params) {
 
     var hiddenField = document.createElement("input");
     hiddenField.setAttribute("type", "hidden");
-    hiddenField.setAttribute("name", "edit");
+    hiddenField.setAttribute("name", "action");
+    hiddenField.setAttribute("value", "edit");
 
     form.appendChild(hiddenField);
 

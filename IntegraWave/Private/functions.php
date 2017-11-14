@@ -7,15 +7,51 @@ function url_for($script_path){
     return WWW_ROOT . $script_path;
 }
 
+function requestOperation($controller, $data, $action){
+
+    if($data['action'] == "add"){
+        unset($data['action']);
+        unset($data['id']);
+        $requestStatus = insertData($controller, $data);
+    }
+
+    if($data['action'] == "delete"){
+        $param = $data['id'];
+        unset($data['action']);
+        unset($data['id']);
+        $requestStatus = deleteData($controller,$param);
+    }
+
+    if($data['action'] == "edit"){
+        $param = $data['id'];
+        unset($data['action']);
+        unset($data['id']);
+        $requestStatus = getData($controller,$param);
+    }
+
+    if($data['action'] == "update"){
+        $param = $data['id'];
+        unset($data['action']);
+        unset($data['id']);
+        $requestStatus = updateData($controller, $param, $data);
+    }
+
+    return $requestStatus;
+}
+
 function insertData($controller, $data){
 
     $url = "http://php-integrawave.azurewebsites.net/$controller";
+    $data_str = json_encode($data);
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data_str);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
     $response = curl_exec($ch);
+    curl_close($ch);
 
     return $response;
 }
@@ -30,6 +66,7 @@ function deleteData($controller,$param){
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $response = curl_exec($ch);
+    curl_close($ch);
 
     return $response;
 }
@@ -44,6 +81,8 @@ function updateData($controller, $param, $data){
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
     $response = curl_exec($ch);
+    curl_close($ch);
+
     return $response;
 }
 
@@ -52,8 +91,10 @@ function getAll($controller){
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $request = curl_exec($ch);
+    curl_close($ch);
 
     $assoc = true;
     $response = json_decode($request, $assoc);
@@ -66,8 +107,10 @@ function getData($controller,$param){
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $request = curl_exec($ch);
+    curl_close($ch);
 
     $assoc = true;
     $response = json_decode($request, $assoc);
