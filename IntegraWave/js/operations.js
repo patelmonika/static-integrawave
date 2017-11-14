@@ -45,3 +45,7 @@ function setIdOnDelete(clickedEle){
         }
     }
 }
+
+function testMethod(){
+
+}
