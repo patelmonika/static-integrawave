@@ -25,6 +25,9 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script src="../js/operations.js"></script>
+
 </head>
 <body class="hold-transition skin-black sidebar-mini">
 <div class="wrapper">
@@ -33,9 +36,9 @@
         <!-- Logo -->
         <a href="index2.html" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><img src="../../dist/img/logo.jpg" alt="logo"/></span>
+            <span class="logo-mini"><img src="../dist/img/logo.JPG" alt="logo"/></span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><img src="../../dist/img/logo.jpg" alt="logo"/>Integra Wave</span>
+            <span class="logo-lg"><img src="../dist/img/logo.JPG" alt="logo"/>Integra Wave</span>
         </a>
         <!-- Header Navbar -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -150,15 +153,15 @@
                             <!-- The user image in the navbar-->
                             <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs">Anand Baraskar</span>
+                            <span class="hidden-xs">Admin</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
                                 <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                 <p>
-                                    Anand Baraskar - Admin
-                                    <small>Active since July 2016</small>
+                                    Team IntegraWave - Admin
+                                    <small>Active</small>
                                 </p>
                             </li>
                             <!-- Menu Footer-->
@@ -175,51 +178,4 @@
                 </ul>
             </div>
         </nav>
-        <script type="text/javascript">
-
-            function postMethod(params) {
-                method = "POST"; // Set method to post by default if not specified.
-
-                // The rest of this code assumes you are not using a library.
-                // It can be made less wordy if you use one.
-                var form = document.createElement("form");
-                form.setAttribute("method", method);
-
-                for(var key in params) {
-                    if(params.hasOwnProperty(key)) {
-                        var hiddenField = document.createElement("input");
-                        hiddenField.setAttribute("type", "hidden");
-                        hiddenField.setAttribute("name", key);
-                        hiddenField.setAttribute("value", params[key]);
-
-                        form.appendChild(hiddenField);
-                    }
-                }
-
-                document.body.appendChild(form);
-                form.submit();
-            }
-
-            function setRequestParam(clickedEle){
-                var recordId = clickedEle.getAttribute("data-met-id");
-                var name = clickedEle.getAttribute("data-met-name");
-
-                var myParam = {action: name, id:recordId};
-
-                postMethod(myParam);
-            }
-
-            function setIdOnDelete(clickedEle){
-                var attr = clickedEle.getAttribute("data-target").replace("#",'');
-                var idToDelete = clickedEle.getAttribute("data-met-id");
-                var ele = document.getElementById(attr).querySelectorAll("*");
-                for(var i=0;i<ele.length;i++){
-                    if(ele[i].id == "hidElementId"){
-                        ele[i].setAttribute("value",idToDelete);
-                        break;
-                    }
-                }
-            }
-
-        </script>
     </header>

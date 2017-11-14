@@ -5,7 +5,7 @@
         Version <b>1.0</b>
     </div>
     <!-- Default to the left -->
-    &copy; Copyright <strong><a href="#">Aradhya InfoSystems Pvt Ltd</a></strong>, 2016. All rights reserved.
+    &copy; Copyright <strong><a href="#">IntegraWave</a></strong>, 2017. All rights reserved.
 </footer>
 </div>
 <!-- ./wrapper -->

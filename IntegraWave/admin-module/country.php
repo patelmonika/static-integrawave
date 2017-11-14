@@ -22,13 +22,13 @@ if(isset($_POST['delete'])){
     $requestStatus = deleteData($controller,$param);
 }
 
-if(isset($_POST['action']) == "edit"){
+if(isset($_POST['name']) == "edit"){
     $controller = "country";
     $param = $_POST['id'];
     $requestStatus = getData($controller,$param);
 }
 
-if(isset($_POST['name']) == "update"){
+if(isset($_POST['update'])){
     $controller = "country";
     $param = $_POST['id'];
     $data = array('name' => $_POST['name']);
@@ -67,24 +67,24 @@ if(isset($_POST['name']) == "update"){
                 <!-- form start -->
 
                     <div class="box-body">
-                        <div class="box-body">
-                            <form class="form-horizontal">
-                            <input type="hidden" id="hidId" name="id" value='<?php if(isset($requestStatus['id'])) echo $requestStatus['id']; ?>' >
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Country</label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="name" id="txtName" placeholder="Add New Country" class="form-control"
-                                           value='<?php if(isset($requestStatus['name'])) echo $requestStatus['name'];?>' >
+                        <form class="form-horizontal" method="POST">
+                            <div class="box-body">
+                                <input type="hidden" id="hidId" name="id" value='<?php if(isset($requestStatus['id'])) echo $requestStatus['id']; ?>' >
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Country</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="name" id="txtName" placeholder="Add New Country" class="form-control"
+                                               value='<?php if(isset($requestStatus['name'])) echo $requestStatus['name'];?>' >
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="box-footer">
-                            <button class="btn btn-primary pull-right" type="submit"
-                                    name='<?php echo isset($requestStatus['id']) ? 'update' : 'add' ?>'><?php echo isset($requestStatus['id']) ? 'Update' : 'Add' ?></button>
-                            <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
-                        </div>
-                </form>
-                        <table id="cat1" class="table table-bordered table-striped table-responsive">
+                            <div class="box-footer">
+                                <button class="btn btn-primary pull-right" type="submit"
+                                        name='<?php echo isset($requestStatus['id']) ? 'update' : 'add' ?>'><?php echo isset($requestStatus['id']) ? 'Update' : 'Add' ?></button>
+                                <button class="btn btn-link btn-grey pull-right" type="reset">Cancel</button>
+                            </div>
+                        </form>
+                        <table id="tblDisplay" class="table table-bordered table-striped table-responsive">
                             <thead>
                             <tr>
                                 <th>Id</th>
@@ -104,8 +104,8 @@ if(isset($_POST['name']) == "update"){
                                     $returnResponse = $returnResponse . "<td name='id'>" . $value['id'] . "</td>";
                                     $returnResponse = $returnResponse . "<td>" . $value['name'] . "</td>";
                                     $returnResponse = $returnResponse . "<td>";
-                                    $returnResponse = $returnResponse . "<button type='submit' data-met-name='edit' data-met-id=" . $value['id'] . " name='edit' onclick='setRequestParam(this);'>Edit</button>";
-                                    $returnResponse = $returnResponse . " / <button type='button' data-toggle='modal' data-target='#delete' data-met-id=" . $value['id'] . " onclick='setIdOnDelete(this);'>Delete</button>";
+                                    $returnResponse = $returnResponse . "<a href='#' data-met-name='edit' data-met-id=" . $value['id'] . " name='edit' onclick='setRequestParam(this);'>Edit</a> / ";
+                                    $returnResponse = $returnResponse . "<a href='#' data-toggle='modal' data-target='#delete' data-met-id=" . $value['id'] . " onclick='setIdOnDelete(this);'>Delete</a>";
                                     $returnResponse = $returnResponse . "</td></tr>";
                                 }
                             }
@@ -115,9 +115,8 @@ if(isset($_POST['name']) == "update"){
                             ?>
                         </table>
                     </div>
-                    <!-- /.box-body -->
 
-
+                <!-- Modal -->
                 <form class="form-horizontal" method="POST">
                     <div id="delete" class="modal fade" role="dialog">
                         <div class="modal-dialog">
@@ -125,11 +124,12 @@ if(isset($_POST['name']) == "update"){
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Delete</h4>
+                                    <h4 class="modal-title">Delete Country</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Are you sure you want to delete it?</p>
+                                    <p>Are you sure you want to delete this Country?</p>
                                 </div>
+                                <input type="hidden" id="hidElementId" name="id"/>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-link btn-grey" data-dismiss="modal">Cancel</button>
                                     <button type="submit" class="btn btn-primary" name="delete">OK</button>
@@ -149,4 +149,4 @@ if(isset($_POST['name']) == "update"){
 </div>
 <!-- /.content-wrapper -->
 
-<?php include_once "footer.php"; ?>
+<?php include_once "../Shared/footer.php"; ?>
