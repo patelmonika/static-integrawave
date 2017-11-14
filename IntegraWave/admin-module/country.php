@@ -159,7 +159,7 @@ if(isset($_POST['action'])) {
 </div>
 
 <!-- /.content -->
-</div>
+
 <!-- /.content-wrapper -->
 
 <?php include_once "../Shared/footer.php"; ?>
