@@ -150,7 +150,7 @@ if(isset($_POST['update'])){
 </div>
 
 <!-- /.content -->
-</div>
+
 <!-- /.content-wrapper -->
 
 <?php include_once "../Shared/footer.php"; ?>
