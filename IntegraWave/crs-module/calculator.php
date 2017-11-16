@@ -66,7 +66,7 @@ include_once "../Shared/left-navigation.php";
                 <div class="row">
                     <div class="col-sm-12">
                         <button type="submit" class="btn btn-primary pull-right" type="submit">Calculate</button>
-                        <button type="reset" class="btn btn-link btn-grey pull-right">Cancel</button>
+                        <button type="reset" class="btn btn-link btn-grey pull-right" onclick="hideDescriptionLabel();">Cancel</button>
                     </div>
                 </div>
 

@@ -47,16 +47,16 @@ function setIdOnDelete(clickedEle){
 }
 
 function addSelectOption(){
-    var eles = document.getElementsByTagName("select");
-    for(var i=0;i<eles.length;i++){
+    var elements = document.getElementsByTagName("select");
+    for(var i=0;i<elements.length;i++){
         var newoption = document.createElement("option");
         newoption.setAttribute("value","");
         newoption.setAttribute("selected","");
         var textnode = document.createTextNode("--Select--");
         newoption.appendChild(textnode);
 
-        if(eles[i].getAttribute("data-met-addoption") !== null){
-            eles[i].insertBefore(newoption, eles[i].firstChild);
+        if(elements[i].getAttribute("data-met-addoption") !== null){
+            elements[i].insertBefore(newoption, elements[i].firstChild);
         }
     }
 }
@@ -71,4 +71,11 @@ function showDescription(clickedEle){
     lblDesc.innerHTML = descriptionText;
 
     lblDesc.style.display = "block";
+}
+
+function hideDescriptionLabel(){
+    var elements = document.querySelectorAll('label[id^="lblDesc_"]');
+    for(var i=0;i<elements.length;i++){
+        elements[i].style.display = "none";
+    }
 }
