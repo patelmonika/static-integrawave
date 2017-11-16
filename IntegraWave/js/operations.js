@@ -49,13 +49,15 @@ function setIdOnDelete(clickedEle){
 function addSelectOption(){
     var elements = document.getElementsByTagName("select");
     for(var i=0;i<elements.length;i++){
-        var newoption = document.createElement("option");
-        newoption.setAttribute("value","");
-        newoption.setAttribute("selected","");
-        var textnode = document.createTextNode("--Select--");
-        newoption.appendChild(textnode);
+        var groupId = elements[i].getAttribute("data-met-addoption");
+        if(groupId !== null){
+            var newoption = document.createElement("option");
+            newoption.setAttribute("value","");
+            newoption.setAttribute("selected","");
+            newoption.setAttribute("data-met-groupId",groupId);
+            var textnode = document.createTextNode("--Select--");
+            newoption.appendChild(textnode);
 
-        if(elements[i].getAttribute("data-met-addoption") !== null){
             elements[i].insertBefore(newoption, elements[i].firstChild);
         }
     }
@@ -64,11 +66,11 @@ function addSelectOption(){
 function showDescription(clickedEle){
     var selectedIndex = clickedEle.selectedIndex;
 
-    if(selectedIndex !== 0) {
-        var groupId = clickedEle[selectedIndex].getAttribute("data-met-groupId");
-        var descriptionText = clickedEle[selectedIndex].getAttribute("data-met-desc");
+    var groupId = clickedEle[selectedIndex].getAttribute("data-met-groupId");
+    var lblDesc = document.getElementById("lblDesc_" + groupId);
 
-        var lblDesc = document.getElementById("lblDesc_" + groupId);
+    if(selectedIndex !== 0) {
+        var descriptionText = clickedEle[selectedIndex].getAttribute("data-met-desc");
         lblDesc.innerHTML = descriptionText;
 
         lblDesc.style.display = "block";
