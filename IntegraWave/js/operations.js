@@ -64,13 +64,18 @@ function addSelectOption(){
 function showDescription(clickedEle){
     var selectedIndex = clickedEle.selectedIndex;
 
-    var groupId = clickedEle[selectedIndex].getAttribute("data-met-groupId");
-    var descriptionText = clickedEle[selectedIndex].getAttribute("data-met-desc");
+    if(selectedIndex !== 0) {
+        var groupId = clickedEle[selectedIndex].getAttribute("data-met-groupId");
+        var descriptionText = clickedEle[selectedIndex].getAttribute("data-met-desc");
 
-    var lblDesc = document.getElementById("lblDesc_" + groupId);
-    lblDesc.innerHTML = descriptionText;
+        var lblDesc = document.getElementById("lblDesc_" + groupId);
+        lblDesc.innerHTML = descriptionText;
 
-    lblDesc.style.display = "block";
+        lblDesc.style.display = "block";
+    }
+    else{
+        lblDesc.style.display = "none";
+    }
 }
 
 function hideDescriptionLabel(){
