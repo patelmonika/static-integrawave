@@ -7,33 +7,36 @@ function url_for($script_path){
     return WWW_ROOT . $script_path;
 }
 
-function requestOperation($controller, $data, $action){
+function requestOperation($controller, $data){
 
-    if($data['action'] == "add"){
-        unset($data['action']);
-        unset($data['id']);
-        $requestStatus = insertData($controller, $data);
-    }
+    $action = $data['action'];
 
-    if($data['action'] == "delete"){
-        $param = $data['id'];
-        unset($data['action']);
-        unset($data['id']);
-        $requestStatus = deleteData($controller,$param);
-    }
-
-    if($data['action'] == "edit"){
-        $param = $data['id'];
-        unset($data['action']);
-        unset($data['id']);
-        $requestStatus = getData($controller,$param);
-    }
-
-    if($data['action'] == "update"){
-        $param = $data['id'];
-        unset($data['action']);
-        unset($data['id']);
-        $requestStatus = updateData($controller, $param, $data);
+    switch ($action){
+        case "add":
+            unset($data['action']);
+            unset($data['id']);
+            $requestStatus = insertData($controller, $data);
+            break;
+        case "delete":
+            $param = $data['id'];
+            unset($data['action']);
+            unset($data['id']);
+            $requestStatus = deleteData($controller,$param);
+            break;
+        case "edit":
+            $param = $data['id'];
+            unset($data['action']);
+            unset($data['id']);
+            $requestStatus = getData($controller,$param);
+            break;
+        case "update":
+            $param = $data['id'];
+            unset($data['action']);
+            unset($data['id']);
+            $requestStatus = updateData($controller, $param, $data);
+            break;
+        default:
+            break;
     }
 
     return $requestStatus;
