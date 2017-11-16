@@ -1,13 +1,14 @@
 <?php
 
-$title = "dates";
-$selectedOption = "";
+$title = "calculator";
+$selectedOption = "CRS,Calculator";
 
 require_once "../Private/functions.php";
 
 include_once "../Shared/header.php";
 
 include_once "../Shared/left-navigation.php";
+
 ?>
 
 
@@ -35,60 +36,40 @@ include_once "../Shared/left-navigation.php";
                         <div id="basic" class="tab-pane active">
                             <form class="form-horizontal">
                                 <div class="box-body">
-
-                                    <table id="schedule" class="table table-bordered table-striped table-responsive">
-                                        <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Course</th>
-                                            <th>Location</th>
-                                            <th>Day</th>
-                                            <th>Start Time</th>
-                                            <th>End Time</th>
-                                            <th>Action</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>PHP</td>
-                                            <td>J678</td>
-                                            <td>Tuesday</td>
-                                            <td>10:00:00</td>
-                                            <td>13:30:00</td>
-                                            <td>
-                                                <a href="#" data-toggle="modal" data-target="#edit-feesdate">Edit</a>/
-                                                <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>ASP</td>
-                                            <td>J124</td>
-                                            <td>Monday</td>
-                                            <td>08:00:00</td>
-                                            <td>11:30:00</td>
-                                            <td>
-                                                <a href="#" data-toggle="modal" data-target="#edit-feesdate">Edit</a>/
-                                                <a href="#" data-toggle="modal" data-target="#delete" data-met-error="">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Java</td>
-                                            <td>J124</td>
-                                            <td>Monday</td>
-                                            <td>15:00:00</td>
-                                            <td>18:30:00</td>
-                                            <td>
-                                                <a href="#" data-toggle="modal" data-target="#edit-feesdate">Edit</a>/
-                                                <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                                            </td>
-                                        </tr>
-                                    </table>
-
                                     <div class="box-body">
+                                        <?php
+                                        $response = getData('section', '1');
 
+//                                        foreach ($response['factor'] as $factor) {
+//                                            echo "$factor[name]</br>";
+//                                            foreach ($factor['subfactor'] as $subfactor) {
+//                                                echo "$subfactor[name]</br>";
+//                                                foreach ($subfactor['group'] as $group) {
+//                                                    echo "$group[name]</br>";
+//                                                    foreach ($group['option'] as $option) {
+//                                                        echo "$option[id] - $option[name]</br>";
+//                                                    }
+//                                                }
+//                                            }
+//                                        }
+                                        ?>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-9">
+                                            <label class="col-sm-3 control-label">Factor : </label>
+                                            </div>
+                                            <label class="col-sm-3 control-label">Select Semester</label>
+                                            <div class="col-sm-9">
+
+                                                <select class="form-control">
+                                                    <option>Sem 1</option>
+                                                    <option>Sem 2</option>
+                                                    <option>Sem 3</option>
+                                                    <option>Sem 4</option>
+                                                    <option>Sem 5</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label">Select Semester</label>
                                             <div class="col-sm-9">
@@ -102,51 +83,51 @@ include_once "../Shared/left-navigation.php";
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-3 control-label">Select Course</label>
+                                            <label class="col-sm-3 control-label">Select Semester</label>
                                             <div class="col-sm-9">
                                                 <select class="form-control">
-                                                    <option>PHP 1</option>
-                                                    <option>ASP 2</option>
-                                                    <option>Project Management</option>
-                                                    <option>JAVA</option>
-                                                    <option>C#</option>
+                                                    <option>Sem 1</option>
+                                                    <option>Sem 2</option>
+                                                    <option>Sem 3</option>
+                                                    <option>Sem 4</option>
+                                                    <option>Sem 5</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-3 control-label">Location</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" name="location" id="location" placeholder="Add New Location Here" class="form-control">
+                                            <label class="col-sm-3 control-label">Select Semester</label>
+                                            <div class="col-sm-9">
+                                                <select class="form-control">
+                                                    <option>Sem 1</option>
+                                                    <option>Sem 2</option>
+                                                    <option>Sem 3</option>
+                                                    <option>Sem 4</option>
+                                                    <option>Sem 5</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-3 control-label">Day Of Week</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" name="day" id="day" placeholder="Add Location Here" class="form-control">
+                                            <label class="col-sm-3 control-label">Select Semester</label>
+                                            <div class="col-sm-9">
+                                                <select class="form-control">
+                                                    <option>Sem 1</option>
+                                                    <option>Sem 2</option>
+                                                    <option>Sem 3</option>
+                                                    <option>Sem 4</option>
+                                                    <option>Sem 5</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-3 control-label">Start Time</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" name="stime" id="stime" placeholder="Add Start Time Here" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">End Time</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" name="etime" id="etime" placeholder="Add End Time Here" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Start Date</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" name="sdate" id="sdate" placeholder="Add Start Date Here" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">End Date</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" name="edate" id="edate" placeholder="Add End Date Here" class="form-control">
+                                            <label class="col-sm-3 control-label">Select Semester</label>
+                                            <div class="col-sm-9">
+                                                <select class="form-control">
+                                                    <option>Sem 1</option>
+                                                    <option>Sem 2</option>
+                                                    <option>Sem 3</option>
+                                                    <option>Sem 4</option>
+                                                    <option>Sem 5</option>
+                                                </select>
                                             </div>
                                         </div>
 

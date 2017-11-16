@@ -26,6 +26,18 @@
 
                 </ul>
             </li>
+            <li class="treeview <?php echo isset($selectedOptionArr) && $selectedOptionArr[0] == 'CRS' ? 'active' : '' ?> ">
+                <a href="../index.html"><i class="fa fa-graduation-cap"></i> <span>CRS</span>
+                    <span class="pull-right-container">
+                     <i class="fa fa-angle-left pull-right"></i>
+                     </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="treeview"><a href="<?php echo url_for('/crs-module/calculator.php'); ?>">Calculator</a>
+                    </li>
+
+                </ul>
+            </li>
             <li class="treeview <?php echo isset($selectedOptionArr) && $selectedOptionArr[0] == 'Student' ? 'active' : '' ?> ">
                 <a href="<?php echo url_for('/index.html'); ?>"><i class="fa fa-graduation-cap"></i> <span>Student</span>
                     <span class="pull-right-container">
