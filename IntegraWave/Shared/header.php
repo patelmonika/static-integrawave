@@ -29,7 +29,7 @@
     <script src="../js/operations.js"></script>
 
 </head>
-<body class="hold-transition skin-black sidebar-mini">
+<body class="hold-transition skin-black sidebar-mini" onload="addSelectOption();">
 <div class="wrapper">
     <!-- Main Header -->
     <header class="main-header">

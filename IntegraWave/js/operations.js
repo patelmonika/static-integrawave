@@ -46,6 +46,29 @@ function setIdOnDelete(clickedEle){
     }
 }
 
-function testMethod(){
+function addSelectOption(){
+    var eles = document.getElementsByTagName("select");
+    for(var i=0;i<eles.length;i++){
+        var newoption = document.createElement("option");
+        newoption.setAttribute("value","");
+        newoption.setAttribute("selected","");
+        var textnode = document.createTextNode("--Select--");
+        newoption.appendChild(textnode);
 
+        if(eles[i].getAttribute("data-met-addoption") !== null){
+            eles[i].insertBefore(newoption, eles[i].firstChild);
+        }
+    }
+}
+
+function showDescription(clickedEle){
+    var selectedIndex = clickedEle.selectedIndex;
+
+    var groupId = clickedEle[selectedIndex].getAttribute("data-met-groupId");
+    var descriptionText = clickedEle[selectedIndex].getAttribute("data-met-desc");
+
+    var lblDesc = document.getElementById("lblDesc_" + groupId);
+    lblDesc.innerHTML = descriptionText;
+
+    lblDesc.style.display = "block";
 }
