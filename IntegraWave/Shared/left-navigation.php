@@ -14,7 +14,7 @@
                 <a href="<?php echo url_for('/index.php'); ?>"><i class="fa fa-dashboard"></i> <span>Home</span></a>
             </li>
             <li class="treeview <?php echo isset($selectedOptionArr) && $selectedOptionArr[0] == 'Admin' ? 'active' : '' ?> ">
-                <a href="../index.html"><i class="fa fa-graduation-cap"></i> <span>Admin</span>
+                <a href=<?php echo url_for('/index.php'); ?>><i class="fa fa-graduation-cap"></i> <span>Admin</span>
                     <span class="pull-right-container">
                      <i class="fa fa-angle-left pull-right"></i>
                      </span>
