@@ -16,33 +16,6 @@ if(isset($_POST['action'])) {
     $requestStatus = requestOperation("country", $_POST);
 }
 
-//if($_POST['action'] == "add"){
-//    unset($_POST['action']);
-//    unset($_POST['id']);
-//    $requestStatus = insertData($controller, $_POST);
-//}
-//
-//if($_POST['action'] == "delete"){
-//    $param = $_POST['id'];
-//    unset($_POST['action']);
-//    unset($_POST['id']);
-//    $requestStatus = deleteData($controller,$_POST);
-//}
-//
-//if($_POST['action'] == "edit"){
-//    $param = $_POST['id'];
-//    unset($_POST['action']);
-//    unset($_POST['id']);
-//    $requestStatus = getData($controller,$param);
-//}
-//
-//if($_POST['action'] == "update"){
-//    $param = $_POST['id'];
-//    unset($_POST['action']);
-//    unset($_POST['id']);
-//    $requestStatus = updateData($controller, $param, $_POST);
-//}
-
 ?>
 
 <!-- Content Wrapper. Contains page content -->
