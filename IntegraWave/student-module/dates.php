@@ -15,6 +15,7 @@ include_once "../Shared/left-navigation.php";
 <div class="wrapper">
     <!-- Content Wrapper. Contains page content -->
         <!-- Content Header (Page header) -->
+    <div class="content-wrapper">
     <div class="fc-widget-content">
         <section class="content-header">
             <h1 style="color: whitesmoke">
@@ -435,6 +436,7 @@ include_once "../Shared/left-navigation.php";
         </section>
         <!-- /.content -->
     </div>
+</div>
 </div>
 
 <?php include_once "../Shared/footer.php"; ?>

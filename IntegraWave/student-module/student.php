@@ -14,6 +14,7 @@ include_once "../Shared/left-navigation.php";
 
 <div class="wrapper">
 
+    <div class="content-wrapper">
     <div class="row">
         <!-- left column -->
         <div class="col-md-6">
@@ -489,6 +490,7 @@ include_once "../Shared/left-navigation.php";
         </div>
         <!-- Default to the left -->
     </div>
+</div>
 </div>
 <!-- ./wrapper -->
 
