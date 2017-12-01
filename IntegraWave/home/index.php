@@ -1,8 +1,8 @@
 
 <?php
 
-$title = "Country";
-$selectedOption = "Admin,Country";
+$title = "DashBoard";
+$selectedOption = "Home";
 
 require_once "../Private/functions.php";
 

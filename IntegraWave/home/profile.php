@@ -1,7 +1,7 @@
 <?php
 
-$title = "Country";
-$selectedOption = "Admin,Country";
+$title = "User Profile";
+$selectedOption = "Profile";
 
 require_once "../Private/functions.php";
 
