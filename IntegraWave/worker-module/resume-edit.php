@@ -1,7 +1,7 @@
 <?php
 
-$title = "Country";
-$selectedOption = "Admin,Country";
+$title = "Resume Wizard";
+$selectedOption = "Worker,Resume,Customize Resume";
 
 require_once "../Private/functions.php";
 
@@ -312,7 +312,7 @@ include_once "../Shared/left-navigation.php";
                                  <textarea class="form-control small-textarea" rows="5" cols="10" >
                                     Full Stack Developer
                                     HackersYou
-                                    Graduating : October 2017
+
                                  </textarea>
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -346,13 +346,13 @@ include_once "../Shared/left-navigation.php";
                                                     <form class="form-horizontal">
                                                         <div class="box-body">
                                                             <div class="form-group">
-                                                                <label class="col-sm-3 control-label">Name </label>
+                                                                <label class="col-sm-3 control-label">Job Category </label>
                                                                 <div class="col-sm-9">
                                                                     <input type="text" value="Jane" class="form-control" disabled>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="col-sm-3 control-label">Email</label>
+                                                                <label class="col-sm-3 control-label">Company Name</label>
                                                                 <div class="col-sm-9">
                                                                     <input type="text" value="Jane@email.com" class="form-control" disabled>
                                                                 </div>
@@ -370,9 +370,9 @@ include_once "../Shared/left-navigation.php";
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="col-sm-3 control-label">Job Category</label>
+                                                                <label class="col-sm-3 control-label">Experience Description</label>
                                                                 <div class="col-sm-9">
-                                                                    <input type="text" value="Full Stack Developer" class="form-control" disabled>
+                                                                    <textarea class="form-control" ></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>

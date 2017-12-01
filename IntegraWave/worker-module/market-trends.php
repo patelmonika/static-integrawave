@@ -1,7 +1,7 @@
 <?php
 
-$title = "Country";
-$selectedOption = "Admin,Country";
+$title = "Market Trends";
+$selectedOption = "Worker,Job Market Trends";
 
 require_once "../Private/functions.php";
 
