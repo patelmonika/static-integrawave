@@ -9,6 +9,7 @@ include_once "../Shared/header.php";
 
 include_once "../Shared/left-navigation.php";
 ?>
+<div class="wrapper">
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -74,6 +75,7 @@ include_once "../Shared/left-navigation.php";
         </section>
         <!-- /.content -->
     </div>
+</div>
 
     <!-- /.content -->
 

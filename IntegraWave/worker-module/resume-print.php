@@ -1,7 +1,7 @@
 <?php
 
-$title = "Country";
-$selectedOption = "Admin,Country";
+$title = "Resume Wizard";
+$selectedOption = "Worker,Resume,Print Resume";
 
 require_once "../Private/functions.php";
 

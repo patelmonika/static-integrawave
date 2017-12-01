@@ -1,7 +1,7 @@
 <?php
 
-$title = "Country";
-$selectedOption = "Admin,Country";
+$title = "Cover Letter Wizard";
+$selectedOption = "Worker,Cover Letter,Templates";
 
 require_once "../Private/functions.php";
 

@@ -1,7 +1,7 @@
 <?php
 
-$title = "Country";
-$selectedOption = "Admin,Country";
+$title = "Canada's best places to live";
+$selectedOption = "Worker,Ranking of cities";
 
 require_once "../Private/functions.php";
 
