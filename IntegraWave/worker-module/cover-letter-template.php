@@ -10,7 +10,7 @@ include_once "../Shared/header.php";
 include_once "../Shared/left-navigation.php";
 ?>
 
-<div class="wrapper">
+
     <!-- Main Header -->
 
     <!-- Left side column. contains the logo and sidebar -->
@@ -18,6 +18,8 @@ include_once "../Shared/left-navigation.php";
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
+
+        <!-- Main content -->
         <section class="content-header">
             <h1>
                 Cover Letter Wizard
@@ -28,64 +30,60 @@ include_once "../Shared/left-navigation.php";
                 <li class="active">Device Details </li>
             </ol>
         </section>
-        <!-- Main content -->
-        <section class="content">
             <!-- Your Page Content Here -->
             <!-- Small boxes (Stat box) -->
+        <section class="content">
             <div class="row">
-                <div class="row">
-                    <div class="col-lg-4 col-xs-6 ">
-                        <!-- small box -->
-                        <div class="small-box bg-blue">
-                            <div class="inner">
-                                <img itemprop="image" alt="A sample template of a Traditional resume" src="./resume-templates/traditional resume.png" class="tmpl_preview">
-                            </div>
-                            <a href="resume-edit.php" class="small-box-footer">Traditional Resume <i class="fa fa-arrow-circle-right"></i></a>
+                <div class="col-lg-4 col-xs-6 ">
+                    <!-- small box -->
+                    <div class="small-box bg-blue">
+                        <div class="inner">
+                            <img itemprop="image" alt="A sample template of a Traditional resume" src="./resume-templates/cv.png" class="tmpl_preview">
                         </div>
+                        <a href="resume-edit.php" class="small-box-footer">Traditional Resume <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
-                    <!-- ./col -->
-                    <div class="col-lg-4 col-xs-6 ">
-                        <!-- small box -->
-                        <div class="small-box bg-blue">
-                            <div class="inner">
-                                <img itemprop="image" alt="A sample template of a Traditional resume" src="./resume-templates/left justified.png" class="tmpl_preview">
-                            </div>
-                            <a href="resume-edit.php" class="small-box-footer">Left Justified <i class="fa fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-4 col-xs-6">
-                        <!-- small box -->
-                        <div class="small-box bg-blue">
-                            <div class="inner">
-                                <img itemprop="image" alt="A sample template of a Traditional resume" src="./resume-templates/heavy.png" class="tmpl_preview">
-                            </div>
-                            <a href="resume-edit.php" class="small-box-footer">Heavy <i class="fa fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-4 col-xs-6 ">
-                        <!-- small box -->
-                        <div class="small-box bg-blue">
-                            <div class="inner">
-                                <img itemprop="image" alt="A sample template of a Traditional resume" src="./resume-templates/letter block.png" class="tmpl_preview">
-                            </div>
-                            <a href="resume-edit.php" class="small-box-footer">Letter Block <i class="fa fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-xs-6 ">
-                        <!-- small box -->
-                        <div class="small-box bg-blue">
-                            <div class="inner">
-                                <img itemprop="image" alt="A sample template of a Traditional resume" src="./resume-templates/apple green.png" class="tmpl_preview">
-                            </div>
-                            <a href="resume-edit.php" class="small-box-footer ">Apple Green <i class="fa fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <!-- ./col -->
                 </div>
+                <!-- ./col -->
+                <div class="col-lg-4 col-xs-6 ">
+                    <!-- small box -->
+                    <div class="small-box bg-blue">
+                        <div class="inner">
+                            <img itemprop="image" alt="A sample template of a Traditional resume" src="./resume-templates/left justified.png" class="tmpl_preview">
+                        </div>
+                        <a href="resume-edit.php" class="small-box-footer">Left Justified <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-4 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-blue">
+                        <div class="inner">
+                            <img itemprop="image" alt="A sample template of a Traditional resume" src="./resume-templates/heavy.png" class="tmpl_preview">
+                        </div>
+                        <a href="resume-edit.php" class="small-box-footer">Heavy <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-4 col-xs-6 ">
+                    <!-- small box -->
+                    <div class="small-box bg-blue">
+                        <div class="inner">
+                            <img itemprop="image" alt="A sample template of a Traditional resume" src="./resume-templates/letter block.png" class="tmpl_preview">
+                        </div>
+                        <a href="resume-edit.php" class="small-box-footer">Letter Block <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-xs-6 ">
+                    <!-- small box -->
+                    <div class="small-box bg-blue">
+                        <div class="inner">
+                            <img itemprop="image" alt="A sample template of a Traditional resume" src="./resume-templates/apple green.png" class="tmpl_preview">
+                        </div>
+                        <a href="resume-edit.php" class="small-box-footer ">Apple Green <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
                 <!-- ./col -->
             </div>
             <!-- /.row -->
@@ -97,7 +95,7 @@ include_once "../Shared/left-navigation.php";
     </div>
 
     <!-- /.content -->
-</div>
+
 <!-- /.content-wrapper -->
 
 <?php include_once "../Shared/footer.php"; ?>
