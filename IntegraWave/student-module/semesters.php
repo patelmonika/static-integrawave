@@ -28,8 +28,8 @@ include_once "../Shared/left-navigation.php";
 
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#basic" aria-expanded="true">Semester1</a></li>
-                        <li><a data-toggle="tab" href="#security" aria-expanded="false">Semester2</a></li>
+                        <li class="active"><a data-toggle="tab" href="#basic" aria-expanded="true">Course-ASP</a></li>
+                        <li><a data-toggle="tab" href="#security" aria-expanded="false">Course-PHP</a></li>
                     </ul>
                     <div class="tab-content">
                         <div id="basic" class="tab-pane active">
