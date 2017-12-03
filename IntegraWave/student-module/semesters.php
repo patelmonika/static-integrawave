@@ -18,7 +18,7 @@ include_once "../Shared/left-navigation.php";
     <div class="content-wrapper">
         <div class="fc-widget-content">
             <section class="content-header">
-                <h1 style="color: whitesmoke">
+                <h1 style="color: black">
                     Grades
                 </h1>
             </section>

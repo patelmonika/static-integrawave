@@ -18,7 +18,7 @@ include_once "../Shared/left-navigation.php";
     <div class="content-wrapper">
     <div class="fc-widget-content">
         <section class="content-header">
-            <h1 style="color: whitesmoke">
+            <h1 style="color: black">
                 Important Dates
                 <small>Deadlines and Schedule</small>
             </h1>
