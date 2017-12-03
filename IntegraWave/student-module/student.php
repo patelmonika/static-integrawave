@@ -251,6 +251,7 @@ include_once "../Shared/left-navigation.php";
                 <!-- /.box-header -->
                 <!-- form start -->
                 <form class="form-horizontal">
+                    <div class="box-body">
                     <table id="categories" class="table table-bordered table-striped table-responsive">
                         <thead>
                         <tr>
@@ -319,8 +320,6 @@ include_once "../Shared/left-navigation.php";
                         <button class="btn btn-primary pull-right" type="submit">Add</button>
                         <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
                     </div>
-
-                    <div class="box-body">
                     </div>
                     <div id="edit-category" class="modal fade" role="dialog">
                         <div class="modal-dialog">
@@ -356,8 +355,10 @@ include_once "../Shared/left-navigation.php";
                                 </div>
                             </div>
                         </div>
-                    </div></form>
+                    </div>
+                </form>
             </div>
+
             <!-- /.box -->
             <div class="box box-info">
                 <div class="box-header with-border">
@@ -370,6 +371,7 @@ include_once "../Shared/left-navigation.php";
                 <!-- /.box-header -->
                 <!-- form start -->
                 <form class="form-horizontal">
+                    <div class="box-body">
                     <table id="weighting" class="table table-bordered table-striped table-responsive">
                         <thead>
                         <tr>
@@ -447,7 +449,6 @@ include_once "../Shared/left-navigation.php";
                         <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
                     </div>
 
-                    <div class="box-body">
                     </div>
                     <div id="edit-weight" class="modal fade" role="dialog">
                         <div class="modal-dialog">

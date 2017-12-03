@@ -45,11 +45,9 @@
                      </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="treeview"><a href="<?php echo url_for('/student-module/category.php'); ?>">Courses</a>
-                        <ul class="treeview-menu">
-                            <li><a href="<?php echo url_for('/student-module/category.php'); ?>">ASP</a></li>
-                            <li><a href="<?php echo url_for('/student-module/category.php'); ?>">PHP</a></li>
-                        </ul>
+                    <li class="treeview"><a href="<?php echo url_for('/student-module/student.php'); ?>">Add new..</a>
+                    </li>
+                    <li class="treeview"><a href="<?php echo url_for('/student-module/courses.php'); ?>">Courses & Grades</a>
                     </li>
                     <li class="treeview"><a href="<?php echo url_for('/student-module/category.php'); ?>">Important Dates</a>
                         <ul class="treeview-menu">
