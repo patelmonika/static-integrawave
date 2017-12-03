@@ -16,7 +16,6 @@ include_once "../Shared/left-navigation.php";
     <!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->
     <div class="content-wrapper">
-        <div class="box-body">
         <div class="fc-widget-content">
             <section class="content-header">
                 <h1 style="color: black">
