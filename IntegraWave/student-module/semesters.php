@@ -1,6 +1,6 @@
 <?php
 
-$title = "dates";
+$title = "semester";
 $selectedOption = "";
 
 require_once "../Private/functions.php";
