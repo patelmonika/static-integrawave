@@ -11,10 +11,10 @@
         <ul class="sidebar-menu">
             <!-- Optionally, you can add icons to the links -->
             <li <?php echo isset($selectedOptionArr) && $selectedOptionArr[0] == 'Home' ? "class='active'" : '' ?> >
-                <a href="<?php echo url_for('/home/index.php'); ?>"><i class="fa fa-dashboard"></i> <span>Home</span></a>
+                <a href="<?php echo url_for('/dashboard.php'); ?>"><i class="fa fa-dashboard"></i> <span>Home</span></a>
             </li>
             <li class="treeview <?php echo isset($selectedOptionArr) && $selectedOptionArr[0] == 'Admin' ? 'active' : '' ?> ">
-                <a href=<?php echo url_for('/index.php'); ?>><i class="fa fa-graduation-cap"></i> <span>Admin</span>
+                <a href=<?php echo url_for('/dashboard.php'); ?>><i class="fa fa-graduation-cap"></i> <span>Admin</span>
                     <span class="pull-right-container">
                      <i class="fa fa-angle-left pull-right"></i>
                      </span>
@@ -27,13 +27,13 @@
                 </ul>
             </li>
             <li class="treeview <?php echo isset($selectedOptionArr) && $selectedOptionArr[0] == 'CRS' ? 'active' : '' ?> ">
-                <a href="../index.html"><i class="fa fa-graduation-cap"></i> <span>CRS</span>
+                <a href="../dashboard.php"><i class="fa fa-graduation-cap"></i> <span>CRS</span>
                     <span class="pull-right-container">
                      <i class="fa fa-angle-left pull-right"></i>
                      </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="treeview"><a href="<?php echo url_for('/crs-module/calculator.php'); ?>">Calculator</a>
+                    <li class="treeview"><a href="<?php echo url_for('/crs-module/initializeCandidate.php'); ?>">Calculator</a>
                     </li>
 
                 </ul>
@@ -45,24 +45,22 @@
                      </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="treeview"><a href="<?php echo url_for('/student-module/student.php'); ?>">Add new..</a>
+                    <li class="treeview"><a href="<?php echo url_for('/student-module/category.php'); ?>">Courses</a>
+                        <ul class="treeview-menu">
+                            <li><a href="<?php echo url_for('/student-module/category.php'); ?>">ASP</a></li>
+                            <li><a href="<?php echo url_for('/student-module/category.php'); ?>">PHP</a></li>
+                        </ul>
                     </li>
-                    <li class="treeview"><a href="<?php echo url_for('/student-module/courses.php'); ?>">Courses & Grades</a>
-                    </li>
-                    <li class="treeview"><a href="<?php echo url_for('/student-module/dates.php'); ?>">Important Dates<span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-                </span></a>
+                    <li class="treeview"><a href="<?php echo url_for('/student-module/category.php'); ?>">Important Dates</a>
                         <ul class="treeview-menu">
                             <li><a href="<?php echo url_for('/student-module/dates.php'); ?>">Schedule</a></li>
                             <li><a href="<?php echo url_for('/student-module/dates.php'); ?>">Fees Deadlines</a></li>
                         </ul>
                     </li>
-                    <li class="treeview"><a href="<?php echo url_for('/student-module/contacts.php'); ?>">Contacts</a>
-                    </li>
                 </ul>
             </li>
-            <li class="treeview <?php echo isset($selectedOptionArr) && $selectedOptionArr[0] == 'Worker' ? 'active' : '' ?> ">
-                <a href="<?php echo url_for('/index.html'); ?>"><i class="fa fa-briefcase"></i> <span>Worker</span>
+            <li class="treeview <?php echo isset($selectedOptionArr) && $selectedOptionArr[0] == 'Workers' ? 'active' : '' ?> ">
+                <a href="<?php echo url_for('/index.html'); ?>"><i class="fa fa-briefcase"></i> <span>Workers</span>
                     <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
                 </span>
@@ -74,7 +72,6 @@
                         <ul class="treeview-menu">
                             <li><a href="<?php echo url_for('/worker-module/resume-template.php'); ?>">Templates</a> </li>
                             <li><a href="<?php echo url_for('/worker-module/resume-edit.php'); ?>">Customize Resume</a> </li>
-                            <li><a href="<?php echo url_for('/worker-module/resume-print.php'); ?>">Print Resume</a> </li>
                         </ul>
                     </li>
                     <li class="treeview active"><a href="#"> <span>Cover Letter</span> <span class="pull-right-container">
@@ -82,10 +79,8 @@
                 </span> </a>
                         <ul class="treeview-menu">
                             <li><a href="<?php echo url_for('/worker-module/cover-letter-template.php'); ?>">Templates</a> </li>
-                            <li class="active"><a href="<?php echo url_for('/worker-module/cover-letter-edit.php'); ?>">
+                            <li class="active"><a href="<?php echo url_for('/worker-module/resume-edit.php'); ?>">
                                     Customize Cover Letter</a> </li>
-                            <li class="active"><a href="<?php echo url_for('/worker-module/cover-letter-print.php'); ?>">
-                                    Print Cover Letter</a> </li>
                         </ul>
                     </li>
                     <li class="treeview"><a href="<?php echo url_for('/worker-module/ranking-of-cities.php'); ?>">
@@ -95,7 +90,7 @@
                 </ul>
             </li>
             <li <?php echo isset($selectedOptionArr) && $selectedOptionArr[0] == 'Profile' ? "class='active'" : '' ?> >
-                <a href="<?php echo url_for('/home/profile.php'); ?>">
+                <a href="<?php echo url_for('/profile.html'); ?>">
                     <i class="fa fa-user"></i> <span>Profile</span></a>
             </li>
         </ul>
