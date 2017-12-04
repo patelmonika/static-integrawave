@@ -49,13 +49,15 @@
                     </li>
                     <li class="treeview"><a href="<?php echo url_for('/student-module/courses.php'); ?>">Courses & Grades</a>
                     </li>
-                    <li class="treeview"><a href="<?php echo url_for('/student-module/category.php'); ?>">Important Dates<span class="pull-right-container">
+                    <li class="treeview"><a href="<?php echo url_for('/student-module/dates.php'); ?>">Important Dates<span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
                 </span></a>
                         <ul class="treeview-menu">
                             <li><a href="<?php echo url_for('/student-module/dates.php'); ?>">Schedule</a></li>
                             <li><a href="<?php echo url_for('/student-module/dates.php'); ?>">Fees Deadlines</a></li>
                         </ul>
+                    </li>
+                    <li class="treeview"><a href="<?php echo url_for('/student-module/contacts.php'); ?>">Contacts</a>
                     </li>
                 </ul>
             </li>
