@@ -35,6 +35,10 @@ function requestOperation($controller, $data){
             unset($data['id']);
             $requestStatus = updateData($controller, $param, $data);
             break;
+        case "login":
+            unset($data['action']);
+            $requestStatus = getLoginStatus($controller,$data);
+            break;
         default:
             break;
     }
@@ -119,6 +123,22 @@ function getData($controller,$param){
     $response = json_decode($request, $assoc);
 
     return $response[0];
+}
+
+function getLoginStatus($controller,$data){
+    $url = "http://php-integrawave.azurewebsites.net/$controller";
+    $data_str = json_encode($data);
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data_str);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    return $response;
 }
 
 function uploadImage($actionType){

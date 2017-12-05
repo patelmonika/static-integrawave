@@ -8,14 +8,14 @@ $requestStatus;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
-    $requestStatus = requestOperation("country", $_POST);
+    $requestStatus = requestOperation("user", $_POST);
 }
 
 ?>
 <!-- /.container -->
 <div class="container">
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-4 col-md-offset-3">
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Sign In</h3>
@@ -28,9 +28,9 @@ if(isset($_POST['action'])) {
                                 <label for="username" class="required">Username</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="username" placeholder="Username" autofocus>
+                                    <input type="text" class="form-control" name="email" placeholder="Registered Email" autofocus>
                                 </div>
-                                <p class="error-message">Please enter Username.</p>
+<!--                                <p class="error-message">Please enter Username.</p>-->
                             </div>
                             <div class="form-group">
                                 <label for="password" class="required">Password</label>
@@ -45,10 +45,29 @@ if(isset($_POST['action'])) {
                                 </label>
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
-                            <button href="index.html" class="btn btn-primary btn-block">Login</button>
+                            <button href="index.html" class="btn btn-primary btn-block" name="action" value="login">Login</button>
                             <button href="index.html" class="btn btn-default btn-block">Cancel</button>
                         </fieldset>
                     </form>
+                    <div class="col-md-12">
+                        <div class="sign-up">
+                            <a class="btn btn-block btn-social btn-xs btn-facebook">
+                                <span class="fa fa-facebook"></span> Sign in with Facebook
+                            </a>
+
+                            <a class="btn btn-block btn-social btn-xs btn-google">
+                                <span class="fa fa-google"></span> Sign in with Google
+                            </a>
+
+                            <a class="btn btn-block btn-social btn-xs btn-github">
+                                <span class="fa fa-github"></span> Sign in with GitHub
+                            </a>
+
+                            <a class="btn btn-block btn-social btn-xs btn-linkedin">
+                                <span class="fa fa-linkedin"></span> Sign in with LinkedIn
+                            </a>
+                        </div>
+                    </div>
                     <div class="col-md-12">
                         <div class="sign-up">
                             Don't have an account ?
