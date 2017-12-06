@@ -274,11 +274,20 @@ if(isset($_POST['action'])) {
                             </div>
                             <!-- Create button -->
                             <div class="form-group text-center">
-                                <button onclick="location.href = 'login.php'" class="btn btn-link btn-grey " type="button">Cancel</button>
+                                <button class="btn btn-link btn-grey " type="reset">Cancel</button>
                                 <button type="button" class="btn btn-primary">Agree and Create Account</button>
                             </div>
                         </fieldset>
                     </form>
+
+                    <div class="form-group text-center">
+                        <div class="sign-up">
+                            Already have an account ?
+                            &nbsp;<a href="login.php">
+                                Login Here
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="panel-footer">
                     <label class="required"></label> - required field
