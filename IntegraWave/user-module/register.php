@@ -15,7 +15,7 @@ if(isset($_POST['action'])) {
 <!-- /.container -->
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-1">
             <div class="registration-panel panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Registration</h3>
@@ -274,7 +274,7 @@ if(isset($_POST['action'])) {
                             </div>
                             <!-- Create button -->
                             <div class="form-group text-center">
-                                <button onclick="location.href = 'login.html'" class="btn btn-link btn-grey " type="button">Cancel</button>
+                                <button onclick="location.href = 'login.php'" class="btn btn-link btn-grey " type="button">Cancel</button>
                                 <button type="button" class="btn btn-primary">Agree and Create Account</button>
                             </div>
                         </fieldset>
@@ -283,6 +283,40 @@ if(isset($_POST['action'])) {
                 <div class="panel-footer">
                     <label class="required"></label> - required field
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- User Agreement Modal -->
+<div class="modal fade" id="user-agreement" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">User Agreement</h4>
+            </div>
+            <div class="modal-body">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Helpt Modal -->
+<div class="modal fade" id="help" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Help</h4>
+            </div>
+            <div class="modal-body">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
             </div>
         </div>
     </div>

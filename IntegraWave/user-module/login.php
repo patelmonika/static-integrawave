@@ -71,7 +71,7 @@ if(isset($_POST['action'])) {
                     <div class="col-md-12">
                         <div class="sign-up">
                             Don't have an account ?
-                            &nbsp;<a href="registration.html">
+                            &nbsp;<a href="register.php">
                                 Sign Up Here
                             </a>
                         </div>
