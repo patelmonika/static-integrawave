@@ -19,7 +19,7 @@ if(isset($_POST['action'])) {
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Sign In</h3>
-                    <div class="right-link"><a href="forgotpassword.html">Forgot password?</a></div>
+                    <div class="right-link"><a href="resetPassword.php">Forgot password?</a></div>
                 </div>
                 <div class="panel-body">
                     <form role="form">

@@ -1,6 +1,6 @@
 <?php
 
-$title = "Login";
+$title = "Sign Up";
 
 include_once "../Shared/header_main.php";
 

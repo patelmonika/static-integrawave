@@ -1,7 +1,7 @@
 <!-- /.footer -->
 <footer class="footer">
     <div class="container">
-        <p class="text-muted">&copy; Copyright Aradhya InfoSystems Pvt Ltd, 2016 </p>
+        <p class="text-muted">&copy; Copyright IntegraWave, 2017. All rights reserved. </p>
     </div>
 </footer>
 <!-- jQuery -->
