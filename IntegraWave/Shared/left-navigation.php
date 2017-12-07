@@ -45,18 +45,17 @@
                      </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="treeview"><a href="<?php echo url_for('/student-module/category.php'); ?>">Courses</a>
-                        <ul class="treeview-menu">
-                            <li><a href="<?php echo url_for('/student-module/category.php'); ?>">ASP</a></li>
-                            <li><a href="<?php echo url_for('/student-module/category.php'); ?>">PHP</a></li>
-                        </ul>
-                    </li>
+                    <li class="treeview"><a href="<?php echo url_for('/student-module/student.php'); ?>">Add new..</a>
+                                   </li>
+                                 <li class="treeview"><a href="<?php echo url_for('/student-module/courses.php'); ?>">Courses & Grades</a>
                     <li class="treeview"><a href="<?php echo url_for('/student-module/category.php'); ?>">Important Dates</a>
                         <ul class="treeview-menu">
                             <li><a href="<?php echo url_for('/student-module/dates.php'); ?>">Schedule</a></li>
                             <li><a href="<?php echo url_for('/student-module/dates.php'); ?>">Fees Deadlines</a></li>
                         </ul>
                     </li>
+                    <li class="treeview"><a href="<?php echo url_for('/student-module/contacts.php'); ?>">Contacts</a>
+                                           </li>
                 </ul>
             </li>
             <li class="treeview <?php echo isset($selectedOptionArr) && $selectedOptionArr[0] == 'Workers' ? 'active' : '' ?> ">
