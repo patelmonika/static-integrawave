@@ -26,8 +26,21 @@ include_once "../Shared/left-navigation.php";
             background-color: whitesmoke;
         }
 
+        .subtitle{
+
+            margin-top: 2px;
+            margin-bottom: 2px;
+            font-size: 20px;
+
+        }
+
+        .category{
+            font-weight: bold;
+        }
+
         .name {
-            color: red;
+            font-weight: bold;
+            text-align: center;
         }
 
     </style>
@@ -98,24 +111,25 @@ $RESUME_ARRAY = JSON_TO_ARRAY($JSON);*/
                 <article class="resume-page">
 
                     <section class="title">
-                        <h1 class="candidate-name">
-                            <?php echo $RESUME_ARRAY['candidate-name']?>
+                        <h1 class="candidate-name name">
+                            Monika Patel
+                             <? /*php echo $RESUME_ARRAY['candidate-name'] */?>
                         </h1>
-                        <h2 class="address">
+                        <h3 class="address subtitle name">
                             <span class="address-number">205</span>
                             <span class="address-street">Humber College Blv</span> -
                             <span class="address-complement">Basement</span>
-                        </h2>
-                        <h2 class="address-location">
+                        </h3>
+                        <h3 class="address-location subtitle name">
                             <span class="address-city">Toronto</span>,
                             <span class="address-state">Ontario</span>
-                        </h2>
-                        <h2 class="phone">987-987-5432</h2>
-                        <h2 class="email">mo@ni.ca</h2>
+                        </h3>
+                        <h3 class="phone subtitle name">987-987-5432</h3>
+                        <h3 class="email subtitle name">mo@ni.ca</h3>
                     </section>
 
                     <section class="summary">
-                        <h2 class="summary-section-title">Summary</h2>
+                        <h2 class="summary-section-title category">Summary</h2>
                         <p class="summary-text">
                             It is a long established fact that a reader will be distracted by the readable content of a
                             page when looking at its layout. The point of using Lorem Ipsum is that it has a
@@ -128,15 +142,15 @@ $RESUME_ARRAY = JSON_TO_ARRAY($JSON);*/
                     </section>
 
                     <section class="education">
-                        <h2 class="education-section-title">Education</h2>
+                        <h2 class="education-section-title category">Education</h2>
 
-                        <h1 class="education-title">
-                            <span class="education-institution">Humber College</span> -
-                            <span class="education-credential-name">Post Grad in Software Development</span> -
+                        <h1 class="education-title subtitle">
+                            <span class="education-institution">Humber College</span>
+                            <span class="education-credential-name">Post Grad in Software Development</span>
                             <span class="education-credential-location">Toronto</span>
                         </h1>
 
-                        <h2 class="education-subtitle">
+                        <h2 class="education-subtitle subtitle">
                             <span class="education-type">Diploma</span>
                             <span class="education-status">Graduated</span>
                         </h2>
@@ -152,6 +166,81 @@ $RESUME_ARRAY = JSON_TO_ARRAY($JSON);*/
                             The generated Lorem Ipsum is therefore always free from repetition, injected humour, or
                             non-characteristic words etc.
                         </p>
+
+                    </section>
+
+                    <section class="employment">
+                        <h2 class="employment-section-title category">Employment History</h2>
+
+                        <h1 class="employment-title subtitle">
+                            <span class="emlployment-institution"> Shopify </span>
+                            <span class="education-credential-location">Toronto</span>
+                        </h1>
+
+                        <h2 class="employment-subtitle subtitle">
+                            <span class="employment-type">Web Developer</span>
+                        </h2>
+
+                        <p class="employment-description">
+                            There are many variations of passages of Lorem Ipsum available, but the majority have
+                            suffered alteration in some form, by injected humour, or randomised words which don't look
+                            even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be
+                            sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+                            generators on the Internet tend to repeat predefined chunks as necessary, making this the
+                            first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined
+                            with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+                            The generated Lorem Ipsum is therefore always free from repetition, injected humour, or
+                            non-characteristic words etc.
+                        </p>
+                        <br>
+
+                        <h1 class="employment-title subtitle">
+                            <span class="emlployment-institution"> TCS </span>
+                            <span class="education-credential-location">Toronto</span>
+                        </h1>
+
+                        <h2 class="employment-subtitle subtitle">
+                            <span class="employment-type">Web Developer</span>
+                        </h2>
+
+                        <p class="employment-description">
+                            There are many variations of passages of Lorem Ipsum available, but the majority have
+                            suffered alteration in some form, by injected humour, or randomised words which don't look
+                            even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be
+                            sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+                            generators on the Internet tend to repeat predefined chunks as necessary, making this the
+                            first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined
+                            with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+                            The generated Lorem Ipsum is therefore always free from repetition, injected humour, or
+                            non-characteristic words etc.
+                        </p>
+
+                    </section>
+
+                    <section class="hobby">
+                        <h2 class="skill-section-title category">Hobbies and Interests</h2>
+                        <p class="hobby-description">
+                            There are many variations of passages of Lorem Ipsum available, but the majority have
+                            suffered alteration in some form, by injected humour, or randomised words which don't look
+                            even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be
+                            sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+                            generators on the Internet tend to repeat predefined chunks as necessary, making this the
+                            first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined
+                            with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+                            The generated Lorem Ipsum is therefore always free from repetition, injected humour, or
+                            non-characteristic words etc.
+                        </p>
+
+                    </section>
+
+                    <section class="skill">
+                        <h2 class="skill-section-title category">Professional Skills</h2>
+
+                        <ul>
+                            <li> Programming Languages:	Java, C#, HTML, JavaScript, XML, SCSS, PHP, Android . Proficient in writing code,
+                                testing, debugging, and documentation</li>
+                            <li>Troubleshooting: Able to research and implement technical solutions to hardware and software problems</li>
+                        </ul>
 
                     </section>
 
