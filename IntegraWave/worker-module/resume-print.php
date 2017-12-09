@@ -65,12 +65,30 @@ include_once "../Shared/left-navigation.php";
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="form-group">
-               <textarea style="width: 50%; margin: 0 auto;" class="form-control" rows="30" cols="10" >
-                                                                                   Jane Doe
-                                                                 email - phone - address-LinkedIn
-               </textarea>
-                </div>
+                <!--TYPE THE ACTUAL CODE FOR TRADITIONAL RESUME HERE -->
+
+                <article>
+
+                    <section class="title">
+                        <h1 class="title"></h1>
+                        <h2 class="address"></h2>
+                        <h2 class="phone"></h2>
+                        <h2 class="email"></h2>
+                    </section>
+
+                    <section class="summary">
+                        <p class="summary-text"></p>
+                    </section>
+
+                    <section class="education">
+                        <h1 class="education"></h1>
+                        <h2 class="degree"></h2>
+                        <p class="education-description"></p>
+                    </section>
+
+                </article>
+
+                <!--TYPE THE ACTUAL CODE FOR TRADITIONAL RESUME HERE-->
             </div>
         </section>
         <!-- /.content -->
