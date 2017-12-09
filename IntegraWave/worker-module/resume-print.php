@@ -10,28 +10,6 @@ include_once "../Shared/header.php";
 include_once "../Shared/left-navigation.php";
 ?>
 
-    <style>
-        .resume-container {
-            background-color: gray;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .resume-page {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 2px solid dimgray;
-            background-color: whitesmoke;
-        }
-
-        .name {
-            color: red;
-        }
-
-    </style>
-
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -95,23 +73,82 @@ $RESUME_ARRAY = JSON_TO_ARRAY($JSON);*/
 
 
 ?>
+
+                <style>
+                    .resume-container {
+                        background-color: gray;
+                        padding: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .resume-page {
+                        max-width: 800px;
+                        margin: 20px auto;
+                        padding: 20px;
+                        border: 2px solid dimgray;
+                        background-color: whitesmoke;
+                    }
+
+                    .candidate-name {
+                        font-weight: bold;
+                        text-transform: capitalize;
+                        color: black;
+                        text-align: center;
+                    }
+
+                    .address *,
+                    .contact * {
+                        margin: 5px 10px;
+                        font-size: 14px;
+                        color: #3e3e3e;
+                        text-align: center;
+                        text-transform: capitalize;
+                    }
+                    .address-number {
+                        margin-right: 0;
+                    }
+                    .address-street, .address-city {
+                        margin-left: 0;
+                        margin-right: 5px;
+                    }
+                    .address-complement, .address-state {
+                        margin-left: 5px;
+                    }
+
+                    .education-title {
+                        width: 90%;
+                        margin-left: auto;
+                        font-size: 16px;
+                        display: flex;
+                        justify-content: space-between;
+                        border-bottom: 1px solid lightgray;
+                    }
+
+                </style>
+
                 <article class="resume-page">
 
                     <section class="title">
                         <h1 class="candidate-name">
-                            <?php echo $RESUME_ARRAY['candidate-name']?>
+                            Monika Patel
+<!--                            --><?php //echo $RESUME_ARRAY['candidate-name']?>
                         </h1>
-                        <h2 class="address">
-                            <span class="address-number">205</span>
-                            <span class="address-street">Humber College Blv</span> -
-                            <span class="address-complement">Basement</span>
-                        </h2>
-                        <h2 class="address-location">
-                            <span class="address-city">Toronto</span>,
-                            <span class="address-state">Ontario</span>
-                        </h2>
-                        <h2 class="phone">987-987-5432</h2>
-                        <h2 class="email">mo@ni.ca</h2>
+                        <div class="address">
+                            <h2>
+                                <span class="address-number">205</span>
+                                <span class="address-street">Humber College Blv</span> -
+                                <span class="address-complement">Basement</span>
+                            </h2>
+                            <h2>
+                                <span class="address-city">Toronto</span>,
+                                <span class="address-state">Ontario</span>
+                            </h2>
+                        </div>
+                        <div class="contact">
+                            <h2 class="phone">987-987-5432</h2>
+                            <h2 class="email">mo@ni.ca</h2>
+                        </div>
                     </section>
 
                     <section class="summary">
