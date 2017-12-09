@@ -88,14 +88,20 @@ include_once "../Shared/left-navigation.php";
             <!-- /.row -->
             <div class="resume-container">
                 <!--TYPE THE ACTUAL CODE FOR TRADITIONAL RESUME HERE -->
+<?php
 
+/*$JSON => JSON.getenv("C:\Users\danie\Desktop\local\static-integrawave\IntegraWave\worker-module\resume-print.json");
+$RESUME_ARRAY = JSON_TO_ARRAY($JSON);*/
+
+
+?>
                 <article class="resume-page">
 
                     <section class="title">
                         <h1 class="candidate-name">
-                            <span class="name">Monika Patel</span>
+                            <?php echo $RESUME_ARRAY['candidate-name']?>
                         </h1>
-                        <h2 class="address-street">
+                        <h2 class="address">
                             <span class="address-number">205</span>
                             <span class="address-street">Humber College Blv</span> -
                             <span class="address-complement">Basement</span>
