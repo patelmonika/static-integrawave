@@ -102,9 +102,9 @@ include_once "../Shared/left-navigation.php";
             <div class="resume-container">
                 <!--TYPE THE ACTUAL CODE FOR TRADITIONAL RESUME HERE -->
 <?php
-
-/*$JSON => JSON.getenv("C:\Users\danie\Desktop\local\static-integrawave\IntegraWave\worker-module\resume-print.json");
-$RESUME_ARRAY = JSON_TO_ARRAY($JSON);*/
+$str = file_get_contents('resume-print.json');
+$json = json_decode($str, true);
+echo '<pre>' . print_r($json, true) . '</pre>';
 
 
 ?>
