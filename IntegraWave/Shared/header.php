@@ -1,3 +1,27 @@
+<?php
+
+session_start();
+
+$userName = "";
+if(isset($_SESSION['username'])){
+    $userName = $_SESSION['username'];
+}
+else{
+    header("Location: ../index.php");
+}
+
+require_once "../Private/initialize.php";
+
+if(isset($_POST['action'])) {
+    if($_POST['action'] == 'logout'){
+        session_unset();
+        session_destroy();
+        header("Location: ../user-module/logout.php");
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +58,7 @@
     <!-- Main Header -->
     <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="../home/dashboard.php" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><img src="../dist/img/logo.JPG" alt="logo"/></span>
             <!-- logo for regular state and mobile devices -->
@@ -153,25 +177,27 @@
                             <!-- The user image in the navbar-->
                             <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs">Admin</span>
+                            <span class="hidden-xs">User</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
-                                <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="../public/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                 <p>
-                                    Team IntegraWave - Admin
+                                    <?php echo "IntegraWave - " . $userName; ?>
                                     <small>Active</small>
                                 </p>
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="profile.html" class="btn btn-secondary">Profile</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="logout.html" class="btn btn-primary">Sign out</a>
-                                </div>
+                                <form method="post">
+                                    <div class="pull-left">
+                                         <a href="<?php echo url_for('/home/profile.php'); ?>" class="btn btn-secondary">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <button type="submit" class="btn btn-primary" name="action" value="logout">Sign out</button>
+                                    </div>
+                                </form>
                             </li>
                         </ul>
                     </li>

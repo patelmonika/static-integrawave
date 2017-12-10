@@ -2,8 +2,6 @@
 
 $title = "Login";
 
-//include_once "Shared/header_main.php";
-
 $requestStatus;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
@@ -50,9 +48,9 @@ if(isset($_POST['action'])) {
         <!-- Logo -->
         <a href="#" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><img src="../dist/img/logo.JPG" alt="logo"/></span>
+            <span class="logo-mini"><img src="dist/img/logo.JPG" alt="logo"/></span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><img src="../dist/img/logo.JPG" alt="logo"/>Integra Wave</span>
+            <span class="logo-lg"><img src="dist/img/logo.JPG" alt="logo"/>Integra Wave</span>
         </a>
         <!-- Header Navbar -->
 
