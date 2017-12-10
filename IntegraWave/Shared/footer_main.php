@@ -22,5 +22,20 @@
 
     });
 </script>
+
+<script src="../plugins/datepicker/bootstrap-datepicker.js"></script>
+<script>
+    $(function () {
+
+        //Date picker
+        $('#datepicker').datepicker({
+            autoclose: true,
+            format: 'yyyy-mm-dd'
+        });
+
+
+    });
+</script>
+
 </body>
 </html>
