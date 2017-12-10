@@ -75,7 +75,7 @@ if(isset($_POST['action'])) {
                                     <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
                                     <input type="text" class="form-control" name="email" placeholder="Registered Email" autofocus>
                                 </div>
-                                <!--                                <p class="error-message">Please enter Username.</p>-->
+                                <!-- <p class="error-message">Please enter Username.</p>-->
                             </div>
                             <div class="form-group">
                                 <label for="password" class="required">Password</label>

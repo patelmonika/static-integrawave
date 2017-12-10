@@ -37,11 +37,6 @@ function requestOperation($controller, $data){
             break;
         case "login":
             unset($data['action']);
-            $password = $_POST['password'];
-            $options = [
-                'cost' => 12,
-            ];
-            $data['password'] = password_hash($password, PASSWORD_BCRYPT, $options);
             $requestStatus = getLoginStatus($controller,$data);
             break;
         default:
@@ -143,13 +138,13 @@ function getLoginStatus($controller,$data){
     $response = curl_exec($ch);
     curl_close($ch);
 
-    $userResponse = json_encode($response);
+    $userResponse = json_decode($response, true);
 
-    if(is_array($userResponse)){
+    if(isset($userResponse['email'])){
         session_start();
-        $_SESSION['username']=$userResponse['username'];
+        $_SESSION['username']=$userResponse['email'];
         $_SESSION['username']=$userResponse['role_id'];
-        header("Location: public/dashboard_old.php");
+        header("Location: home/dashboard.php");
     }
 
     return $response;
