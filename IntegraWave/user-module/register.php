@@ -8,10 +8,18 @@ include_once "../Shared/header_main.php";
 $countries = getAll("country");
 
 $requestStatus;
+$error = null;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
     $requestStatus = requestOperation("register", $_POST);
+    $requestStatus = json_decode($requestStatus, true);
+    
+    if($requestStatus['status'] == "success"){
+        header("Location: ../index.php?status=".$requestStatus['message']);
+    }else if($requestStatus['status'] == "failed"){
+        $error = $requestStatus['message'];
+    }
 }
 
 ?>
@@ -25,6 +33,11 @@ if(isset($_POST['action'])) {
                     <div class="right-link"><a href="help.html"  data-toggle="modal" data-target="#help">Help</a></div>
                 </div>
                 <div class="panel-body">
+                    <?php
+                    if(!is_null($error)){
+                        echo "<p class=\"error-message\">$error</p>";
+                    }
+                    ?>
                     <form role="form" method="post">
                         <fieldset>
                             <div class="row">

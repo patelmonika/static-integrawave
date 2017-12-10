@@ -7,6 +7,7 @@ require_once "Private/functions.php";
 
 $requestStatus;
 $error=null;
+$success = null;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
@@ -23,6 +24,8 @@ if(isset($_POST['action'])) {
     }else{
         $error = $userResponse['message'];
     }
+}else if(isset($_GET['status'])){
+    $success = $_GET['status'];
 }
 
 ?>
@@ -82,8 +85,18 @@ if(isset($_POST['action'])) {
                 </div>
                 <div class="panel-body">
                     <?php
+                    if(!is_null($success)){
+                        echo "<div class=\"alert alert-success alert-dismissible\">
+                              <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
+                              <h4><i class=\"icon fa fa-check\"></i> Success!</h4>$success</div>";
+                    }
+                    ?>
+
+                    <?php
                         if(!is_null($error)){
-                            echo "<p class=\"error-message\">$error</p>";
+                            echo "<div class=\"alert alert-danger alert-dismissible\">
+                              <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
+                              <h4><i class=\"icon fa fa-ban\"></i> Alert!</h4>$error</div>";
                         }
                     ?>
 
