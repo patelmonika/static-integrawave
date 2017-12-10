@@ -23,7 +23,7 @@ if(isset($_POST['action'])) {
                         <h2 class="text-center">Forgot Password?</h2>
                         <p>You can reset your password here.</p>
                         <div class="panel-body">
-                            <form class="form">
+                            <form class="form" method="post">
                                 <fieldset>
                                     <div class="form-group">
                                         <div class="input-group">

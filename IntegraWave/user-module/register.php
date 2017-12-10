@@ -25,7 +25,7 @@ if(isset($_POST['action'])) {
                     <div class="right-link"><a href="help.html"  data-toggle="modal" data-target="#help">Help</a></div>
                 </div>
                 <div class="panel-body">
-                    <form role="form" class="">
+                    <form role="form" method="post">
                         <fieldset>
                             <div class="row">
                                 <div class="col-sm-6 form-group">
