@@ -1,4 +1,3 @@
-
 <?php
 
 $title = "DashBoard";
@@ -14,7 +13,6 @@ include_once "../Shared/left-navigation.php";
 
 <div class="wrapper">
     <!-- Main Header -->
-
 
 <div class="wrapper">
     <!-- Main Header -->
@@ -39,8 +37,8 @@ include_once "../Shared/left-navigation.php";
     </div>
 </div>
 
-    <!-- /.content-wrapper -->
-    <!-- Main Footer -->
+<!-- /.content-wrapper -->
+<!-- Main Footer -->
 
-    <?php include_once "../Shared/footer.php"; ?>
+<?php include_once "../Shared/footer.php"; ?>
 

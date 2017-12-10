@@ -143,6 +143,15 @@ function getLoginStatus($controller,$data){
     $response = curl_exec($ch);
     curl_close($ch);
 
+    $userResponse = json_encode($response);
+
+    if(is_array($userResponse)){
+        session_start();
+        $_SESSION['username']=$userResponse['username'];
+        $_SESSION['username']=$userResponse['role_id'];
+        header("Location: public/dashboard_old.php");
+    }
+
     return $response;
 }
 

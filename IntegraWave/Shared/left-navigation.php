@@ -27,7 +27,7 @@
                 </ul>
             </li>
             <li class="treeview <?php echo isset($selectedOptionArr) && $selectedOptionArr[0] == 'CRS' ? 'active' : '' ?> ">
-                <a href="../dashboard.php"><i class="fa fa-graduation-cap"></i> <span>CRS</span>
+                <a href="../home/dashboard.php"><i class="fa fa-graduation-cap"></i> <span>CRS</span>
                     <span class="pull-right-container">
                      <i class="fa fa-angle-left pull-right"></i>
                      </span>

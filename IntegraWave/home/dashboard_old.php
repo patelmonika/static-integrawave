@@ -1,37 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Integra Wave | Dashboard</title>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"/>
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"/>
-    <!-- Custom style -->
-    <link rel="stylesheet" href="dist/css/custom.css"/>
-    <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/skin-black.css"/>
-    <!-- bootstrap datepicker -->
-    <link rel="stylesheet" href="plugins/datepicker/datepicker3.css"/>
-    <!-- Bootstrap time Picker -->
-    <link rel="stylesheet" href="plugins/timepicker/bootstrap-timepicker.min.css"/>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body class="hold-transition skin-black sidebar-mini">
+<?php
+
+$title = "Dashboard";
+$selectedOption = "CRS,Calculator";
+
+require_once "Private/functions.php";
+
+include_once "Shared/header.php";
+
+include_once "Shared/left-navigation.php";
+
+?>
 <div class="wrapper">
     <!-- Main Header -->
     <header class="main-header">
         <!-- Logo -->
-        <a href="dashboard.php" class="logo">
+        <a href="dashboard_old.php" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><img src="../dist/img/logo.jpg" alt="logo"/></span>
             <!-- logo for regular state and mobile devices -->
@@ -63,7 +46,7 @@
                                         <a href="#">
                                             <div class="pull-left">
                                                 <!-- User Image -->
-                                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                                <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                             </div>
                                             <!-- Message title and timestamp -->
                                             <h4>
@@ -148,14 +131,14 @@
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
-                            <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs">Anand Baraskar</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
-                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                 <p>
                                     Anand Baraskar - Admin
                                     <small>Active since July 2017</small>
@@ -191,7 +174,7 @@
                      </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="treeview"><a href="./admin-module/country.php">Country</a>
+                        <li class="treeview"><a href="../admin-module/country.php">Country</a>
 
                         </li>
 
@@ -274,40 +257,4 @@
 </div>
 
     <!-- /.content-wrapper -->
-    <!-- Main Footer -->
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="pull-right hidden-xs">
-            Version <b>1.0</b>
-        </div>
-        <!-- Default to the left -->
-        &copy; Copyright <strong><a href="#">Aradhya InfoSystems Pvt Ltd</a></strong>, 2016. All rights reserved.
-    </footer>
-</div>
-<!-- ./wrapper -->
-<!-- REQUIRED JS SCRIPTS -->
-<!-- jQuery 2.2.3 -->
-<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/app.min.js"></script>
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-   Both of these plugins are recommended to enhance the
-   user experience. Slimscroll is required when using the
-   fixed layout. -->
-<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
-<!-- bootstrap time picker -->
-<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
-<script>
-    $(function () {
-
-        //Date picker
-        $('#datepicker1,#datepicker2').datepicker({
-            autoclose: true
-        });
-
-    });
-</script>
-</body>
-</html>
+<?php include_once "Shared/footer.php"; ?>
