@@ -2,6 +2,7 @@
 
 $title = "Login";
 
+require_once "Private/initialize.php";
 require_once "Private/functions.php";
 
 $requestStatus;
@@ -77,7 +78,7 @@ if(isset($_POST['action'])) {
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Sign In</h3>
-                    <div class="right-link"><a href="resetPassword.php">Forgot password?</a></div>
+                    <div class="right-link"><a href="<?php echo url_for('user-module/resetPassword.php'); ?>">Forgot password?</a></div>
                 </div>
                 <div class="panel-body">
                     <?php
@@ -135,7 +136,7 @@ if(isset($_POST['action'])) {
                     <div class="col-md-12">
                         <div class="sign-up">
                             Don't have an account ?
-                            &nbsp;<a href="register.php">
+                            &nbsp;<a href="<?php echo url_for('user-module/register.php'); ?>">
                                 Sign Up Here
                             </a>
                         </div>
