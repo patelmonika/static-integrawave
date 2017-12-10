@@ -98,7 +98,7 @@ if(isset($_POST['action'])) {
                             <!-- Create button -->
                             <div class="form-group text-center">
                                 <button class="btn btn-link btn-grey " type="reset">Cancel</button>
-                                <button type="submit" class="btn btn-primary" name="add">Agree and Create Account</button>
+                                <button type="submit" class="btn btn-primary" name="action" value="add">Agree and Create Account</button>
                             </div>
                         </fieldset>
                     </form>
