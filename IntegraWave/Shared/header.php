@@ -3,8 +3,8 @@
 session_start();
 
 $userName = "";
-if(isset($_SESSION['username'])){
-    $userName = $_SESSION['username'];
+if(isset($_SESSION['email'])){
+    $userName = $_SESSION['name'];
 }
 else{
     header("Location: ../index.php");

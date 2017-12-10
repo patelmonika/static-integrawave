@@ -5,10 +5,23 @@ $title = "Login";
 require_once "Private/functions.php";
 
 $requestStatus;
+$error=null;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
     $requestStatus = requestOperation("login", $_POST);
+
+    $userResponse = json_decode($requestStatus, true);
+
+    if(isset($userResponse['email'])){
+        session_start();
+        $_SESSION['email']=$userResponse['email'];
+        $_SESSION['role']=$userResponse['role_id'];
+        $_SESSION['name']=$userResponse['name'];
+        header("Location: home/dashboard.php");
+    }else{
+        $error = $userResponse['message'];
+    }
 }
 
 ?>
@@ -67,13 +80,19 @@ if(isset($_POST['action'])) {
                     <div class="right-link"><a href="resetPassword.php">Forgot password?</a></div>
                 </div>
                 <div class="panel-body">
+                    <?php
+                        if(!is_null($error)){
+                            echo "<p class=\"error-message\">$error</p>";
+                        }
+                    ?>
+
                     <form role="form" method="post">
                         <fieldset>
                             <div class="form-group ">
                                 <label for="username" class="required">Username</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="email" placeholder="Registered Email" autofocus>
+                                    <input type="text" class="form-control" name="email" placeholder="Registered Email" autofocus required>
                                 </div>
                                 <!-- <p class="error-message">Please enter Username.</p>-->
                             </div>
@@ -81,7 +100,7 @@ if(isset($_POST['action'])) {
                                 <label for="password" class="required">Password</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <input type="password" class="form-control" name="password"  placeholder="Password">
+                                    <input type="password" class="form-control" name="password"  placeholder="Password" required>
                                 </div>
                             </div>
                             <div class="checkbox">
