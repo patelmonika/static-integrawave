@@ -2,6 +2,8 @@
 
 $title = "Login";
 
+require_once "Private/functions.php";
+
 $requestStatus;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
