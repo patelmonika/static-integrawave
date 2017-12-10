@@ -8,7 +8,7 @@ $requestStatus;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
-    $requestStatus = requestOperation("user", $_POST);
+    $requestStatus = requestOperation("login", $_POST);
 }
 
 ?>
@@ -22,7 +22,7 @@ if(isset($_POST['action'])) {
                     <div class="right-link"><a href="resetPassword.php">Forgot password?</a></div>
                 </div>
                 <div class="panel-body">
-                    <form role="form">
+                    <form role="form" method="post">
                         <fieldset>
                             <div class="form-group ">
                                 <label for="username" class="required">Username</label>

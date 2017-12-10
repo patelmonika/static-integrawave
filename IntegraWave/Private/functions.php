@@ -37,6 +37,11 @@ function requestOperation($controller, $data){
             break;
         case "login":
             unset($data['action']);
+            $password = $_POST['password'];
+            $options = [
+                'cost' => 12,
+            ];
+            $data['password'] = password_hash($password, PASSWORD_BCRYPT, $options);
             $requestStatus = getLoginStatus($controller,$data);
             break;
         default:
