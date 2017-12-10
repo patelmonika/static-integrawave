@@ -106,7 +106,7 @@ if(isset($_POST['action'])) {
                     <div class="form-group text-center">
                         <div class="sign-up">
                             Already have an account ?
-                            &nbsp;<a href="login.php">
+                            &nbsp;<a href="../index.php">
                                 Login Here
                             </a>
                         </div>

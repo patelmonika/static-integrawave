@@ -33,7 +33,7 @@ if(isset($_POST['action'])) {
                                     </div>
                                     <div class="form-group">
                                         <button class="btn btn-lg btn-primary btn-block">Send My Password</button>
-                                        <button type="button" class="btn btn-link btn-grey" onclick="location.href = 'login.php'" >Back to Login</button>
+                                        <button type="button" class="btn btn-link btn-grey" onclick="location.href = '../index.php'" >Back to Login</button>
                                     </div>
                                 </fieldset>
                             </form>
