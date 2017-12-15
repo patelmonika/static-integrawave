@@ -37,6 +37,7 @@ if(isset($_POST['action'])) {
                        <!-- Your Page Content Here -->
                        <?php
                            $response = getData('resumecategory', '1');
+                           var_dump($_POST);
                            echo  "<div class=\"col-sm-12\"> 
                 <div class=\"box\">
                 <div class=\"box-header with-border\">
