@@ -14,6 +14,7 @@ if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
     $requestStatus = requestOperation("resumeCategory", $_POST);
+    var_dump($_POST);
 }
 
 ?>
