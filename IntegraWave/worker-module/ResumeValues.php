@@ -1,7 +1,7 @@
 <?php
 
 $title = "calculator";
-$selectedOption = "worker-module,Workers";
+$selectedOption = "CRS,Calculator";
 
 require_once "../Private/functions.php";
 
@@ -13,8 +13,7 @@ $requestStatus;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
-    $requestStatus = requestOperation("resumeCategory", $_POST);
-
+    $requestStatus = requestOperation("country", $_POST);
 }
 
 ?>
@@ -24,8 +23,8 @@ if(isset($_POST['action'])) {
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Resume Information
-                    <small>Enter your Information</small>
+                    Calculator
+                    <small>Calculate Express Entry Points</small>
                 </h1>
             </section>
             <!-- Main content -->
@@ -33,11 +32,10 @@ if(isset($_POST['action'])) {
                 <form class="form-horizontal" method="POST">
                     <?php
                     $response = getData('resumeCategory', '1');
-                    var_dump($_POST);
 
                     foreach ($response['resumeCategory'] as $resumeCategory) {
                         echo "<div class=\"col-sm-12\">
-                        <input type='hidden' name='resumeCategory' value='1'/>
+                        <input type='hidden' name='scenario' value='1'/>
                         <div class=\"box\">
                             <div class=\"box-header with-border\">
                                 <h3 class=\"box-title\">$resumeCategory[name]</h3>
@@ -46,23 +44,28 @@ if(isset($_POST['action'])) {
                                     </button>
                                 </div>
                             </div>";
+                        foreach ($resumeCategory['resumeField'] as $resumeField) {
 
-                            foreach ($resumeField['name'] as $resumeField) {
-                                echo $resumeField[name];
                                 echo "<div class=\"box-body\">
                                         <div class=\"form-group\">
                                             <label class=\"col-sm-3 control-label\">$resumeField[name]</label>
                                             <div class=\"col-sm-9\">
-                                          </div>
-                                          
+                                               
+                                
+                               ";
+                                    //echo "$option[id] - $option[name]</br>";
+                                }
+
+                                echo "
+                                    </div>
                                 </div>
                             </div>";
-                            }
 
+                        }
 
                         echo "</div>
                             </div>";
-                    }
+
 
                     ?>
                     <div class="row">
