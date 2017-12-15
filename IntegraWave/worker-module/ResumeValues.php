@@ -34,32 +34,7 @@ if(isset($_POST['action'])) {
                     $response = getData('resumeCategory');
 
                     foreach ($response['resumeCategory'] as $resumeCategory) {
-                        echo "<div class=\"col-sm-12\">
-                        <input type='hidden' name='scenario' value='1'/>
-                        <div class=\"box\">
-                            <div class=\"box-header with-border\">
-                                <h3 class=\"box-title\">$resumeCategory[name]</h3>
-                                <div class=\"box-tools pull-right\">
-                                    <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-minus\"></i>
-                                    </button>
-                                </div>
-                            </div>";
-                        foreach ($resumeCategory['resumeField'] as $resumeField) {
-
-                                echo "<div class=\"box-body\">
-                                        <div class=\"form-group\">
-                                            <label class=\"col-sm-3 control-label\">$resumeField[name]</label>
-                                            <div class=\"col-sm-9\">
-                                               
-                                
-                               ";
-                                    //echo "$option[id] - $option[name]</br>";
-                                }
-
-                                echo "
-                                    </div>
-                                </div>
-                            </div>";
+                     echo $resumeCategory['name'];
 
                         }
 
