@@ -9,6 +9,14 @@ require_once "../Private/functions.php";
 include_once "../Shared/header.php";
 
 include_once "../Shared/left-navigation.php";
+
+$requestStatus;
+if(isset($_POST['action'])) {
+    $action = $_POST['action'];
+
+    $requestStatus = requestOperation("resumeCategory", $_POST);
+}
+
 ?>
 
 <div class="wrapper">
