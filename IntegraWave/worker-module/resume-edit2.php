@@ -36,34 +36,40 @@ if(isset($_POST['action'])) {
                <section class="content">
                        <!-- Your Page Content Here -->
                        <?php
-                           $response = getData('resumecategory', '1');
-                           var_dump($_POST);
+                           $response = getData('resumeCategory', '1');
                            echo  "<div class=\"col-sm-12\"> 
                 <div class=\"box\">
                 <div class=\"box-header with-border\">
-                        <h3 class=\"box-title\">$resumecategory[name] </h3>
+                        <h3 class=\"box-title\">$resumeCategory[name] </h3>
                         <div class=\"box-tools pull-right\">
                             <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-minus\"></i>
                             </button>
                         </div>
                     </div> ";
-                     foreach ($response['resumefield'] as $resumefield) {
-                                        echo "  <form class=\"form-horizontal\">
-                        <div class=\"box-body\">
-                            <div class=\"form-group\">
-                                 <label class=\"col-sm-3 control-label\">$resumefield[name] </label>
-                                    <div class=\"col-sm-9\">
-                                        <input type=\"text\" value=\" \" class=\"form-control\" disabled>
-                                    </div>
-                             </div>
-                              </div>
-                        <!-- /.box-body -->
-                        <div class=\"box-footer\">
-                            <button class=\"btn btn-primary pull-right\" type=\"submit\">Save Changes</button>
-                        </div>
-                        <!-- /.box-footer -->
-                    </form>
-                </div>
-                <!-- /.box -->
-            </div>";
-                     } ?>
+                       foreach ($response['resumeCategory'] as $resumeCategory) {
+                           echo "<div class=\"col-sm-12\">
+                        <input type='hidden' name='resumeCategory' value='1'/>
+                        <div class=\"box\">
+                            <div class=\"box-header with-border\">
+                                <h3 class=\"box-title\">$resumeCategory[name]</h3>
+                                <div class=\"box-tools pull-right\">
+                                    <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-minus\"></i>
+                                    </button>
+                                </div>
+                            </div>";
+
+                           foreach ($resumeField['name'] as $resumeField) {
+                               echo "<div class=\"box-body\">
+                                        <div class=\"form-group\">
+                                            <label class=\"col-sm-3 control-label\">$resumeField[name]</label>
+                                            <div class=\"col-sm-9\">
+                                          </div>
+                                </div>
+                            </div>";
+                           }
+
+
+                           echo "</div>
+                            </div>";
+                       }
+                       ?>
