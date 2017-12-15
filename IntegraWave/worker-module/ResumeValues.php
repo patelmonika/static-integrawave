@@ -48,11 +48,13 @@ if(isset($_POST['action'])) {
                             </div>";
 
                             foreach ($resumeField['name'] as $resumeField) {
+                                echo $resumeField[name];
                                 echo "<div class=\"box-body\">
                                         <div class=\"form-group\">
                                             <label class=\"col-sm-3 control-label\">$resumeField[name]</label>
                                             <div class=\"col-sm-9\">
                                           </div>
+                                          
                                 </div>
                             </div>";
                             }
