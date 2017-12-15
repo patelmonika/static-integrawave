@@ -13,7 +13,7 @@ $requestStatus;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
-    $requestStatus = requestOperation("country", $_POST);
+    $requestStatus = requestOperation("resumeCategory", $_POST);
 }
 
 ?>
@@ -31,7 +31,7 @@ if(isset($_POST['action'])) {
             <section class="content">
                 <form class="form-horizontal" method="POST">
                     <?php
-                    $response = getData('resumeCategory', '1');
+                    $response = getData('resumeCategory');
 
                     foreach ($response['resumeCategory'] as $resumeCategory) {
                         echo "<div class=\"col-sm-12\">

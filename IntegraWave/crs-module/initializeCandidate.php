@@ -13,7 +13,7 @@ $requestStatus;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
-    $requestStatus = requestOperation("country", $_POST);
+    $requestStatus = requestOperation("resumeCategory", $_POST);
 }
 
 ?>
