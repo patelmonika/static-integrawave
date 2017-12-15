@@ -14,7 +14,7 @@ if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
     $requestStatus = requestOperation("resumeCategory", $_POST);
-    var_dump($_POST);
+
 }
 
 ?>
@@ -33,6 +33,7 @@ if(isset($_POST['action'])) {
                 <form class="form-horizontal" method="POST">
                     <?php
                     $response = getData('resumeCategory', '1');
+                    var_dump($_POST);
 
                     foreach ($response['resumeCategory'] as $resumeCategory) {
                         echo "<div class=\"col-sm-12\">
