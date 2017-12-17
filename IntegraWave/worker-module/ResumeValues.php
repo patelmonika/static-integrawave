@@ -44,7 +44,7 @@ if(isset($_POST['action'])) {
                                     </button>
                                 </div>
                             </div>";
-                        foreach ($cat['resumefield'] as $resumefield) {
+                       /* foreach ($cat['resumefield'] as $resumefield) {
                             foreach ($resumefield['name'] as $resumefield) {
                                 echo "<div class=\"box-body\">
                                         <div class=\"form-group\">
@@ -58,13 +58,13 @@ if(isset($_POST['action'])) {
                                     </div>
                                 </div>
                             </div>";
-                            }
+                            }*/
 
 
                             echo "</div>
                             </div>";
                         }
-                    }
+
                     ?>
                     <div class="row">
                         <div class="col-sm-12">
