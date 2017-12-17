@@ -13,7 +13,7 @@ $requestStatus;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
-    $requestStatus = requestOperation("resumecategory", $_POST);
+    $requestStatus = requestOperation("country", $_POST);
 }
 
 ?>
@@ -31,22 +31,45 @@ if(isset($_POST['action'])) {
             <section class="content">
                 <form class="form-horizontal" method="POST">
                     <?php
-                    $response = getData('resumecategory','0');
+                    $response = getData('resumecategory', '1');
 
-                    foreach ($response['resumecategory'] as $resumecategory) {
-                     echo $resumecategory['name'];
-
-                        }
-
-                        echo "</div>
+                    foreach ($response as $cat) {
+                        echo "<div class=\"col-sm-12\">
+                        <input type='hidden' name='scenario' value='1'/>
+                        <div class=\"box\">
+                            <div class=\"box-header with-border\">
+                                <h3 class=\"box-title\">$cat[name]</h3>
+                                <div class=\"box-tools pull-right\">
+                                    <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-minus\"></i>
+                                    </button>
+                                </div>
                             </div>";
+                        foreach ($cat['resumefield'] as $resumefield) {
+                            foreach ($resumefield['name'] as $resumefield) {
+                                echo "<div class=\"box-body\">
+                                        <div class=\"form-group\">
+                                            <label class=\"col-sm-3 control-label\">$group[name]</label>
+                                            <div class=\"col-sm-9\">
+                                       ";
+                                echo "$resumefield[name]</br>";
 
 
+                                echo "
+                                    </div>
+                                </div>
+                            </div>";
+                            }
+
+
+                            echo "</div>
+                            </div>";
+                        }
+                    }
                     ?>
                     <div class="row">
                         <div class="col-sm-12">
                             <button type="submit" class="btn btn-primary pull-right" name="submit">Submit</button>
-                            <button type="reset" class="btn btn-link btn-grey pull-right" onclick="hideDescriptionLabel();">Cancel</button>
+                            <button type="reset" class="btn btn-link btn-grey pull-right">Cancel</button>
                         </div>
                     </div>
 
