@@ -34,12 +34,12 @@ if(isset($_POST['action'])) {
                     $response = getAll('resumecategory');
 
                     foreach ($response as $cat) {
-                      echo  $cat[name];
-                        }
-foreach ($resumecategory['resumeField'] as $r) {
-                        echo $r['name'];
-}
+                        echo $cat[name];
 
+                        foreach ($resumecategory['resumeField'] as $r) {
+                            echo $r['name'];
+                        }
+                    }
                     ?>
 
 
