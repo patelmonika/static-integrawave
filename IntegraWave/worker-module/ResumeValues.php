@@ -31,18 +31,15 @@ if(isset($_POST['action'])) {
             <section class="content">
                 <form class="form-horizontal" method="POST">
                     <?php
-                    $response = getData('resumecategory', '1');
+                    $response = getData('resumecategory', '0');
 
-                    foreach ($response['resumecategory'] as $cat) {
+                    foreach ($response as $cat) {
                         echo "<div class=\"col-sm-12\">
                         <input type='hidden' name='scenario' value='1'/>
                         <div class=\"box\">
                             <div class=\"box-header with-border\">
                                 <h3 class=\"box-title\">$cat[name]</h3>
-                                <div class=\"box-tools pull-right\">
-                                    <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-minus\"></i>
-                                    </button>
-                                </div>
+                               
                             </div>";
                        /* foreach ($cat['resumefield'] as $resumefield) {
                             foreach ($resumefield['name'] as $resumefield) {
