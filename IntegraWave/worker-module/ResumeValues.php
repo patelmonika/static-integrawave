@@ -34,7 +34,7 @@ if(isset($_POST['action'])) {
                     $response = getData('resumecategory','1');
 
                     foreach ($response as $cat) {
-                        echo $cat[name];
+                        echo $cat['name'];
 
 }
                     ?>
