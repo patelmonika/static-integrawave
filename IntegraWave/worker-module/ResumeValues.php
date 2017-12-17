@@ -32,17 +32,15 @@ if(isset($_POST['action'])) {
                 <form class="form-horizontal" method="POST">
                     <?php
                     $response = getAll('resumecategory');
-$requestStatus=getData('resumecategory',2);
+
                     foreach ($response as $cat) {
                         echo "<div class=\"col-sm-12\">
                         <input type='hidden' name='scenario' value='1'/>
                         <div class=\"box\">
                             <div class=\"box-header with-border\">
-                                <h3 class=\"box-title\">$cat[name]</h3>";
-                                 foreach ($requestStatus as $field)   {
-                            echo "   <h3 class=\"box-title\">$field[name]</h3>";
-                             }
-                           echo" </div>
+                                <h3 class=\"box-title\">$cat[name]</h3>
+                               
+                            </div>
                             </div>
                             
                             </div>
