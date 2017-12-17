@@ -13,7 +13,7 @@ $requestStatus;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
-    $requestStatus = ge("country", $_POST);
+
 }
 
 ?>
@@ -40,26 +40,14 @@ if(isset($_POST['action'])) {
                             <div class=\"box-header with-border\">
                                 <h3 class=\"box-title\">$cat[name]</h3>
                                
-                            </div>";
-                       /* foreach ($cat['resumefield'] as $resumefield) {
-                            foreach ($resumefield['name'] as $resumefield) {
-                                echo "<div class=\"box-body\">
-                                        <div class=\"form-group\">
-                                            <label class=\"col-sm-3 control-label\">$group[name]</label>
-                                            <div class=\"col-sm-9\">
-                                       ";
-                                echo "$resumefield[name]</br>";
+                            </div>
+                            </div>
+                            </div>
+                            ";
 
 
-                                echo "
-                                    </div>
-                                </div>
-                            </div>";
-                            }*/
 
 
-                            echo "</div>
-                            </div>";
                         }
 
                     ?>
