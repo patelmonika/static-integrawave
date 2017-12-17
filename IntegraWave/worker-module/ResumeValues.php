@@ -31,9 +31,9 @@ if(isset($_POST['action'])) {
             <section class="content">
 
                     <?php
-                    $response = getData('resumecategory','1');
+                    $response = getData('resumecategory','2');
 
-                    foreach ($response['resume_field'] as $cat) {
+                    foreach ($response as $cat) {
                         echo $cat[name];
 
 }
