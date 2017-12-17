@@ -34,12 +34,13 @@ if(isset($_POST['action'])) {
                     $response = getData('resumecategory',1);
 
                     foreach ($response as $cat) {
-                        echo "<div class=\"col-sm-12\">
+                        echo "
+<div class=\"col-sm-12\">
                         <input type='hidden' name='scenario' value='1'/>
                         <div class=\"box\">
                             <div class=\"box-header with-border\">
                                 <h3 class=\"box-title\">$cat[name]</h3>
-                               
+                              
                             </div>
                             </div>
                             
