@@ -38,11 +38,11 @@ $requestStatus=getData('resumecategory',2);
                         <input type='hidden' name='scenario' value='1'/>
                         <div class=\"box\">
                             <div class=\"box-header with-border\">
-                                <h3 class=\"box-title\">$cat[name]</h3>
+                                <h3 class=\"box-title\">$cat[name]</h3>";
                                  foreach ($requestStatus as $field)   {
                              echo $field[name];
                              }
-                            </div>
+                           echo" </div>
                             </div>
                             
                             </div>
