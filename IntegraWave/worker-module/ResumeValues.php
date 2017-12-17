@@ -36,7 +36,7 @@ if(isset($_POST['action'])) {
                     foreach ($response as $cat) {
                         echo $cat[name];
 
-                        foreach ($response['resumeField'] as $r) {
+                        foreach ($cat['resumeField'] as $r) {
                             echo $r[name];
                         }
 }
