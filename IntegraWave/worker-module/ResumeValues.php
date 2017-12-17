@@ -31,7 +31,7 @@ if(isset($_POST['action'])) {
             <section class="content">
 
                     <?php
-                    $response = getAll('resumecategory');
+                    $response = getData('resumecategory','1');
 
                     foreach ($response as $cat) {
                         echo $cat[name];
