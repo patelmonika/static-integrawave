@@ -40,7 +40,7 @@ $requestStatus=getData('resumecategory',2);
                             <div class=\"box-header with-border\">
                                 <h3 class=\"box-title\">$cat[name]</h3>";
                                  foreach ($requestStatus as $field)   {
-                             echo $field[name];
+                            echo "   <h3 class=\"box-title\">$field[name]</h3>";
                              }
                            echo" </div>
                             </div>
