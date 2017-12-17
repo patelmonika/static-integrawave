@@ -5,7 +5,7 @@ require_once "../Private/functions.php";
 
 
 $response = getData('resumecategory',1);
-foreach ($response as $cat){
+foreach ($response['resumecategory'] as $cat){
     echo $cat[name];
 
 }
