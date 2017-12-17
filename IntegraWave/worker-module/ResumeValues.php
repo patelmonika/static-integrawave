@@ -31,7 +31,7 @@ if(isset($_POST['action'])) {
             <section class="content">
                 <form class="form-horizontal" method="POST">
                     <?php
-                    $response = getData('resumecategory');
+                    $response = getData('resumecategory','1');
 
                     foreach ($response['resumecategory'] as $resumecategory) {
                      echo $resumecategory['name'];
