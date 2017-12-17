@@ -33,7 +33,7 @@ if(isset($_POST['action'])) {
                     <?php
                     $response = getData('resumecategory', '1');
 
-                    foreach ($response as $cat) {
+                    foreach ($response['resumecategory'] as $cat) {
                         echo "<div class=\"col-sm-12\">
                         <input type='hidden' name='scenario' value='1'/>
                         <div class=\"box\">
