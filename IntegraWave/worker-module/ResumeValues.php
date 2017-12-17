@@ -32,7 +32,7 @@ if(isset($_POST['action'])) {
                 <form class="form-horizontal" method="POST">
                     <?php
                     $response = getAll('resumecategory');
-$requestStatus=getData('resumecategory',1);
+$requestStatus=getData('resumecategory',2);
                     foreach ($response as $cat) {
                         echo "<div class=\"col-sm-12\">
                         <input type='hidden' name='scenario' value='1'/>
