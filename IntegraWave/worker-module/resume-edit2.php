@@ -4,7 +4,7 @@ require_once "../Private/functions.php";
 
 
 
-$response = getAll('resumecategory');
+$response = getData('resumecategory',1);
 foreach ($response as $cat){
     echo $response[name];echo "<br><br>";
 
