@@ -35,11 +35,11 @@ if(isset($_POST['action'])) {
 
                     foreach ($response as $cat) {
                         echo $cat[name];
-}
-                        foreach ($response['resumefield'] as $r) {
+
+                        foreach ($response['resumeField'] as $r) {
                             echo $r[name];
                         }
-
+}
                     ?>
 
 
