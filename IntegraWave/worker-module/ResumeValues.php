@@ -33,7 +33,7 @@ if(isset($_POST['action'])) {
                     <?php
                     $response = getData('resumecategory','1');
 
-                    foreach ($response as $cat) {
+                    foreach ($response['resumeField'] as $cat) {
                         echo $cat[name];
 
 }
