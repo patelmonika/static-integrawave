@@ -67,7 +67,7 @@
                 </span></a>
                         <ul class="treeview-menu">
                             <li><a href="<?php echo url_for('/worker-module/resume-template.php'); ?>">Templates</a> </li>
-                            <li><a href="<?php echo url_for('/worker-module/resume-edit.php'); ?>">Customize Resume</a> </li>
+                            <li><a href="<?php echo url_for('/worker-module/resumeValues.php'); ?>">Customize Resume</a> </li>
                         </ul>
                     </li>
                     <li class="treeview active"><a href="#"> <span>Cover Letter</span> <span class="pull-right-container">
