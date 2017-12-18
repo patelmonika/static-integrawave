@@ -157,13 +157,15 @@ $response=getData('worker',1);
                         <h1 class="candidate-name name">
                           <?php
 var_dump($response);
-
+foreach ($response['pivot'] as $pivot){
+    echo $pivot[name];
+}
 
                           ?>
 
-<p>Second block</p>
-                          <?php
-                          foreach ($response['pivot'] as $name){
+<!--<p>Second block</p>
+                          --><?php
+/*                          foreach ($response['pivot'] as $name){
                               foreach($name as $key => $vale){
                               if($key[resume_field_id] == 1){
                                   echo $key[value];
@@ -172,7 +174,7 @@ var_dump($response);
                               }
 
 
-                          }
+                          }*/
                           ?>
 
                         </h1>
