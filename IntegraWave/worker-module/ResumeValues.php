@@ -30,14 +30,14 @@ if(isset($_POST['action'])) {
             <!-- Main content -->
             <section class="content">
                 <form class="form-horizontal" method="POST">
+                    <div class="col-sm-12">
+                        <div class="box">
                     <?php
                     $catresponse=getAll('resumecategory');
                     $response = getData('resumecategory', '1');
-                     echo "<div class=\"col-sm-12\">";
 foreach($catresponse as $category){
-   echo "
-                        <input type='hidden' name='scenario' value='1'/>
-                        <div class=\"box\">
+    echo "
+                       
                             <div class=\"box-header with-border\">
                                 <h3 class=\"box-title\">$category[name]</h3>
                                 <div class=\"box-tools pull-right\">
@@ -57,7 +57,7 @@ foreach($catresponse as $category){
                         }
 
                     }
-echo "</div>";
+
                     ?>
                     <div class="row">
                         <div class="col-sm-12">
@@ -65,7 +65,8 @@ echo "</div>";
                             <button type="reset" class="btn btn-link btn-grey pull-right" onclick="hideDescriptionLabel();">Cancel</button>
                         </div>
                     </div>
-
+                        </div>
+                    </div>
                 </form>
             </section>
         </div>
