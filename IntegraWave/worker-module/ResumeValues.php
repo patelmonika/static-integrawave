@@ -13,7 +13,7 @@ $requestStatus;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
-
+    $requestStatus = requestOperation("country", $_POST);
 }
 
 ?>
@@ -23,40 +23,45 @@ if(isset($_POST['action'])) {
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Calculator
-                    <small>Calculate Express Entry Points</small>
+                    Resume
+                    <small>Enter your information below</small>
                 </h1>
             </section>
             <!-- Main content -->
             <section class="content">
                 <form class="form-horizontal" method="POST">
                     <?php
-                    $response = getData('resumecategory',1);
-
-                    foreach ($response as $cat) {
-                        echo "
-<div class=\"col-sm-12\">
+                    $catresponse=getAll('resumecategory');
+                    $response = getData('resumecategory', '1');
+foreach($catresponse as $category){
+    echo "<div class=\"col-sm-12\">
                         <input type='hidden' name='scenario' value='1'/>
                         <div class=\"box\">
                             <div class=\"box-header with-border\">
-                                <h3 class=\"box-title\">$cat[name]</h3>
-                              
-                            </div>
-                            </div>
-                            
-                            </div>
-                            ";
+                                <h3 class=\"box-title\">$field[name]</h3>
+                                <div class=\"box-tools pull-right\">
+                                    <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-minus\"></i>
+                                    </button>
+                                </div>
+                            </div>";
+                        foreach ($response['resume_field'] as $field) {
 
 
-
+                                echo "<div class=\"box-body\">
+                                        <div class=\"form-group\">
+                                            <label class=\"col-sm-3 control-label\">$group[name]</label>
+                                             </div>
+                                </div>";
 
                         }
+
+                    }
 
                     ?>
                     <div class="row">
                         <div class="col-sm-12">
                             <button type="submit" class="btn btn-primary pull-right" name="submit">Submit</button>
-                            <button type="reset" class="btn btn-link btn-grey pull-right">Cancel</button>
+                            <button type="reset" class="btn btn-link btn-grey pull-right" onclick="hideDescriptionLabel();">Cancel</button>
                         </div>
                     </div>
 
