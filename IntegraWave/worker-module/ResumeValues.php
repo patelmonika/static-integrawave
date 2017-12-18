@@ -45,7 +45,7 @@ foreach($catresponse as $category) {
                                 </div>
                             </div>";
     $i=1;
-    $response = getData('resumecategory', $i);
+    $response = getData('resumecategory','$i');
     foreach ($response['resume_field'] as $field) {
  echo "<div class=\"box-body\">
                                         <div class=\"form-group\">
@@ -61,12 +61,13 @@ foreach($catresponse as $category) {
                                     </div>
                                 </div>
                             </div>";
-                            $i++;
+
                         }
 
 
                     echo "</div>
                             </div>";
+    $i++;
                 }
                     ?>
                     <div class="row">
