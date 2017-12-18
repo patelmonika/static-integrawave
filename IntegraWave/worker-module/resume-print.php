@@ -9,7 +9,7 @@ include_once "../Shared/header.php";
 
 include_once "../Shared/left-navigation.php";
 $response=getData('worker',1);
-$res=json_decode($response);
+
 ?>
 
     <style>
@@ -156,7 +156,7 @@ $res=json_decode($response);
                     <section class="title">
                         <h1 class="candidate-name name">
                           <?php
-var_dump($res);
+var_dump($response);
 
 
                           ?>
