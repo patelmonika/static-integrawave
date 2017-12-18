@@ -161,18 +161,16 @@ var_dump($response);
 
                           ?>
 
-<!--<p>Second block</p>
-                          --><?php
-/*                          foreach ($response['pivot'] as $name){
-                              foreach($name as $key => $vale){
-                              if($key[resume_field_id] == 1){
-                                  echo $key[value];
+<p>Second block</p>
+                          <?php
+                          foreach ($response['pivot'] as $name) {
+                              foreach ($name as $key => $value) {
+                                  if ($name['resume_field_id'] == 1) {
+                                      echo $name['value'];
 
+                                  }
                               }
-                              }
-
-
-                          }*/
+                          }
                           ?>
 
                         </h1>
