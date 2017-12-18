@@ -162,6 +162,20 @@ foreach ($response as $pivot){
     }
 }
                           ?>
+
+                          <?php
+                          foreach ($response['pivot'] as $name){
+                              foreach($name as $key => $vale){
+                              //if($key[resume_field_id] == 1){
+                                  echo $key[1][$value];
+
+                              //}
+                              }
+
+
+                          }
+                          ?>
+
                         </h1>
 
                         <div class="address">
