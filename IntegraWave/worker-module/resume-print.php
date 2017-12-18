@@ -155,10 +155,10 @@ $response=getData('worker',1);
                     <section class="title">
                         <h1 class="candidate-name name">
                           <?php
-                          foreach ($response['pivot'] as $name){
-                              foreach ($name[0] as $v) {
-                                  echo $v[value];
-                              }
+                          foreach ($response[0] as $name){
+foreach ($name['pivot'] as $value){
+    echo $value[value];
+}
                           }
                           ?>
                         </h1>
