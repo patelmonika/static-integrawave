@@ -155,7 +155,7 @@ $response=getData('worker',1);
                     <section class="title">
                         <h1 class="candidate-name name">
                           <?php
-var_dump($response[0]);
+var_dump($response[1]);
 
 
                           ?>
