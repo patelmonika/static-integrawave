@@ -45,19 +45,26 @@ foreach($catresponse as $category) {
                                 </div>
                             </div>";
     foreach ($response['resume_field'] as $field) {
-
-
-        echo "<div class=\"box-body\">
+ echo "<div class=\"box-body\">
                                         <div class=\"form-group\">
                                             <label class=\"col-sm-3 control-label\">$field[name]</label>
-                                             </div>
-                                </div>";
-
-    }
+                                            <div class=\"col-sm-9\">";
 
 
-    echo "</div></div>";
-}
+                                echo "<input type=\"text\" class=\"form-control\">";
+                                //echo "$option[id] - $option[name]</br>";
+
+
+                            echo "
+                                    </div>
+                                </div>
+                            </div>";
+                        }
+
+
+                    echo "</div>
+                            </div>";
+                }
                     ?>
                     <div class="row">
                         <div class="col-sm-12">
