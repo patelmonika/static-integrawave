@@ -69,7 +69,9 @@ foreach($catresponse as $category) {
                             </div>";
     $i++;
                 }
+                    echo $i;
                     ?>
+
                     <div class="row">
                         <div class="col-sm-12">
                             <button type="submit" class="btn btn-primary pull-right" name="submit">Submit</button>
