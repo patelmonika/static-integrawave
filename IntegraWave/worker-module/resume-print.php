@@ -8,6 +8,7 @@ require_once "../Private/functions.php";
 include_once "../Shared/header.php";
 
 include_once "../Shared/left-navigation.php";
+$response=getData('worker',1);
 ?>
 
     <style>
@@ -96,10 +97,7 @@ include_once "../Shared/left-navigation.php";
             <h1>
                 Resume Wizard
             </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-mobile"></i>Devices</a></li>
-                <li class="active">Devices List</li>
-            </ol>
+
         </section>
         <!-- Main content -->
         <section class="content">
@@ -156,7 +154,11 @@ include_once "../Shared/left-navigation.php";
 
                     <section class="title">
                         <h1 class="candidate-name name">
-                            Monika Patel<!--                            --><?/*php //echo $RESUME_ARRAY['candidate-name']*/?>
+                          <?php
+                          foreach ($response['pivot'] as $name){
+                              echo $name[value];
+                          }
+                          ?>
                         </h1>
 
                         <div class="address">
