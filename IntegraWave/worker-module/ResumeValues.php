@@ -45,7 +45,7 @@ foreach($catresponse as $category) {
                                 </div>
                             </div>";
 
-    $response = getData('resumecategory','$i');
+    $response = getData('resumecategory',$i);
     foreach ($response['resume_field'] as $field) {
  echo "<div class=\"box-body\">
                                         <div class=\"form-group\">
