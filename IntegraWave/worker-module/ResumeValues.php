@@ -31,13 +31,12 @@ if(isset($_POST['action'])) {
             <section class="content">
                 <form class="form-horizontal" method="POST">
                     <div class="col-sm-12">
-                        <div class="box">
                     <?php
                     $catresponse=getAll('resumecategory');
                     $response = getData('resumecategory', '1');
 foreach($catresponse as $category){
     echo "
-                       
+                        <div class=\"box\">
                             <div class=\"box-header with-border\">
                                 <h3 class=\"box-title\">$category[name]</h3>
                                 <div class=\"box-tools pull-right\">
@@ -57,7 +56,7 @@ foreach($catresponse as $category){
                         }
 
                     }
-
+echo "</div>";
                     ?>
                     <div class="row">
                         <div class="col-sm-12">
@@ -65,7 +64,6 @@ foreach($catresponse as $category){
                             <button type="reset" class="btn btn-link btn-grey pull-right" onclick="hideDescriptionLabel();">Cancel</button>
                         </div>
                     </div>
-                        </div>
                     </div>
                 </form>
             </section>
