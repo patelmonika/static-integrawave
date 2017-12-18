@@ -38,7 +38,7 @@ foreach($catresponse as $category){
                         <input type='hidden' name='scenario' value='1'/>
                         <div class=\"box\">
                             <div class=\"box-header with-border\">
-                                <h3 class=\"box-title\">$field[name]</h3>
+                                <h3 class=\"box-title\">$category[name]</h3>
                                 <div class=\"box-tools pull-right\">
                                     <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-minus\"></i>
                                     </button>
@@ -49,7 +49,7 @@ foreach($catresponse as $category){
 
                                 echo "<div class=\"box-body\">
                                         <div class=\"form-group\">
-                                            <label class=\"col-sm-3 control-label\">$group[name]</label>
+                                            <label class=\"col-sm-3 control-label\">$field[name]</label>
                                              </div>
                                 </div>";
 
