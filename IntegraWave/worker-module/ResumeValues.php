@@ -33,7 +33,7 @@ if(isset($_POST['action'])) {
 
                     <?php
                     $catresponse=getAll('resumecategory');
-                    $response = getData('resumecategory', '1');
+
 foreach($catresponse as $category) {
     echo "  <div class=\"col-sm-12\">
                         <div class=\"box\">
@@ -44,6 +44,8 @@ foreach($catresponse as $category) {
                                     </button>
                                 </div>
                             </div>";
+    $i=1;
+    $response = getData('resumecategory', $i);
     foreach ($response['resume_field'] as $field) {
  echo "<div class=\"box-body\">
                                         <div class=\"form-group\">
@@ -59,6 +61,7 @@ foreach($catresponse as $category) {
                                     </div>
                                 </div>
                             </div>";
+                            $i++;
                         }
 
 
