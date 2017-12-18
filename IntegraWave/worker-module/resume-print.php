@@ -157,37 +157,11 @@ $response=getData('worker',1);
                         <h1 class="candidate-name name">
                           <?php
 foreach ($response['resume_fields'] as $field){
-     echo "<div class=\"col-sm-12\">
-                        <input type='hidden' name='scenario' value='1'/>
-                        <div class=\"box\">
-                            <div class=\"box-header with-border\">
-                                <h3 class=\"box-title\">$field[name]</h3>
-                                <div class=\"box-tools pull-right\">
-                                    <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-minus\"></i>
-                                    </button>
-                                </div>
-                            </div>";
+    foreach ($field['pivot'] as $pivot){
+      echo $pivot;
+       }
 
-
-                foreach ($field['pivot'] as $pivot){
-                            echo "<div class=\"box-body\">
-                                        <div class=\"form-group\">
-                                            <label class=\"col-sm-3 control-label\">$pivot[value]</label>
-                                            <div class=\"col-sm-9\"> ";
-                            //echo "$group[name]</br>";
-
-
-                            echo "
-                                    </div>
-                                </div>
-                            </div>";
-
-                    }
-
-                    echo "</div>
-                            </div>";
-                }
-
+}
 
                           ?>
 
