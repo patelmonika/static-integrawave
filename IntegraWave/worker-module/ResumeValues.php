@@ -1,7 +1,7 @@
 <?php
 
-$title = "calculator";
-$selectedOption = "CRS,Calculator";
+$title = "Edit Resume";
+$selectedOption = "Workers,Resume";
 
 require_once "../Private/functions.php";
 
@@ -13,7 +13,7 @@ $requestStatus;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
-    $requestStatus = requestOperation("country", $_POST);
+    $requestStatus = requestOperation("resumecategory", $_POST);
 }
 
 ?>
@@ -74,7 +74,7 @@ foreach($catresponse as $category) {
 
                     <div class="row">
                         <div class="col-sm-12">
-                            <button type="submit" class="btn btn-primary pull-right" name="submit">Submit</button>
+                            <button type="submit" class="btn btn-primary pull-right" name="action" value="add">Submit</button>
                             <button type="reset" class="btn btn-link btn-grey pull-right" onclick="hideDescriptionLabel();">Cancel</button>
                         </div>
                     </div>
