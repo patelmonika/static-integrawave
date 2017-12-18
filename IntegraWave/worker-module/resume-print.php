@@ -158,8 +158,8 @@ $response=getData('worker',1);
                           <?php
 foreach ($response['resume_fields'] as $field){
     foreach ($field['pivot'] as $pivot){
-      foreach ($pivot['value'] as $v){
-          echo $v[0];
+      foreach ($pivot as $v){
+          echo $v[value];
       }
        }
 
