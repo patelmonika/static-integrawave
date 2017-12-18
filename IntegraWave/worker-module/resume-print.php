@@ -157,10 +157,7 @@ $response=getData('worker',1);
                         <h1 class="candidate-name name">
                           <?php
 var_dump($response);
-foreach ($response['pivot'] as $pivot){
-    foreach ($pivot as $name)
-    echo $name[name];
-}
+
 
                           ?>
 
