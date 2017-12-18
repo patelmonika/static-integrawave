@@ -156,14 +156,8 @@ $response=getData('worker',1);
                     <section class="title">
                         <h1 class="candidate-name name">
                           <?php
-foreach ($response['resume_fields'] as $field){
-foreach ($field[0] as $pivot){
-    foreach ($pivot['pivot'] as $p) {
-        echo $p[value];
-    }
-}
+var_dump($response[0]);
 
-}
 
                           ?>
 
