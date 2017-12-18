@@ -51,7 +51,7 @@ foreach($catresponse as $category){
                                         <div class=\"form-group\">
                                             <label class=\"col-sm-3 control-label\">$field[name]</label>
                                              </div>
-                                </div>";
+                                </div></div>";
 
                         }
 
