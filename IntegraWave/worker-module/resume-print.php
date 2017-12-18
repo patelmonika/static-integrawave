@@ -162,7 +162,6 @@ foreach ($response['resume_fields'] as $field){
        }
 
 }
-
                           ?>
 
 
