@@ -69,7 +69,7 @@ foreach($catresponse as $category) {
                             </div>";
     $i++;
                 }
-                    echo $i;
+
                     ?>
 
                     <div class="row">
