@@ -155,8 +155,9 @@ $response=getData('worker',1);
                     <section class="title">
                         <h1 class="candidate-name name">
                           <?php
-                          foreach ($response[pivot] as $name){
-                              echo $name[value];
+                          foreach ($response['pivot'] as $name){
+                              foreach ($name as $val)
+                              echo $val[value];
                           }
                           ?>
                         </h1>
