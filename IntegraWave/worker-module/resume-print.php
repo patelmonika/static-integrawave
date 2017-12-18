@@ -144,20 +144,17 @@ $response=getData('worker',1);
             <!-- /.row -->
             <div class="resume-container">
                 <!--TYPE THE ACTUAL CODE FOR TRADITIONAL RESUME HERE -->
-                <?php
-                /*$str = file_get_contents('resume-print.json');
-                $json = json_decode($str, true);
-                echo '<pre>' . print_r($json, true) . '</pre>';
-                */?>
+
 
                 <article class="resume-page">
 
                     <section class="title">
                         <h1 class="candidate-name name">
                           <?php
-                          foreach ($response as $name){
-                              foreach ($name['pivot'] as $value)
-                              echo $value[value];
+                          foreach ($response as $name) {
+                              foreach ($name['pivot'] as $value) {
+                                  echo $value[value];
+                              }
                           }
                           ?>
                         </h1>
