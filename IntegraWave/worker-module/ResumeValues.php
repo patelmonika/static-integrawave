@@ -42,15 +42,16 @@ foreach($catresponse as $category){
                                 <div class=\"box-tools pull-right\">
                                     <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-minus\"></i>
                                     </button>
-                                </div>
-                            </div>
-                           ";
+                              ";
                         foreach ($response['resume_field'] as $field) {
                                 echo "<div class=\"box-body\">
                                         <div class=\"form-group\">
                                             <label class=\"col-sm-3 control-label\">$field[name]</label>
                                              </div>
-                                </div></div>";
+                                </div></div>
+                                  </div>
+                            </div>
+                           ";
 
                         }
 
