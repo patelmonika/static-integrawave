@@ -156,6 +156,11 @@ $response=getData('worker',1);
                         <h1 class="candidate-name name">
                           <?php
 var_dump($response);
+foreach ($response as $pivot){
+    foreach($pivot['pivot'] as $val){
+        echo $val[value];
+    }
+}
                           ?>
                         </h1>
 
