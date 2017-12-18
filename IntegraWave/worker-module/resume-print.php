@@ -157,28 +157,13 @@ $response=getData('worker',1);
                         <h1 class="candidate-name name">
                           <?php
                          // var_dump($response);
+$workerFields = array();
 foreach ($response['resume_fields'] as $field){
-    foreach ($field['pivot'] as $pivot){
-      foreach ($pivot as $v){
-          echo $v[value];
-      }
-       }
-
+    $workerFields[$field["name"]] = $field["pivot"]["value"];
 }
+var_dump($workerFields);
                           ?>
-                            <?php
-                          echo "Monika's block";
-
-                          foreach ($response['resume_fields'] as $rf ){
-                              foreach ($rf['pivot'] as $p){
-                                  foreach ($p as $k => $v){
-                                      echo "\$p[$k] => $v.\n";
-                                  }
-                              }
-                          }
-
-
-                          ?>
+                          <?php echo $workerFields["name"]?>
 
 
 
@@ -187,7 +172,7 @@ foreach ($response['resume_fields'] as $field){
                         <div class="address">
                             <h3 class="address subtitle name">
                                 <span class="address-number">205</span>
-                                <span class="address-street">Humber College Blv</span> -
+                                <span class="address-street"><?php echo $workerFields["name"]?></span> -
                                 <span class="address-complement">Basement</span>
                             </h3>
                             <h3 class="address-location subtitle name">
