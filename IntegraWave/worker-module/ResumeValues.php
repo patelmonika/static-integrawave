@@ -33,8 +33,9 @@ if(isset($_POST['action'])) {
                     <?php
                     $catresponse=getAll('resumecategory');
                     $response = getData('resumecategory', '1');
+                     echo "<div class=\"col-sm-12\">";
 foreach($catresponse as $category){
-    echo "<div class=\"col-sm-12\">
+   echo "
                         <input type='hidden' name='scenario' value='1'/>
                         <div class=\"box\">
                             <div class=\"box-header with-border\">
@@ -56,7 +57,7 @@ foreach($catresponse as $category){
                         }
 
                     }
-
+echo "</div>";
                     ?>
                     <div class="row">
                         <div class="col-sm-12">
