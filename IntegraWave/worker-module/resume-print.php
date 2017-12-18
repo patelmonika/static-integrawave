@@ -166,6 +166,19 @@ $response=getData('worker',1);
 
 }*/
                           ?>
+                            <?php
+                          echo "Monika's block";
+
+                          foreach ($response['resume_fields'] as $rf ){
+                              foreach ($rf['pivot'] as $p){
+                                  foreach ($p as $k => $v){
+                                      echo "\$p[$k] => $v.\n";
+                                  }
+                              }
+                          }
+
+
+                          ?>
 
 
 
