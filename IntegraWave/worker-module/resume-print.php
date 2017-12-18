@@ -158,7 +158,8 @@ $response=getData('worker',1);
                           <?php
 var_dump($response);
 foreach ($response['pivot'] as $pivot){
-    echo $pivot[name];
+    foreach ($pivot as $name)
+    echo $name[name];
 }
 
                           ?>
