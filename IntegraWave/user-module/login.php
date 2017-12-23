@@ -3,14 +3,6 @@
 $title = "Login";
 
 include_once "../Shared/header_main.php";
-require_once "../Private/functions.php";
-
-$requestStatus;
-if(isset($_POST['action'])) {
-    $action = $_POST['action'];
-
-    $requestStatus = requestOperation("login", $_POST);
-}
 
 ?>
 <!-- /.container -->

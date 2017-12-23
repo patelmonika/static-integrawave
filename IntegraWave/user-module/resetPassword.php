@@ -6,10 +6,18 @@ include_once "../Shared/header_main.php";
 require_once "../Private/functions.php";
 
 $requestStatus;
+$error = null;
+$success = null;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
     $requestStatus = requestOperation("register", $_POST);
+
+    if($requestStatus['status'] == "success"){
+        $success = $requestStatus['message'];
+    }else if($requestStatus['status'] == "failed"){
+        $error = $requestStatus['message'];
+    }
 }
 
 ?>
@@ -19,6 +27,17 @@ if(isset($_POST['action'])) {
         <div class="col-md-4 col-md-offset-3">
             <div class="forgotpwd-panel panel panel-default">
                 <div class="panel-body">
+                    <?php
+                    if(!is_null($error)){
+                        echo "<div class=\"alert alert-danger alert-dismissible\">
+                              <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
+                              <h4><i class=\"icon fa fa-ban\"></i> Alert!</h4>$error</div>";
+                    }else if(!is_null($success)){
+                        echo "<div class=\"alert alert-success alert-dismissible\">
+                              <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
+                              <h4><i class=\"icon fa fa-check\"></i> Success!</h4>$success</div>";
+                    }
+                    ?>
                     <div class="text-center">
                         <h3><i class="fa fa-lock fa-4x"></i></h3>
                         <h2 class="text-center">Forgot Password?</h2>
