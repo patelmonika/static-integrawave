@@ -16,6 +16,8 @@ if(isset($_POST['action'])) {
     $userResponse = json_decode($requestStatus, true);
 
     if(isset($userResponse['email'])){
+	    $expire = time() + 3600;
+	    setcookie($userResponse['email'],$userResponse['role_id'],$expire->getTimestamp(),"/","localhost",false,true);
         session_start();
         $_SESSION['email']=$userResponse['email'];
         $_SESSION['role']=$userResponse['role_id'];
