@@ -10,6 +10,7 @@ if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
     $requestStatus = requestOperation("register", $_POST);
+    var_dump($requestStatus);
 }
 
 ?>
@@ -24,7 +25,7 @@ if(isset($_POST['action'])) {
                         <h2 class="text-center">Update Password</h2>
                         <p>You can update your password here.</p>
                         <div class="panel-body">
-                            <form class="form" method="POST">
+                            <form class="form" method="POST" autocomplete="off">
                                 <fieldset>
                                     <div class="form-group">
                                         <div class="input-group">

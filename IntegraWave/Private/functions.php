@@ -8,7 +8,7 @@ function url_for($script_path){
 }
 
 function getPreUrl(){
-    $preUrl = "http://localhost:8090/";
+    $preUrl = "http://localhost/";
     return $preUrl;
 }
 
@@ -60,9 +60,6 @@ function requestOperation($controller, $data){
 }
 
 function insertData($controller, $data){
-
-	$url = "http://localhost/php-integrawave/web-api/public/$controller";
-	$url = "http://php-integrawave.azurewebsites.net/$controller";
     $url = getPreUrl() . "php-integrawave/web-api/public/$controller";
     $data_str = json_encode($data);
 
@@ -79,8 +76,6 @@ function insertData($controller, $data){
 }
 
 function deleteData($controller,$param){
-	$url = "http://localhost/php-integrawave/web-api/public/$controller/$param";
-    $url = "http://php-integrawave.azurewebsites.net/$controller/$param";
     $url = "php-integrawave/web-api/public/$controller/$param";
 
     $ch = curl_init();
@@ -95,8 +90,6 @@ function deleteData($controller,$param){
 }
 
 function updateData($controller, $param, $data){
-	$url = "http://localhost/php-integrawave/web-api/public/$controller/$param";
-    $url = "http://php-integrawave.azurewebsites.net/$controller/$param";
     $url = getPreUrl() . "php-integrawave/web-api/public/$controller/$param";
 
     $ch = curl_init();
@@ -112,8 +105,6 @@ function updateData($controller, $param, $data){
 }
 
 function getAll($controller){
-	$url = "http://localhost/php-integrawave/web-api/public/$controller";
-    $url = "http://php-integrawave.azurewebsites.net/$controller";
     $url = getPreUrl() . "php-integrawave/web-api/public/$controller";
 
     $ch = curl_init();
@@ -130,8 +121,6 @@ function getAll($controller){
 }
 
 function getData($controller,$param){
-	$url = "http://localhost/php-integrawave/web-api/public/$controller/$param";
-    $url = "http://php-integrawave.azurewebsites.net/$controller/$param";
     $url = getPreUrl() . "php-integrawave/web-api/public/$controller/$param";
 
     $ch = curl_init();
@@ -148,8 +137,6 @@ function getData($controller,$param){
 }
 
 function getLoginStatus($controller,$data){
-	$url = "http://localhost/php-integrawave/web-api/public/$controller";
-    $url = "http://php-integrawave.azurewebsites.net/$controller";
     $url = getPreUrl() . "php-integrawave/web-api/public/$controller";
     $data_str = json_encode($data);
 
@@ -166,14 +153,12 @@ function getLoginStatus($controller,$data){
 }
 
 function resetPassword($controller, $data){
-	$url = "http://localhost/php-integrawave/web-api/public/$controller";
-	$url = "http://php-integrawave.azurewebsites.net/$controller";
-    $url = getPreUrl() . "php-integrawave/web-api/public/$controller";
+    $url = getPreUrl() . "php-integrawave/web-api/public/$controller/";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
     curl_setopt($ch, CURLOPT_HEADER, false);
-    curl_setopt($ch, CURLOPT_URL, $url . http_build_query($data));
+    curl_setopt($ch, CURLOPT_URL, $url . $data['email']);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $response = curl_exec($ch);
     curl_close($ch);
@@ -182,17 +167,16 @@ function resetPassword($controller, $data){
 }
 
 function updatePassword($controller, $data){
-	$url = "http://localhost/php-integrawave/web-api/public/$controller";
-	$url = "http://php-integrawave.azurewebsites.net/$controller";
     $url = getPreUrl() . "php-integrawave/web-api/public/$controller";
 
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
-    curl_setopt($ch, CURLOPT_HEADER, false);
-    curl_setopt($ch, CURLOPT_URL, $url . http_build_query($data));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $response = curl_exec($ch);
-    curl_close($ch);
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+	curl_setopt($ch, CURLOPT_HEADER, false);
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+	$response = curl_exec($ch);
+	curl_close($ch);
 
     return $response;
 }
