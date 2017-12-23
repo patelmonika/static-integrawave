@@ -8,7 +8,7 @@ function url_for($script_path){
 }
 
 function getPreUrl(){
-    $preUrl = "http://localhost/";
+    $preUrl = "http://localhost/php-integrawave/web-api/public/";
     return $preUrl;
 }
 
@@ -60,7 +60,7 @@ function requestOperation($controller, $data){
 }
 
 function insertData($controller, $data){
-    $url = getPreUrl() . "php-integrawave/web-api/public/$controller";
+    $url = getPreUrl() . "$controller";
     $data_str = json_encode($data);
 
     $ch = curl_init();
@@ -76,7 +76,7 @@ function insertData($controller, $data){
 }
 
 function deleteData($controller,$param){
-    $url = "php-integrawave/web-api/public/$controller/$param";
+    $url = getPreUrl() . "$controller/$param";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
@@ -90,7 +90,7 @@ function deleteData($controller,$param){
 }
 
 function updateData($controller, $param, $data){
-    $url = getPreUrl() . "php-integrawave/web-api/public/$controller/$param";
+    $url = getPreUrl() . "$controller/$param";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
@@ -105,7 +105,7 @@ function updateData($controller, $param, $data){
 }
 
 function getAll($controller){
-    $url = getPreUrl() . "php-integrawave/web-api/public/$controller";
+    $url = getPreUrl() . "$controller";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -121,7 +121,7 @@ function getAll($controller){
 }
 
 function getData($controller,$param){
-    $url = getPreUrl() . "php-integrawave/web-api/public/$controller/$param";
+    $url = getPreUrl() . "$controller/$param";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -137,7 +137,7 @@ function getData($controller,$param){
 }
 
 function getLoginStatus($controller,$data){
-    $url = getPreUrl() . "php-integrawave/web-api/public/$controller";
+    $url = getPreUrl() . "$controller";
     $data_str = json_encode($data);
 
     $ch = curl_init();
@@ -153,7 +153,7 @@ function getLoginStatus($controller,$data){
 }
 
 function resetPassword($controller, $data){
-    $url = getPreUrl() . "php-integrawave/web-api/public/$controller/";
+    $url = getPreUrl() . "$controller/";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
@@ -167,7 +167,7 @@ function resetPassword($controller, $data){
 }
 
 function updatePassword($controller, $data){
-    $url = getPreUrl() . "php-integrawave/web-api/public/$controller";
+    $url = getPreUrl() . "$controller";
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
