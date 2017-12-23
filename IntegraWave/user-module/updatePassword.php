@@ -5,6 +5,13 @@ $title = "Update Password";
 include_once "../Shared/header_main.php";
 require_once "../Private/functions.php";
 
+$requestStatus;
+if(isset($_POST['action'])) {
+    $action = $_POST['action'];
+
+    $requestStatus = requestOperation("register", $_POST);
+}
+
 ?>
 <!-- /.container -->
 <div class="container">
@@ -38,7 +45,7 @@ require_once "../Private/functions.php";
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-lg btn-primary btn-block" name="action" value="reset">Update</button>
+                                        <button type="submit" class="btn btn-lg btn-primary btn-block" name="action" value="updatePassword">Update</button>
                                         <button type="button" class="btn btn-default btn-block" onclick="location.href = '../index.php'" >Cancel</button>
                                     </div>
                                 </fieldset>

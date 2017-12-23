@@ -39,6 +39,14 @@ function requestOperation($controller, $data){
             unset($data['action']);
             $requestStatus = getLoginStatus($controller,$data);
             break;
+        case "reset":
+            unset($data['action']);
+            $requestStatus = resetPassword($controller, $data);
+            break;
+        case "updatePassword":
+            unset($data['action']);
+            $requestStatus = updatePassword($controller, $data);
+            break;
         default:
             break;
     }
@@ -48,7 +56,7 @@ function requestOperation($controller, $data){
 
 function insertData($controller, $data){
 
-    $url = "http://php-integrawave.azurewebsites.net/$controller";
+    $url = "http://localhost:8090/php-integrawave/web-api/public/$controller";
     $data_str = json_encode($data);
 
     $ch = curl_init();
@@ -65,7 +73,7 @@ function insertData($controller, $data){
 
 function deleteData($controller,$param){
 
-    $url = "http://php-integrawave.azurewebsites.net/$controller/$param";
+    $url = "http://localhost:8090/php-integrawave/web-api/public/$controller/$param";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
@@ -79,7 +87,7 @@ function deleteData($controller,$param){
 }
 
 function updateData($controller, $param, $data){
-    $url = "http://php-integrawave.azurewebsites.net/$controller/$param";
+    $url = "http://localhost:8090/php-integrawave/web-api/public/$controller/$param";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
@@ -94,7 +102,7 @@ function updateData($controller, $param, $data){
 }
 
 function getAll($controller){
-    $url = "http://php-integrawave.azurewebsites.net/$controller";
+    $url = "http://localhost:8090/php-integrawave/web-api/public/$controller";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -110,7 +118,7 @@ function getAll($controller){
 }
 
 function getData($controller,$param){
-    $url = "http://php-integrawave.azurewebsites.net/$controller/$param";
+    $url = "http://localhost:8090/php-integrawave/web-api/public/$controller/$param";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -126,7 +134,7 @@ function getData($controller,$param){
 }
 
 function getLoginStatus($controller,$data){
-    $url = "http://php-integrawave.azurewebsites.net/$controller";
+    $url = "http://localhost:8090/php-integrawave/web-api/public/$controller";
     $data_str = json_encode($data);
 
     $ch = curl_init();
@@ -135,6 +143,34 @@ function getLoginStatus($controller,$data){
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data_str);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    return $response;
+}
+
+function resetPassword($controller, $data){
+    $url = "http://localhost:8090/php-integrawave/web-api/public/$controller";
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+    curl_setopt($ch, CURLOPT_HEADER, false);
+    curl_setopt($ch, CURLOPT_URL, $url . http_build_query($data));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    return $response;
+}
+
+function updatePassword($controller, $data){
+    $url = "http://localhost:8090/php-integrawave/web-api/public/$controller";
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+    curl_setopt($ch, CURLOPT_HEADER, false);
+    curl_setopt($ch, CURLOPT_URL, $url . http_build_query($data));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $response = curl_exec($ch);
     curl_close($ch);
 
