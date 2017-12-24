@@ -66,6 +66,7 @@ if(isset($_POST['action'])) {
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-lg btn-primary btn-block" name="action" value="updatePassword">Update</button>
                                         <button type="button" class="btn btn-default btn-block" onclick="location.href = '../index.php'" >Cancel</button>
+                                        <button type="button" class="btn btn-link btn-grey" onclick="location.href = '../index.php'" >Back to Login</button>
                                     </div>
                                 </fieldset>
                             </form>

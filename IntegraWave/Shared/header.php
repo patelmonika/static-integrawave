@@ -14,9 +14,15 @@ require_once "../Private/initialize.php";
 
 if(isset($_POST['action'])) {
     if($_POST['action'] == 'logout'){
-        session_unset();
-        session_destroy();
-        header("Location: ../user-module/logout.php");
+	    session_unset();
+	    session_destroy();
+	    unset($_COOKIE["email"]);
+	    unset($_COOKIE["role"]);
+	    unset($_COOKIE["name"]);
+	    setcookie("email", "", time()-3600, "/","localhost",false,true);
+	    setcookie("role", "", time()-3600, "/","localhost",false,true);
+	    setcookie("name", "", time()-3600, "/","localhost",false,true);
+	    header("Location: ../user-module/logout.php");
     }
 }
 

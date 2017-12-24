@@ -8,6 +8,20 @@ require_once "Private/functions.php";
 $requestStatus;
 $error=null;
 $success = null;
+
+if(isset($_COOKIE['email'])) {
+	session_start();
+	$_SESSION['email']=$_COOKIE['email'];
+	$_SESSION['role']=$_COOKIE['role_id'];
+	$_SESSION['name']=$_COOKIE['name'];
+	header("Location: home/dashboard.php");
+}
+
+session_start();
+if(isset($_SESSION['email'])){
+	header("Location: home/dashboard.php");
+}
+
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
@@ -16,13 +30,16 @@ if(isset($_POST['action'])) {
     $userResponse = json_decode($requestStatus, true);
 
     if(isset($userResponse['email'])){
-	    $expire = time() + 3600;
-	    setcookie($userResponse['email'],$userResponse['role_id'],$expire->getTimestamp(),"/","localhost",false,true);
-        session_start();
-        $_SESSION['email']=$userResponse['email'];
-        $_SESSION['role']=$userResponse['role_id'];
-        $_SESSION['name']=$userResponse['name'];
-        header("Location: home/dashboard.php");
+	    session_start();
+	    $_SESSION['email']=$userResponse['email'];
+	    $_SESSION['role']=$userResponse['role_id'];
+	    $_SESSION['name']=$userResponse['name'];
+	    if ($_POST['remember']){
+		    setcookie("email", $userResponse['email'], time()+3600, "/","localhost",false,true);
+		    setcookie("role", $userResponse['role_id'], time()+3600, "/","localhost",false,true);
+		    setcookie("name", $userResponse['name'], time()+3600, "/","localhost",false,true);
+	    }
+	    header("Location: home/dashboard.php");
     }else{
         $error = $userResponse['message'];
     }
