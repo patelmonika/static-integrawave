@@ -6,44 +6,44 @@ require_once "Private/initialize.php";
 require_once "Private/functions.php";
 
 $requestStatus;
-$error=null;
+$error = null;
 $success = null;
 
-if(isset($_COOKIE['email'])) {
-	session_start();
-	$_SESSION['email']=$_COOKIE['email'];
-	$_SESSION['role']=$_COOKIE['role_id'];
-	$_SESSION['name']=$_COOKIE['name'];
-	header("Location: home/dashboard.php");
+if (isset($_COOKIE['email'])) {
+    session_start();
+    $_SESSION['email'] = $_COOKIE['email'];
+    $_SESSION['role'] = $_COOKIE['role_id'];
+    $_SESSION['name'] = $_COOKIE['name'];
+    header("Location: home/dashboard.php");
 }
 
 session_start();
-if(isset($_SESSION['email'])){
-	header("Location: home/dashboard.php");
+if (isset($_SESSION['email'])) {
+    header("Location: home/dashboard.php");
 }
 
-if(isset($_POST['action'])) {
+if (isset($_POST['action'])) {
     $action = $_POST['action'];
 
     $requestStatus = requestOperation("login", $_POST);
 
     $userResponse = json_decode($requestStatus, true);
 
-    if(isset($userResponse['email'])){
-	    session_start();
-	    $_SESSION['email']=$userResponse['email'];
-	    $_SESSION['role']=$userResponse['role_id'];
-	    $_SESSION['name']=$userResponse['name'];
-	    if ($_POST['remember']){
-		    setcookie("email", $userResponse['email'], time()+3600, "/","localhost",false,true);
-		    setcookie("role", $userResponse['role_id'], time()+3600, "/","localhost",false,true);
-		    setcookie("name", $userResponse['name'], time()+3600, "/","localhost",false,true);
-	    }
-	    header("Location: home/dashboard.php");
-    }else{
+    if (isset($userResponse['email'])) {
+        session_start();
+        $_SESSION['email'] = $userResponse['email'];
+        $_SESSION['role'] = $userResponse['role_id'];
+        $_SESSION['name'] = $userResponse['name'];
+        if ($_POST['remember']) {
+            setcookie("email", $userResponse['email'], time() + 3600, "/", "localhost", false, true);
+            setcookie("role", $userResponse['role_id'], time() + 3600, "/", "localhost", false, true);
+            setcookie("name", $userResponse['name'], time() + 3600, "/", "localhost", false, true);
+        }
+        header("Location: home/dashboard.php");
+    } else {
         $error = $userResponse['message'];
     }
-}else if(isset($_GET['status'])){
+} else if (isset($_GET['status'])) {
     $success = $_GET['status'];
 }
 
@@ -80,7 +80,7 @@ if(isset($_POST['action'])) {
 
 </head>
 <body class="hold-transition skin-black ">
-<div class="wrapper">
+<main class="wrapper">
     <!-- Main Header -->
     <header class="main-header">
         <!-- Logo -->
@@ -93,91 +93,96 @@ if(isset($_POST['action'])) {
         <!-- Header Navbar -->
 
     </header>
-<!-- /.container -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 col-md-offset-3">
-            <div class="login-panel panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Sign In</h3>
-                    <div class="right-link"><a href="<?php echo url_for('user-module/resetPassword.php'); ?>">Forgot password?</a></div>
-                </div>
-                <div class="panel-body">
-                    <?php
-                    if(!is_null($success)){
-                        echo "<div class=\"alert alert-success alert-dismissible\">
+    <!-- /.container -->
+    <div class="container">
+
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Sign In</h3>
+                        <div class="right-link"><a href="<?php echo url_for('user-module/resetPassword.php'); ?>">Forgot
+                                password?</a></div>
+                    </div>
+                    <div class="panel-body">
+                        <?php
+                        if (!is_null($success)) {
+                            echo "<div class=\"alert alert-success alert-dismissible\">
                               <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
                               <h4><i class=\"icon fa fa-check\"></i> Success!</h4>$success</div>";
-                    }
-                    ?>
+                        }
+                        ?>
 
-                    <?php
-                        if(!is_null($error)){
+                        <?php
+                        if (!is_null($error)) {
                             echo "<div class=\"alert alert-danger alert-dismissible\">
                               <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
                               <h4><i class=\"icon fa fa-ban\"></i> Alert!</h4>$error</div>";
                         }
-                    ?>
+                        ?>
 
-                    <form role="form" method="post">
-                        <fieldset>
-                            <div class="form-group ">
-                                <label for="username" class="required">Username</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="email" placeholder="Registered Email" autofocus required>
+                        <form role="form" method="post">
+                            <fieldset>
+                                <div class="form-group ">
+                                    <label for="username" class="required">Username</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user fa-lg"
+                                                                           aria-hidden="true"></i></span>
+                                        <input type="text" class="form-control" name="email"
+                                               placeholder="Registered Email" autofocus required>
+                                    </div>
+                                    <!-- <p class="error-message">Please enter Username.</p>-->
                                 </div>
-                                <!-- <p class="error-message">Please enter Username.</p>-->
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="required">Password</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <input type="password" class="form-control" name="password"  placeholder="Password" required>
+                                <div class="form-group">
+                                    <label for="password" class="required">Password</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock fa-lg"
+                                                                           aria-hidden="true"></i></span>
+                                        <input type="password" class="form-control" name="password"
+                                               placeholder="Password" required>
+                                    </div>
                                 </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                    </label>
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <button href="index.html" class="btn btn-primary btn-block" name="action" value="login">
+                                    Login
+                                </button>
+                                <button href="index.html" class="btn btn-default btn-block">Cancel</button>
+                            </fieldset>
+                        </form>
+                        <div class="col-md-12">
+                            <div class="sign-up">
+                                <a class="btn btn-block btn-social btn-xs btn-facebook">
+                                    <span class="fa fa-facebook"></span> Sign in with Facebook
+                                </a>
+
+                                <a class="btn btn-block btn-social btn-xs btn-google">
+                                    <span class="fa fa-google"></span> Sign in with Google
+                                </a>
+
+                                <a class="btn btn-block btn-social btn-xs btn-github">
+                                    <span class="fa fa-github"></span> Sign in with GitHub
+                                </a>
+
+                                <a class="btn btn-block btn-social btn-xs btn-linkedin">
+                                    <span class="fa fa-linkedin"></span> Sign in with LinkedIn
+                                </a>
                             </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                </label>
-                            </div>
-                            <!-- Change this to a button or input when using this as a form -->
-                            <button href="index.html" class="btn btn-primary btn-block" name="action" value="login">Login</button>
-                            <button href="index.html" class="btn btn-default btn-block">Cancel</button>
-                        </fieldset>
-                    </form>
-                    <div class="col-md-12">
-                        <div class="sign-up">
-                            <a class="btn btn-block btn-social btn-xs btn-facebook">
-                                <span class="fa fa-facebook"></span> Sign in with Facebook
-                            </a>
-
-                            <a class="btn btn-block btn-social btn-xs btn-google">
-                                <span class="fa fa-google"></span> Sign in with Google
-                            </a>
-
-                            <a class="btn btn-block btn-social btn-xs btn-github">
-                                <span class="fa fa-github"></span> Sign in with GitHub
-                            </a>
-
-                            <a class="btn btn-block btn-social btn-xs btn-linkedin">
-                                <span class="fa fa-linkedin"></span> Sign in with LinkedIn
-                            </a>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="sign-up">
-                            Don't have an account ?
-                            &nbsp;<a href="<?php echo url_for('user-module/register.php'); ?>">
-                                Sign Up Here
-                            </a>
+                        <div class="col-md-12">
+                            <div class="sign-up">
+                                Don't have an account ?
+                                &nbsp;<a href="<?php echo url_for('user-module/register.php'); ?>">
+                                    Sign Up Here
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+
     </div>
-</div>
     <!-- /.footer -->
     <footer class="footer">
         <div class="container">
@@ -197,10 +202,5 @@ if(isset($_POST['action'])) {
          Both of these plugins are recommended to enhance the
          user experience. Slimscroll is required when using the
          fixed layout. -->
-</body>
-</html>
-
-});
-</script>
 </body>
 </html>
