@@ -11,7 +11,7 @@
         <ul class="sidebar-menu">
             <!-- Optionally, you can add icons to the links -->
             <li <?php echo isset($selectedOptionArr) && $selectedOptionArr[0] == 'Home' ? "class='active'" : '' ?> >
-                <a href="<?php echo url_for('/dashboard.php'); ?>"><i class="fa fa-dashboard"></i> <span>Home</span></a>
+                <a href="<?php echo url_for('/home/dashboard.php'); ?>"><i class="fa fa-dashboard"></i> <span>Home</span></a>
             </li>
             <?php
 
@@ -86,7 +86,7 @@
                 </ul>
             </li>
             <li <?php echo isset($selectedOptionArr) && $selectedOptionArr[0] == 'Profile' ? "class='active'" : '' ?> >
-                <a href="<?php echo url_for('/profile.html'); ?>">
+                <a href="<?php echo url_for('/home/profile.php'); ?>">
                     <i class="fa fa-user"></i> <span>Profile</span></a>
             </li>
         </ul>
