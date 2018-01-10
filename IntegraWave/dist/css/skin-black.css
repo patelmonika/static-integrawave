@@ -8,6 +8,67 @@
 .nav .notifications-menu {
     display: none;
 }
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-title {
+    text-align: center;
+}
+.icons > .icon > .fa {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.icon-text {
+    text-align: center;
+    font-size: 16px;
+    text-shadow: 3px 3px 13px rgba(60, 53, 53, 0.5);
+    /*font-weight: lighter;*/
+    transition-delay: 20ms;
+    transition-duration: 200ms;
+    transition-property: all;
+    transition-timing-function: ease;
+}
+.icon-text:hover {
+    color: black;
+    text-shadow: 3px 3px 13px rgba(60, 53, 53, 1);
+    /*font-weight: normal;*/
+}
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.icons > .icon {
+    border: 1px solid #ccc;
+    padding: 30px;
+    width: 25%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+    margin: 20px;
+    box-shadow: 5px 6px 15px rgba(0, 0, 0, 0.4);
+    transition-delay: 20ms;
+    transition-duration: 200ms;
+    transition-property: all;
+    transition-timing-function: ease;
+    cursor: pointer;
+}
+
+.icons > .icon:hover {
+    border: 1px solid #828282;
+    box-shadow: 5px 6px 10px rgba(23, 23, 23, 0.4);
+}
+
+.icons > .icon.disabled:hover {
+    cursor: not-allowed;
+}
 
 /* skin-black navbar */
 .skin-black .main-header {
