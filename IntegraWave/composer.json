@@ -1,0 +1,16 @@
+{
+    "name": "vendor_name/package_name",
+    "description": "description_text",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "author's name",
+            "email": "email@example.com"
+        }
+    ],
+    "require": {
+        "knplabs/knp-snappy": "2.0.x-dev",
+        "wemersonjanuario/wkhtmltox-windows-64bit": "0.12.2.4"
+    }
+}
