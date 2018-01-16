@@ -153,13 +153,22 @@ if(isset($_POST['action'])) {
                             <?php
 
                             $response = getAll("course");
+                            $responseSemester = getAll("semester");
                             $returnResponse = "";
+                            $returnResponseSemester = "";
 
                             if(count($response)>0) {
                                 foreach ($response as $key => $value) {
+                                    foreach ($responseSemester as $key => $valueSemester) {
+                                        if ($value['semester_id'] == $valueSemester['id']) {
+                                            $returnResponseSemester =$valueSemester['name'] ;
+                                        }
+                                    }
                                     $returnResponse = $returnResponse . "<tr>";
                                     $returnResponse = $returnResponse . "<td name='id'>" . $value['id'] . "</td>";
                                     $returnResponse = $returnResponse . "<td>" . $value['name'] . "</td>";
+                                    $returnResponse = $returnResponse . "<td>" . $returnResponseSemester . "</td>";
+//                                    $returnResponse = $returnResponse . "<td>" . $value['semester_id'] . "</td>";
                                     $returnResponse = $returnResponse . "<td>";
                                     $returnResponse = $returnResponse . "<a href='#' data-met-name='edit' data-met-id=" . $value['id'] . " name='edit' onclick='setRequestParam(this);'>Edit</a> / ";
                                     $returnResponse = $returnResponse . "<a href='#' data-toggle='modal' data-target='#delete' data-met-id=" . $value['id'] . " onclick='setIdOnDelete(this);'>Delete</a>";
