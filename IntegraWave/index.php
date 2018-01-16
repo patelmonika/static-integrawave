@@ -34,6 +34,7 @@ if (isset($_POST['action'])) {
         $_SESSION['email'] = $userResponse['email'];
         $_SESSION['role'] = $userResponse['role_id'];
         $_SESSION['name'] = $userResponse['name'];
+        $_SESSION['userId'] = $userResponse['id'];
         if ($_POST['remember']) {
             setcookie("email", $userResponse['email'], time() + 3600, "/", "localhost", false, true);
             setcookie("role", $userResponse['role_id'], time() + 3600, "/", "localhost", false, true);

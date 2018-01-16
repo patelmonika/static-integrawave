@@ -8,11 +8,17 @@ require_once "../Private/functions.php";
 include_once "../Shared/header.php";
 
 include_once "../Shared/left-navigation.php";
+
+$userId = "";
+if(isset($_SESSION['email'])){
+    $userId = $_SESSION['userId'];
+}
+
 $requestStatus;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
 
-    $requestStatus = requestOperation("semester", $_POST);
+    $requestStatus = requestOperation("course", $_POST);
 }
 ?>
 
@@ -39,37 +45,6 @@ if(isset($_POST['action'])) {
                 <form class="form-horizontal">
                     <div class="box-body">
 
-                        <table id="example2" class="table table-bordered table-striped table-responsive">
-                            <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>Action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-
-                            $response = getAll("semester");
-                            $returnResponse = "";
-
-                            if(count($response)>0) {
-                                foreach ($response as $key => $value) {
-                                    $returnResponse = $returnResponse . "<tr>";
-                                    $returnResponse = $returnResponse . "<td name='id'>" . $value['id'] . "</td>";
-                                    $returnResponse = $returnResponse . "<td>" . $value['name'] . "</td>";
-                                    $returnResponse = $returnResponse . "<td>";
-                                    $returnResponse = $returnResponse . "<a href='#' data-met-name='edit' data-met-id=" . $value['id'] . " name='edit' onclick='setRequestParam(this);'>Edit</a> / ";
-                                    $returnResponse = $returnResponse . "<a href='#' data-toggle='modal' data-target='#delete' data-met-id=" . $value['id'] . " onclick='setIdOnDelete(this);'>Delete</a>";
-                                    $returnResponse = $returnResponse . "</td></tr>";
-                                }
-                            }
-
-                            echo $returnResponse;
-
-                            ?>
-                        </table>
-
                         <div class="box-body">
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Semester</label>
@@ -83,6 +58,38 @@ if(isset($_POST['action'])) {
                             <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
                         </div>
                     </div>
+
+                    <table id="example2" class="table table-bordered table-striped table-responsive">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+
+                        $response = getAll("semester");
+                        $returnResponse = "";
+
+                        if(count($response)>0) {
+                            foreach ($response as $key => $value) {
+                                $returnResponse = $returnResponse . "<tr>";
+                                $returnResponse = $returnResponse . "<td name='id'>" . $value['id'] . "</td>";
+                                $returnResponse = $returnResponse . "<td>" . $value['name'] . "</td>";
+                                $returnResponse = $returnResponse . "<td>";
+                                $returnResponse = $returnResponse . "<a href='#' data-met-name='edit' data-met-id=" . $value['id'] . " name='edit' onclick='setRequestParam(this);'>Edit</a> / ";
+                                $returnResponse = $returnResponse . "<a href='#' data-toggle='modal' data-target='#delete' data-met-id=" . $value['id'] . " onclick='setIdOnDelete(this);'>Delete</a>";
+                                $returnResponse = $returnResponse . "</td></tr>";
+                            }
+                        }
+
+                        echo $returnResponse;
+
+                        ?>
+                    </table>
+
                     <div id="delete" class="modal fade" role="dialog">
                         <div class="modal-dialog">
                             <!-- Modal content-->
@@ -101,29 +108,7 @@ if(isset($_POST['action'])) {
                             </div>
                         </div>
                     </div>
-                    <div id="edit-semester" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Edit Semester</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">Semester</label>
-                                        <div class="col-sm-6">
-                                                <input type="text" name="semester1" id="semester1" value="Semester1" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-link btn-grey" data-dismiss="modal">Cancel</button>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <!-- /.box-body -->
                 </form>
             </div>
@@ -138,8 +123,48 @@ if(isset($_POST['action'])) {
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form class="form-horizontal">
+
                     <div class="box-body">
+
+                        <div class="box-body">
+                            <form class="form-horizontal" method="post">
+                                <input type="hidden" id="hidId" name="id"
+                                       value='<?php if(isset($requestStatus['id'])) echo $requestStatus['id']; ?>' >
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Select Semester</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="semester_id">
+                                            <option value="">Select</option>
+                                            <?php
+                                            $responseOption="";
+                                            $semesters = getAll("semester");
+                                            foreach ($semesters as $responseArray){
+                                                $responseOption = $responseOption . "<option value='$responseArray[id]'>$responseArray[name]</option>";
+                                            }
+
+                                            echo $responseOption;
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Course</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="course" id="course" placeholder="Add New Course Here" class="form-control" value='<?php if(isset($requestStatus['name'])) echo $requestStatus['name'];?>'>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <button class="btn btn-primary pull-right" type="submit"
+                                        value='<?php echo isset($requestStatus['id']) ? 'update' : 'add' ?>' name="action">
+                                    <?php echo isset($requestStatus['id']) ? 'Update' : 'Add' ?></button>
+                                <?php echo isset($requestStatus['id']) ?
+                                    "<button class='btn btn-link btn-grey pull-right' type='submit' name='reset'>Cancel</button>" :
+                                    "<button class='btn btn-link btn-grey pull-right' type='reset'>Cancel</button>" ?>
+
+                            </div>
+                        </form>
+
                         <table id="courseTable" class="table table-bordered table-striped table-responsive">
                             <thead>
                             <tr>
@@ -180,64 +205,31 @@ if(isset($_POST['action'])) {
 
                             ?>
                         </table>
-                        <div class="box-body">
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Select Semester</label>
-                                <div class="col-sm-9">
-                                    <select class="form-control">
-                                        <option>Sem 1</option>
-                                        <option>Sem 2</option>
-                                        <option>Sem 3</option>
-                                        <option>Sem 4</option>
-                                        <option>Sem 5</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Course</label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="course" id="sem" placeholder="Add New Course Here" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box-footer">
-                            <button class="btn btn-primary pull-right" type="submit">Add</button>
-                            <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
-                        </div>
+                    </div>
 
-                        <div class="box-body">
-                    </div>
-                    </div>
-                    <div id="edit-course" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Edit Course</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">Semester</label>
-                                        <div class="col-sm-6">
-                                            <input type="text" name="course" id="course" value="Course1" class="form-control">
-                                        </div>
+
+                    <!-- Modal -->
+                    <form class="form-horizontal" method="POST">
+                        <div id="delete" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Delete Course</h4>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">Course</label>
-                                        <div class="col-sm-6">
-                                            <input type="text" name="course" id="csem" value="Semester1" class="form-control">
-                                        </div>
+                                    <div class="modal-body">
+                                        <p>Are you sure you want to delete this Course?</p>
                                     </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-link btn-grey" data-dismiss="modal">Cancel</button>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
+                                    <input type="hidden" id="hidElementId" name="id"/>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-link btn-grey" data-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-primary" name="action" value="delete">OK</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
             </div>
             <!-- /.box -->
         </div>
@@ -256,36 +248,7 @@ if(isset($_POST['action'])) {
                 <!-- form start -->
                 <form class="form-horizontal">
                     <div class="box-body">
-                    <table id="categories" class="table table-bordered table-striped table-responsive">
-                        <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php
 
-                        $response = getAll("semester");
-                        $returnResponse = "";
-
-                        if(count($response)>0) {
-                            foreach ($response as $key => $value) {
-                                $returnResponse = $returnResponse . "<tr>";
-                                $returnResponse = $returnResponse . "<td name='id'>" . $value['id'] . "</td>";
-                                $returnResponse = $returnResponse . "<td>" . $value['name'] . "</td>";
-                                $returnResponse = $returnResponse . "<td>";
-                                $returnResponse = $returnResponse . "<a href='#' data-met-name='edit' data-met-id=" . $value['id'] . " name='edit' onclick='setRequestParam(this);'>Edit</a> / ";
-                                $returnResponse = $returnResponse . "<a href='#' data-toggle='modal' data-target='#delete' data-met-id=" . $value['id'] . " onclick='setIdOnDelete(this);'>Delete</a>";
-                                $returnResponse = $returnResponse . "</td></tr>";
-                            }
-                        }
-
-                        echo $returnResponse;
-
-                        ?>
-                    </table>
                     <div class="box-body">
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Select Semester</label>
@@ -320,6 +283,37 @@ if(isset($_POST['action'])) {
                         <button class="btn btn-primary pull-right" type="submit">Add</button>
                         <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
                     </div>
+                    <table id="categories" class="table table-bordered table-striped table-responsive">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+
+                        $response = getAll("semester");
+                        $returnResponse = "";
+
+                        if(count($response)>0) {
+                            foreach ($response as $key => $value) {
+                                $returnResponse = $returnResponse . "<tr>";
+                                $returnResponse = $returnResponse . "<td name='id'>" . $value['id'] . "</td>";
+                                $returnResponse = $returnResponse . "<td>" . $value['name'] . "</td>";
+                                $returnResponse = $returnResponse . "<td>";
+                                $returnResponse = $returnResponse . "<a href='#' data-met-name='edit' data-met-id=" . $value['id'] . " name='edit' onclick='setRequestParam(this);'>Edit</a> / ";
+                                $returnResponse = $returnResponse . "<a href='#' data-toggle='modal' data-target='#delete' data-met-id=" . $value['id'] . " onclick='setIdOnDelete(this);'>Delete</a>";
+                                $returnResponse = $returnResponse . "</td></tr>";
+                            }
+                        }
+
+                        echo $returnResponse;
+
+                        ?>
+                    </table>
+
                     </div>
                     <div id="edit-category" class="modal fade" role="dialog">
                         <div class="modal-dialog">
@@ -372,48 +366,7 @@ if(isset($_POST['action'])) {
                 <!-- form start -->
                 <form class="form-horizontal">
                     <div class="box-body">
-                    <table id="weighting" class="table table-bordered table-striped table-responsive">
-                        <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Course</th>
-                            <th>Category</th>
-                            <th>Activity</th>
-                            <th>Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>PHP</td>
-                            <td>Lab</td>
-                            <td>Lab1</td>
-                            <td>
-                                <a href="#" data-toggle="modal" data-target="#edit-weight">Edit</a>/
-                                <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>ASP</td>
-                            <td>Quiz</td>
-                            <td>Quiz1</td>
-                            <td>
-                                <a href="#" data-toggle="modal" data-target="#edit-weight">Edit</a>/
-                                <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Project Management</td>
-                            <td>Lab</td>
-                            <td>Lab2</td>
-                            <td>
-                                <a href="#" data-toggle="modal" data-target="#edit-weight">Edit</a>/
-                                <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                            </td>
-                        </tr>
-                    </table>
+
                     <div class="box-body">
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Select Course</label>
@@ -448,6 +401,49 @@ if(isset($_POST['action'])) {
                         <button class="btn btn-primary pull-right" type="submit">Add</button>
                         <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
                     </div>
+
+                        <table id="weighting" class="table table-bordered table-striped table-responsive">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Course</th>
+                                <th>Category</th>
+                                <th>Activity</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>PHP</td>
+                                <td>Lab</td>
+                                <td>Lab1</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#edit-weight">Edit</a>/
+                                    <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>ASP</td>
+                                <td>Quiz</td>
+                                <td>Quiz1</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#edit-weight">Edit</a>/
+                                    <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Project Management</td>
+                                <td>Lab</td>
+                                <td>Lab2</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#edit-weight">Edit</a>/
+                                    <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
+                                </td>
+                            </tr>
+                        </table>
 
                     </div>
                     <div id="edit-weight" class="modal fade" role="dialog">
@@ -492,6 +488,7 @@ if(isset($_POST['action'])) {
         <!-- Default to the left -->
     </div>
 </div>
+    <input type="hidden" name="student_id" value='<?php echo $userId; ?>' />
 </div>
 <!-- ./wrapper -->
 
