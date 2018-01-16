@@ -9,9 +9,11 @@ include_once "../Shared/header.php";
 
 include_once "../Shared/left-navigation.php";
 
-$userId = "";
+$studentId = "";
 if(isset($_SESSION['email'])){
     $userId = $_SESSION['userId'];
+
+    getData('student');
 }
 
 $requestStatus;
@@ -21,8 +23,6 @@ if(isset($_POST['action'])) {
     $requestStatus = requestOperation("course", $_POST);
 }
 ?>
-
-
 
 <div class="wrapper">
 
@@ -42,10 +42,11 @@ if(isset($_POST['action'])) {
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form class="form-horizontal">
-                    <div class="box-body">
 
+                    <div class="box-body">
+                        <form class="form-horizontal" method="post">
                         <div class="box-body">
+
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Semester</label>
                                 <div class="col-sm-6">
@@ -57,6 +58,7 @@ if(isset($_POST['action'])) {
                             <button class="btn btn-primary pull-right" type="submit">Add</button>
                             <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
                         </div>
+                        </form>
                     </div>
 
                     <table id="example2" class="table table-bordered table-striped table-responsive">
@@ -150,9 +152,10 @@ if(isset($_POST['action'])) {
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Course</label>
                                     <div class="col-sm-9">
-                                        <input type="text" name="course" id="course" placeholder="Add New Course Here" class="form-control" value='<?php if(isset($requestStatus['name'])) echo $requestStatus['name'];?>'>
+                                        <input type="text" name="name" id="course" placeholder="Add New Course Here" class="form-control" value='<?php if(isset($requestStatus['name'])) echo $requestStatus['name'];?>'>
                                     </div>
                                 </div>
+                                <input type="hidden" name="student_id" value='<?php echo $userId; ?>' />
                             </div>
                             <div class="box-footer">
                                 <button class="btn btn-primary pull-right" type="submit"
@@ -488,7 +491,7 @@ if(isset($_POST['action'])) {
         <!-- Default to the left -->
     </div>
 </div>
-    <input type="hidden" name="student_id" value='<?php echo $userId; ?>' />
+
 </div>
 <!-- ./wrapper -->
 
