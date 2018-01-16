@@ -8,6 +8,12 @@ require_once "../Private/functions.php";
 include_once "../Shared/header.php";
 
 include_once "../Shared/left-navigation.php";
+$requestStatus;
+if(isset($_POST['action'])) {
+    $action = $_POST['action'];
+
+    $requestStatus = requestOperation("semester", $_POST);
+}
 ?>
 
 
@@ -42,30 +48,26 @@ include_once "../Shared/left-navigation.php";
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Semester1</td>
-                                <td>
-                                    <a href="#" data-toggle="modal" data-target="#edit-semester">Edit</a>/
-                                    <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Semester2</td>
-                                <td>
-                                    <a href="#" data-toggle="modal" data-target="#edit-semester">Edit</a>/
-                                    <a href="#" data-toggle="modal" data-target="#delete" data-met-error="">Delete</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Semester3</td>
-                                <td>
-                                    <a href="#" data-toggle="modal" data-target="#edit-semester">Edit</a>/
-                                    <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                                </td>
-                            </tr>
+                            <?php
+
+                            $response = getAll("semester");
+                            $returnResponse = "";
+
+                            if(count($response)>0) {
+                                foreach ($response as $key => $value) {
+                                    $returnResponse = $returnResponse . "<tr>";
+                                    $returnResponse = $returnResponse . "<td name='id'>" . $value['id'] . "</td>";
+                                    $returnResponse = $returnResponse . "<td>" . $value['name'] . "</td>";
+                                    $returnResponse = $returnResponse . "<td>";
+                                    $returnResponse = $returnResponse . "<a href='#' data-met-name='edit' data-met-id=" . $value['id'] . " name='edit' onclick='setRequestParam(this);'>Edit</a> / ";
+                                    $returnResponse = $returnResponse . "<a href='#' data-toggle='modal' data-target='#delete' data-met-id=" . $value['id'] . " onclick='setIdOnDelete(this);'>Delete</a>";
+                                    $returnResponse = $returnResponse . "</td></tr>";
+                                }
+                            }
+
+                            echo $returnResponse;
+
+                            ?>
                         </table>
 
                         <div class="box-body">
@@ -148,33 +150,26 @@ include_once "../Shared/left-navigation.php";
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>PHP</td>
-                                <td>Semester2</td>
-                                <td>
-                                    <a href="#" data-toggle="modal" data-target="#edit-course">Edit</a>/
-                                    <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>ASP</td>
-                                <td>Semester2</td>
-                                <td>
-                                    <a href="#" data-toggle="modal" data-target="#edit-course">Edit</a>/
-                                    <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Project Management</td>
-                                <td>Semester1</td>
-                                <td>
-                                    <a href="#" data-toggle="modal" data-target="#edit-course">Edit</a>/
-                                    <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                                </td>
-                            </tr>
+                            <?php
+
+                            $response = getAll("course");
+                            $returnResponse = "";
+
+                            if(count($response)>0) {
+                                foreach ($response as $key => $value) {
+                                    $returnResponse = $returnResponse . "<tr>";
+                                    $returnResponse = $returnResponse . "<td name='id'>" . $value['id'] . "</td>";
+                                    $returnResponse = $returnResponse . "<td>" . $value['name'] . "</td>";
+                                    $returnResponse = $returnResponse . "<td>";
+                                    $returnResponse = $returnResponse . "<a href='#' data-met-name='edit' data-met-id=" . $value['id'] . " name='edit' onclick='setRequestParam(this);'>Edit</a> / ";
+                                    $returnResponse = $returnResponse . "<a href='#' data-toggle='modal' data-target='#delete' data-met-id=" . $value['id'] . " onclick='setIdOnDelete(this);'>Delete</a>";
+                                    $returnResponse = $returnResponse . "</td></tr>";
+                                }
+                            }
+
+                            echo $returnResponse;
+
+                            ?>
                         </table>
                         <div class="box-body">
                             <div class="form-group">
@@ -261,30 +256,26 @@ include_once "../Shared/left-navigation.php";
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>PHP</td>
-                            <td>
-                                <a href="#" data-toggle="modal" data-target="#edit-category">Edit</a>/
-                                <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>ASP</td>
-                            <td>
-                                <a href="#" data-toggle="modal" data-target="#edit-category">Edit</a>/
-                                <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Project Management</td>
-                            <td>
-                                <a href="#" data-toggle="modal" data-target="#edit-category">Edit</a>/
-                                <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                            </td>
-                        </tr>
+                        <?php
+
+                        $response = getAll("semester");
+                        $returnResponse = "";
+
+                        if(count($response)>0) {
+                            foreach ($response as $key => $value) {
+                                $returnResponse = $returnResponse . "<tr>";
+                                $returnResponse = $returnResponse . "<td name='id'>" . $value['id'] . "</td>";
+                                $returnResponse = $returnResponse . "<td>" . $value['name'] . "</td>";
+                                $returnResponse = $returnResponse . "<td>";
+                                $returnResponse = $returnResponse . "<a href='#' data-met-name='edit' data-met-id=" . $value['id'] . " name='edit' onclick='setRequestParam(this);'>Edit</a> / ";
+                                $returnResponse = $returnResponse . "<a href='#' data-toggle='modal' data-target='#delete' data-met-id=" . $value['id'] . " onclick='setIdOnDelete(this);'>Delete</a>";
+                                $returnResponse = $returnResponse . "</td></tr>";
+                            }
+                        }
+
+                        echo $returnResponse;
+
+                        ?>
                     </table>
                     <div class="box-body">
                         <div class="form-group">

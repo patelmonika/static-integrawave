@@ -37,7 +37,7 @@ include_once "../Shared/left-navigation.php";
                         <div class="inner">
                             <img itemprop="image" alt="A sample template of a Traditional resume" src="./resume-templates/traditional resume.png" class="tmpl_preview">
                         </div>
-                        <a href="resume-edit.php" class="small-box-footer">Traditional Resume <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="resume-print.php" class="small-box-footer">Traditional Resume <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
