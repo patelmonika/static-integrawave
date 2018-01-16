@@ -66,9 +66,9 @@ if(isset($_POST['action'])) {
         <!-- Logo -->
         <a href="../home/dashboard.php" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><img src="../dist/img/logo.JPG" alt="logo"/></span>
+            <span class="logo-mini"><img src="../dist/img/logo.png" alt="logo"/></span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><img src="../dist/img/logo.JPG" alt="logo"/>Integra Wave</span>
+            <span class="logo-lg"><img src="../dist/img/logo.png" alt="logo"/>Integra Wave</span>
         </a>
         <!-- Header Navbar -->
         <nav class="navbar navbar-static-top" role="navigation">
