@@ -3,6 +3,20 @@
  * -----------
  */
 
+.results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8BC34A;
+    color: white;
+    font-weight: bold;
+    font-family: monospace;
+    width: 50vw;
+    padding: 50px;
+    margin: auto;
+    font-size: 34px;
+}
+
 .control-label {
     display: flex;
     justify-content: center;

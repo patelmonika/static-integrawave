@@ -44,7 +44,21 @@ if(isset($_POST['action'])) {
 }
 ?>
 
-?>
+<style>
+    .results {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #8BC34A;
+        color: white;
+        font-weight: bold;
+        font-family: monospace;
+        width: 50vw;
+        padding: 50px;
+        margin: auto;
+        font-size: 34px;
+    }
+</style>
 
 <div class="wrapper">
     <div class="content-wrapper">
@@ -63,15 +77,19 @@ if(isset($_POST['action'])) {
             }
             ?>
             </h4>
-            <h3>
-                <?php
-                if ($points == "") {
-                    echo "Calculate your points below.";
-                } else {
-                    echo "You have " . $points;
-                }
-                ?>
-            </h3>
+            <div class="results" style="display: flex; justify-content: center; align-items: center; background-color: black; color: white; width: 50vw; padding: 50px;">
+                <div class="points">
+                    <?php
+                    if ($points == "") {
+                        echo "Calculate your points below.";
+                    } else {
+                        echo "CONGRATS!!! You have " . $points;
+                        echo "<h3>This is enought to immigrate right now. \n Be happy with your immigration process!</h3>";
+                    }
+                    ?>
+                </div>
+            </div>
+
         </section>
     </div>
     <!-- /.content -->
