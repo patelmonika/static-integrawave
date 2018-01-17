@@ -13,7 +13,7 @@ $studentId = "";
 if(isset($_SESSION['email'])){
     $userId = $_SESSION['userId'];
 
-
+   // getData('student');
 }
 
 $requestStatus;
