@@ -3,6 +3,17 @@
  * -----------
  */
 
+.control-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.control-label > input[type="radio"] {
+    margin: 0;
+    margin-left: 10px;
+}
+
 .nav .messages-menu,
 .nav .tasks-menu,
 .nav .notifications-menu {
