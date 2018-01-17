@@ -10,6 +10,12 @@ include_once "../Shared/header.php";
 include_once "../Shared/left-navigation.php";
 $response=getData('worker',1);
 
+function convert(){
+    $pdfWriter = new PDFWriter();
+    $outputFilePath = $pdfWriter->write('resume-print.php');
+    echo $outputFilePath;
+}
+
 ?>
 
     <style>
@@ -136,7 +142,7 @@ $response=getData('worker',1);
                     <!-- small box -->
                     <div class="small-box bg-aqua">
                         <div class="inner small-box-footer">
-                            <p>Download Resume</p>
+                            <p onclick="convert();">Download Resume</p>
                         </div>
                     </div>
                 </div>
@@ -161,7 +167,7 @@ $workerFields = array();
 foreach ($response['resume_fields'] as $field){
     $workerFields[$field["name"]] = $field["pivot"]["value"];
 }
-var_dump($workerFields);
+//var_dump($workerFields);
                           ?>
                           <?php echo $workerFields["name"]?>
 

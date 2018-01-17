@@ -31,7 +31,7 @@ include_once "../Shared/left-navigation.php";
             <!-- Main content -->
             <section class="content">
                 <div class="image-container">
-                    <img src="../../dist/img/logo.png" alt="Image: Integrawave logo">
+                    <img src="../dist/img/logo.png" alt="Image: Integrawave logo">
                 </div>
                 <h1 class="content-title">Welcome to the Immigrant's Helper</h1>
                 <!--                <img src="../../dist/img/integra-logo-transparency.png" alt="Image: Integrawave logo">-->

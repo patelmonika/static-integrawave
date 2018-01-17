@@ -18,6 +18,8 @@
 
     if(strpos($_SERVER['SCRIPT_NAME'], '/IntegraWave') > 0){
         $public_end = strpos($_SERVER['SCRIPT_NAME'], '/IntegraWave') + 12;
+    } else if(strpos($_SERVER['SCRIPT_NAME'], 'static-integrawave') > 0){
+        $public_end = strpos($_SERVER['SCRIPT_NAME'], 'static-integrawave') + 18;
     }
     else{
         $public_end = "";

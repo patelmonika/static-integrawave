@@ -27,11 +27,11 @@ class PdfWriter
 
         $snappy = new Pdf($this->binaryPath);
 
-        $snappy->generateFromHtml(file_get_contents($template), $generatedPdfFilePath);
+        $snappy->generateFromHtml($template, $generatedPdfFilePath);
 
         return $generatedPdfFilePath;
     }
 }
-$pdfWriter = new PDFWriter();
-$outputFilePath = $pdfWriter->write('resume-print-complete.php');
-echo $outputFilePath;
+//$pdfWriter = new PDFWriter();
+//$outputFilePath = $pdfWriter->write('resume-print-complete.php');
+//echo $outputFilePath;

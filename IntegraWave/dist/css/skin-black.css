@@ -3,11 +3,24 @@
  * -----------
  */
 
+.control-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.control-label > input[type="radio"] {
+    margin: 0;
+    margin-left: 10px;
+}
+
 .nav .messages-menu,
 .nav .tasks-menu,
 .nav .notifications-menu {
     display: none;
 }
+
 .image-container {
     display: flex;
     justify-content: center;
@@ -17,6 +30,7 @@
 .content-title {
     text-align: center;
 }
+
 .icons > .icon > .fa {
     font-size: 36px;
     margin-bottom: 20px;
@@ -27,16 +41,17 @@
     font-size: 16px;
     text-shadow: 3px 3px 13px rgba(60, 53, 53, 0.5);
     /*font-weight: lighter;*/
-    transition-delay: 20ms;
-    transition-duration: 200ms;
-    transition-property: all;
-    transition-timing-function: ease;
+    /*transition-delay: 20ms;*/
+    /*transition-duration: 200ms;*/
+    /*transition-property: all;*/
+    /*transition-timing-function: ease;*/
 }
-.icon-text:hover {
-    color: black;
-    text-shadow: 3px 3px 13px rgba(60, 53, 53, 1);
-    /*font-weight: normal;*/
-}
+
+/*.icon-text:hover {*/
+/*color: black;*/
+/*text-shadow: 3px 3px 13px rgba(60, 53, 53, 1);*/
+/*font-weight: normal;*/
+/*}*/
 .icons {
     display: flex;
     flex-wrap: wrap;
@@ -44,6 +59,8 @@
 }
 
 .icons > .icon {
+    background-color: #18bc9c;
+    color: white;
     border: 1px solid #ccc;
     padding: 30px;
     width: 25%;
@@ -64,6 +81,8 @@
 .icons > .icon:hover {
     border: 1px solid #828282;
     box-shadow: 5px 6px 10px rgba(23, 23, 23, 0.4);
+    background-color: rgba(210, 6, 6, 0.9);
+    color: white;
 }
 
 .icons > .icon.disabled:hover {
@@ -213,9 +232,9 @@
     background: #2c3b41;
 }
 
-.skin-black .sidebar a {
-    color: #b8c7ce;
-}
+/*.skin-black .sidebar a {*/
+/*color: #b8c7ce;*/
+/*}*/
 
 .skin-black .sidebar a:hover {
     text-decoration: none;
@@ -277,4 +296,91 @@
 .skin-black .pace .pace-activity {
     border-top-color: #222;
     border-left-color: #222;
+}
+
+/* FOR RESUME */
+.resume-container {
+    background-color: gray;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resume-page {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 40px;
+    border: 2px solid dimgray;
+    background-color: whitesmoke;
+}
+
+.subtitle {
+
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 20px;
+
+}
+
+.name {
+    text-align: center;
+}
+
+.candidate-name {
+    font-weight: bold;
+    text-transform: capitalize;
+    color: black;
+    text-align: center;
+}
+
+.category {
+    font-weight: bold;
+}
+
+.description {
+    text-align: justify;
+}
+
+.resume-container {
+    background-color: gray;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resume-page {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 40px;
+    border: 2px solid dimgray;
+    background-color: whitesmoke;
+}
+
+.subtitle {
+
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 20px;
+
+}
+
+.name {
+    text-align: center;
+}
+
+.candidate-name {
+    font-weight: bold;
+    text-transform: capitalize;
+    color: black;
+    text-align: center;
+}
+
+.category {
+    font-weight: bold;
+}
+
+.description {
+    text-align: justify;
 }

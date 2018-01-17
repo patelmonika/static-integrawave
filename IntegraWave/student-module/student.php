@@ -10,10 +10,9 @@ include_once "../Shared/header.php";
 include_once "../Shared/left-navigation.php";
 
 $studentId = "";
+$userId="";
 if(isset($_SESSION['email'])){
     $userId = $_SESSION['userId'];
-
-   // getData('student');
 }
 
 $requestStatus;
