@@ -72,11 +72,32 @@ if(isset($_POST['action'])) {
                             </div>";
                     foreach ($factor['subfactor'] as $subfactor) {
                         foreach ($subfactor['group'] as $group) {
-                            echo "<div class=\"box-body\">
+//                            IF ONE OF THE LANGUAGUE SKILLS
+                            if($group[id] == "4" || $group[id] == "5" || $group[id] == "6" || $group[id] == "7") {
+//                                CHECK IF ITS ENGLISH OR FRENCH
+
+                                    echo "<div class=\"box-body\">
+                                            <div class=\"form-group\">
+                                                <label class=\"col-sm-3 control-label\">ENGLISH - $group[name]</label>
+                                                <div class=\"col-sm-9\">
+                                                    <select class=\"form-control\" data-met-addOption=\"$group[id]\" onChange=\"showDescription(this)\" name=\"group_$group[id]\" required>";
+
+                                } else if($group[id] == "8" || $group[id] == "9" || $group[id] == "10" || $group[id] == "11") {
+                                    echo "<div class=\"box-body\">
+                                            <div class=\"form-group\">
+                                                <label class=\"col-sm-3 control-label\">FRENCH - $group[name]</label>
+                                                <div class=\"col-sm-9\">
+                                                    <select class=\"form-control\" data-met-addOption=\"$group[id]\" onChange=\"showDescription(this)\" name=\"group_$group[id]\" required>";
+                                }
+//                                    IF NOT READING LIST WRI OR SPEA
+                            else {
+                                echo "<div class=\"box-body\">
                                         <div class=\"form-group\">
                                             <label class=\"col-sm-3 control-label\">$group[name]</label>
                                             <div class=\"col-sm-9\">
                                                 <select class=\"form-control\" data-met-addOption=\"$group[id]\" onChange=\"showDescription(this)\" name=\"group_$group[id]\" required>";
+                            }
+
                             //echo "$group[name]</br>";
                             foreach ($group['option'] as $option) {
                                 echo "<option value=\"$option[id]\" data-met-groupId=\"$group[id]\" data-met-desc=\"$option[description]\">$option[name]</option>";
