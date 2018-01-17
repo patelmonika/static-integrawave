@@ -1,6 +1,13 @@
 <?php
+/**
+ * Copyright (c) 2018. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
+ * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
+ * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
+ * Vestibulum commodo. Ut rhoncus gravida arcu.
+ */
 
-$title = "calculator";
+$title = "Spouse Details";
 $selectedOption = "CRS,Calculator";
 
 require_once "../Private/functions.php";
@@ -9,38 +16,21 @@ include_once "../Shared/header.php";
 
 include_once "../Shared/left-navigation.php";
 
-$requestStatus;
-$married = $_POST['married'];
-$points = 0;
 $pointsArray = getAll('option');
 //print_r($pointsArray);
 
 //echo $pointsArray[0]['value'];
 
+$points = $_POST['points'];
+$married = $_POST['married'];
+
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
-    $marriedCondition;
-    if($married){
-        $marriedCondition = "points_with_spouse";        
-    } else{
-        $marriedCondition = "points_without_spouse";
-    }
-    $points += $pointsArray[ $_POST['group_1'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_2'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_3'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_4'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_5'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_6'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_7'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_8'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_9'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_10'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_11'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_12'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_13'] - 1 ][$marriedCondition];
-
+    $marriedCondition = "points_with_spouse";
 }
 //$points = "430";
+?>
+
 ?>
 
 <div class="wrapper">
@@ -48,17 +38,17 @@ if(isset($_POST['action'])) {
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Calculator
+                Section C
                 <small>Calculate Express Entry Points</small>
             </h1>
-            <h4>
-                <?php
-                if ($married == 1) {
-                    echo "Married profile";
-                } else {
-                    echo "Single profile";
-                }
-                ?>
+            h4>
+            <?php
+            if ($married == 1) {
+                echo "Married profile";
+            } else {
+                echo "Single profile";
+            }
+            ?>
             </h4>
             <h4>
                 <?php
@@ -72,14 +62,12 @@ if(isset($_POST['action'])) {
         </section>
         <!-- Main content -->
         <section class="content">
-            <form class="form-horizontal" method="POST" action=" <?php echo $married? 'spouseDetails.php' : 'sectionC.php'?> ">
-<!--                <input type="hidden" value="--><?php //$married = $_POST['married']; ?><!--">-->
+            <form class="form-horizontal">
                 <?php
-                $response = getData('section', '1');
+                $response = getData('section', '3');
 
                 foreach ($response['factor'] as $factor) {
                     echo "<div class=\"col-sm-12\">
-                        <input type='hidden' name='scenario' value='1'/>
                         <div class=\"box\">
                             <div class=\"box-header with-border\">
                                 <h3 class=\"box-title\">$factor[name]</h3>
@@ -94,7 +82,7 @@ if(isset($_POST['action'])) {
                                         <div class=\"form-group\">
                                             <label class=\"col-sm-3 control-label\">$group[name]</label>
                                             <div class=\"col-sm-9\">
-                                                <select class=\"form-control\" data-met-addOption=\"$group[id]\" onChange=\"showDescription(this)\" name=\"group_$group[id]\" required>";
+                                                <select class=\"form-control\" data-met-addOption=\"$group[id]\" onChange=\"showDescription(this)\" required>";
                             //echo "$group[name]</br>";
                             foreach ($group['option'] as $option) {
                                 echo "<option value=\"$option[id]\" data-met-groupId=\"$group[id]\" data-met-desc=\"$option[description]\">$option[name]</option>";
@@ -116,11 +104,8 @@ if(isset($_POST['action'])) {
                 ?>
                 <div class="row">
                     <div class="col-sm-12">
-                        <button type="submit" class="btn btn-primary pull-right" name="action">Submit</button>
+                        <button type="submit" class="btn btn-primary pull-right" type="submit">Submit</button>
                         <button type="reset" class="btn btn-link btn-grey pull-right" onclick="hideDescriptionLabel();">Cancel</button>
-                        <input type="hidden" name="points" value="<?php echo $points; ?>" />
-                        <input type="hidden" name="married" value="<?php echo $married; ?>" />
-                        <input type="hidden" name="action" value="calculate" />
                     </div>
                 </div>
 

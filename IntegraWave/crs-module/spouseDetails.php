@@ -9,6 +9,53 @@ include_once "../Shared/header.php";
 
 include_once "../Shared/left-navigation.php";
 
+$pointsArray = getAll('option');
+//print_r($pointsArray);
+
+//echo $pointsArray[0]['value'];
+
+$points = $_POST['points'];
+$married = $_POST['married'];
+
+if(isset($_POST['action'])) {
+    if($_POST['action'] == 'calculate') {
+        $action = $_POST['action'];
+        $marriedCondition;
+        if ($married) {
+            $marriedCondition = "points_with_spouse";
+        } else {
+            $marriedCondition = "points_without_spouse";
+        }
+        $points += $pointsArray[$_POST['group_1'] - 1][$marriedCondition];
+        $points += $pointsArray[$_POST['group_2'] - 1][$marriedCondition];
+        $points += $pointsArray[$_POST['group_3'] - 1][$marriedCondition];
+        $points += $pointsArray[$_POST['group_4'] - 1][$marriedCondition];
+        $points += $pointsArray[$_POST['group_5'] - 1][$marriedCondition];
+        $points += $pointsArray[$_POST['group_6'] - 1][$marriedCondition];
+        $points += $pointsArray[$_POST['group_7'] - 1][$marriedCondition];
+        $points += $pointsArray[$_POST['group_8'] - 1][$marriedCondition];
+        $points += $pointsArray[$_POST['group_9'] - 1][$marriedCondition];
+        $points += $pointsArray[$_POST['group_10'] - 1][$marriedCondition];
+        $points += $pointsArray[$_POST['group_11'] - 1][$marriedCondition];
+        $points += $pointsArray[$_POST['group_12'] - 1][$marriedCondition];
+        $points += $pointsArray[$_POST['group_13'] - 1][$marriedCondition];
+    }
+}
+
+//if(isset($_POST['action'])) {
+//    $action = $_POST['action'];
+//    $marriedCondition = "points_with_spouse";
+//    $points += $pointsArray[ $_POST['group_14'] - 1 ][$marriedCondition];
+//    $points += $pointsArray[ $_POST['group_15'] - 1 ][$marriedCondition];
+//    $points += $pointsArray[ $_POST['group_16'] - 1 ][$marriedCondition];
+//    $points += $pointsArray[ $_POST['group_17'] - 1 ][$marriedCondition];
+//    $points += $pointsArray[ $_POST['group_18'] - 1 ][$marriedCondition];
+//    $points += $pointsArray[ $_POST['group_19'] - 1 ][$marriedCondition];
+//
+//}
+//$points = "430";
+?>
+
 ?>
 
 <div class="wrapper">
@@ -22,7 +69,7 @@ include_once "../Shared/left-navigation.php";
         </section>
         <!-- Main content -->
         <section class="content">
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="post" action="sectionC.php">
                 <?php
                 $response = getData('section', '2');
 
@@ -66,6 +113,8 @@ include_once "../Shared/left-navigation.php";
                     <div class="col-sm-12">
                         <button type="submit" class="btn btn-primary pull-right" type="submit">Submit</button>
                         <button type="reset" class="btn btn-link btn-grey pull-right" onclick="hideDescriptionLabel();">Cancel</button>
+                        <input type="hidden" name="points" value="<?php echo $points; ?>" />
+                        <input type="hidden" name="married" value="<?php echo $married; ?>" />
                     </div>
                 </div>
 
