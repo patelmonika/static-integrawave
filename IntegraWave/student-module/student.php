@@ -22,6 +22,22 @@ if(isset($_POST['action'])) {
 
     $requestStatus = requestOperation("course", $_POST);
 }
+$resSem;
+if(isset($_POST['action'])) {
+    $action = $_POST['action'];
+
+    $resSem = requestOperation("semester", $_POST);
+}
+$resCat;
+if(isset($_POST['action'])) {
+    $action = $_POST['action'];
+
+    $resCat = requestOperation("category", $_POST);
+}
+
+
+
+
 ?>
 
 <div class="wrapper">
@@ -45,19 +61,27 @@ if(isset($_POST['action'])) {
 
                     <div class="box-body">
                         <form class="form-horizontal" method="post">
+                            <input type="hidden" id="semhidId" name="semid"
+                                   value='<?php if(isset($resSem['id'])) echo $resSem['id']; ?>' >
                         <div class="box-body">
 
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Semester</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="semester" id="semester" placeholder="Add New Semester Here" class="form-control">
+                                    <input type="text" name="semester" id="semester" placeholder="Add New Semester Here" class="form-control" value='<?php if(isset($resSem['name'])) echo $resSem['name'];?>'>
                                 </div>
                             </div>
                         </div>
-                        <div class="box-footer">
-                            <button class="btn btn-primary pull-right" type="submit">Add</button>
-                            <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
-                        </div>
+                            <input type="hidden" name="student_id" value='<?php echo $userId; ?>' />
+                            <div class="box-footer">
+                                <button class="btn btn-primary pull-right" type="submit"
+                                        value='<?php echo isset($resSem['id']) ? 'update' : 'add' ?>' name="action">
+                                    <?php echo isset($resSem['id']) ? 'Update' : 'Add' ?></button>
+                                <?php echo isset($resSem['id']) ?
+                                    "<button class='btn btn-link btn-grey pull-right' type='submit' name='reset'>Cancel</button>" :
+                                    "<button class='btn btn-link btn-grey pull-right' type='reset'>Cancel</button>" ?>
+
+                            </div>
                         </form>
                     </div>
 
@@ -92,24 +116,32 @@ if(isset($_POST['action'])) {
                         ?>
                     </table>
 
-                    <div id="delete" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Delete</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Are you sure you want to delete it?</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-link btn-grey" data-dismiss="modal">Cancel</button>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                                <!-- Modal -->
+                                <form class="form-horizontal" method="POST">
+                                    <div id="delete" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Delete Country</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Are you sure you want to delete it?</p>
+                                                </div>
+                                                <input type="hidden" id="hidElementId" name="id"/>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-link btn-grey" data-dismiss="modal">Cancel</button>
+                                                    <button type="submit" class="btn btn-primary" name="action" value="delete">OK</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+
 
                     <!-- /.box-body -->
                 </form>
@@ -208,31 +240,30 @@ if(isset($_POST['action'])) {
 
                             ?>
                         </table>
-                    </div>
-
-
-                    <!-- Modal -->
-                    <form class="form-horizontal" method="POST">
-                        <div id="delete" class="modal fade" role="dialog">
-                            <div class="modal-dialog">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Delete Course</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Are you sure you want to delete this Course?</p>
-                                    </div>
-                                    <input type="hidden" id="hidElementId" name="id"/>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-link btn-grey" data-dismiss="modal">Cancel</button>
-                                        <button type="submit" class="btn btn-primary" name="action" value="delete">OK</button>
+                        <!-- Modal -->
+                        <form class="form-horizontal" method="POST">
+                            <div id="delete" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Delete it</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Are you sure you want to delete it?</p>
+                                        </div>
+                                        <input type="hidden" id="hidElementId" name="id"/>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-link btn-grey" data-dismiss="modal">Cancel</button>
+                                            <button type="submit" class="btn btn-primary" name="action" value="delete">OK</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
+
             </div>
             <!-- /.box -->
         </div>
@@ -249,19 +280,24 @@ if(isset($_POST['action'])) {
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form class="form-horizontal">
+
                     <div class="box-body">
 
                     <div class="box-body">
+                        <form class="form-horizontal">
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Select Semester</label>
                             <div class="col-sm-9">
                                 <select class="form-control">
-                                    <option>Sem 1</option>
-                                    <option>Sem 2</option>
-                                    <option>Sem 3</option>
-                                    <option>Sem 4</option>
-                                    <option>Sem 5</option>
+                                    <?php
+                                    $responseOption="";
+                                    $semesters = getAll("semester");
+                                    foreach ($semesters as $responseArray){
+                                        $responseOption = $responseOption . "<option value='$responseArray[id]'>$responseArray[name]</option>";
+                                    }
+
+                                    echo $responseOption;
+                                    ?>
                                 </select>
                             </div>
                         </div>
@@ -269,22 +305,35 @@ if(isset($_POST['action'])) {
                             <label class="col-sm-3 control-label">Select Course</label>
                             <div class="col-sm-9">
                                 <select class="form-control">
-                                    <option>PHP</option>
-                                    <option>ASP</option>
-                                    <option>project Management</option>
+                                    <?php
+                                    $responseOption="";
+                                    $course = getAll("course");
+                                    foreach ($course as $responseArray){
+                                        $responseOption = $responseOption . "<option value='$responseArray[id]'>$responseArray[name]</option>";
+                                    }
+
+                                    echo $responseOption;
+                                    ?>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Category</label>
                             <div class="col-sm-9">
-                                <input type="text" name="category" id="category" placeholder="Add New Category Here" class="form-control">
+                                <input type="text" name="category" id="category" placeholder="Add New Category Here" class="form-control" value='<?php if(isset($resCat['name'])) echo $resCat['name'];?>'>
                             </div>
                         </div>
-                    </div>
-                    <div class="box-footer">
-                        <button class="btn btn-primary pull-right" type="submit">Add</button>
-                        <button class="btn btn-link btn-grey pull-right" type="submit">Cancel</button>
+
+                        <div class="box-footer">
+                            <button class="btn btn-primary pull-right" type="submit"
+                                    value='<?php echo isset($res['id']) ? 'update' : 'add' ?>' name="action">
+                                <?php echo isset($requestStatus['id']) ? 'Update' : 'Add' ?></button>
+                            <?php echo isset($requestStatus['id']) ?
+                                "<button class='btn btn-link btn-grey pull-right' type='submit' name='reset'>Cancel</button>" :
+                                "<button class='btn btn-link btn-grey pull-right' type='reset'>Cancel</button>" ?>
+
+                        </div>
+                        </form>
                     </div>
                     <table id="categories" class="table table-bordered table-striped table-responsive">
                         <thead>
@@ -297,7 +346,7 @@ if(isset($_POST['action'])) {
                         <tbody>
                         <?php
 
-                        $response = getAll("semester");
+                        $response = getAll("category");
                         $returnResponse = "";
 
                         if(count($response)>0) {
@@ -322,11 +371,8 @@ if(isset($_POST['action'])) {
                         <div class="modal-dialog">
                             <!-- Modal content-->
                             <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Edit Category</h4>
-                                </div>
                                 <div class="modal-body">
+                                    <form class="form-horizontal" method="post">
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">Semester</label>
                                         <div class="col-sm-6">
@@ -345,11 +391,16 @@ if(isset($_POST['action'])) {
                                             <input type="text" name="course" id="ccategory" value="Category1" class="form-control">
                                         </div>
                                     </div>
+                                <div class="box-footer">
+                                    <button class="btn btn-primary pull-right" type="submit"
+                                            value='<?php echo isset($resCat['id']) ? 'update' : 'add' ?>' name="action">
+                                        <?php echo isset($resCat['id']) ? 'Update' : 'Add' ?></button>
+                                    <?php echo isset($resCat['id']) ?
+                                        "<button class='btn btn-link btn-grey pull-right' type='submit' name='reset'>Cancel</button>" :
+                                        "<button class='btn btn-link btn-grey pull-right' type='reset'>Cancel</button>" ?>
+
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-link btn-grey" data-dismiss="modal">Cancel</button>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>

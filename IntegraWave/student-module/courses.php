@@ -26,14 +26,20 @@ include_once "../Shared/left-navigation.php";
             </section>
             <!-- Main content -->
             <div class="col-md-12">
-                <form class="box-body" action="semesters.php">
+                <form class="box-body" action="semesters.php" method="get">
+
                     <div class="form-group">
                     <label>Select Semester</label>
-                    <select class="form-control">
-                        <option>Semester 1----(Fall 2016)</option>
-                        <option>Semester 2----(Winter 2016)</option>
-                        <option>Semester 3----(Fall 2017)</option>
-                        <option>Semester 4----(Winter 2017)</option>
+                    <select class="form-control" name="sem">
+                        <?php
+                        $responseOption="";
+                        $semesters = getAll("semester");
+                        foreach ($semesters as $responseArray){
+                            $responseOption = $responseOption . "<option value='$responseArray[id]'>$responseArray[name]</option>";
+                        }
+
+                        echo $responseOption;
+                        ?>
                     </select>
 
                     </div>

@@ -9,6 +9,7 @@ include_once "../Shared/header.php";
 
 include_once "../Shared/left-navigation.php";
 
+$semester=$_GET['sem'];
 
 ?>
 
@@ -30,8 +31,21 @@ include_once "../Shared/left-navigation.php";
 
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#basic" aria-expanded="true">Course-ASP</a></li>
-                        <li><a data-toggle="tab" href="#security" aria-expanded="false">Course-PHP</a></li>
+                       <?php
+                                $course=getAll("course");
+                                $cname="";
+                                foreach ($course as $key=>$c){
+                                    if ($semester == $c['semester_id']) {
+                                        echo " <li><a data-toggle=\"tab\" href=\"#basic\" aria-expanded=\"true\">";
+                                        $cname =$c['name'] ;
+                                        echo $cname;
+                                    }
+
+                                }
+
+                                echo "</a></li>";
+                                ?>
+
                     </ul>
                     <div class="tab-content">
                         <div id="basic" class="tab-pane active">
@@ -60,36 +74,30 @@ include_once "../Shared/left-navigation.php";
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Lab1</td>
-                                                <td>20</td>
-                                                <td>18</td>
-                                                <td>
-                                                    <a href="#" data-toggle="modal" data-target="#edit-activity">Edit</a>/
-                                                    <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Lab2</td>
-                                                <td>10</td>
-                                                <td>9</td>
-                                                <td>
-                                                    <a href="#" data-toggle="modal" data-target="#edit-activity">Edit</a>/
-                                                    <a href="#" data-toggle="modal" data-target="#delete" data-met-error="">Delete</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Lab3</td>
-                                                <td>10</td>
-                                                <td>7</td>
-                                                <td>
-                                                    <a href="#" data-toggle="modal" data-target="#edit-activity">Edit</a>/
-                                                    <a href="#" data-toggle="modal" data-target="#delete">Delete</a>
-                                                </td>
-                                            </tr>
+                                            <?php
+
+                                            $response = getAll("apc");
+
+                                            $returnResponse = "";
+
+                                            if(count($response)>0) {
+                                                foreach ($response as $key => $value) {
+                                                    $returnResponse = $returnResponse . "<tr>";
+                                                    $returnResponse = $returnResponse . "<td name='id'>" . $value['id'] . "</td>";
+                                                    $returnResponse = $returnResponse . "<td>" . $value['name'] . "</td>";
+                                                    $returnResponse = $returnResponse . "<td>" . $value['max_score'] . "</td>";
+                                                    $returnResponse = $returnResponse . "<td>" . $value['achieved_score'] . "</td>";
+//                                    $returnResponse = $returnResponse . "<td>" . $value['semester_id'] . "</td>";
+                                                    $returnResponse = $returnResponse . "<td>";
+                                                    $returnResponse = $returnResponse . "<a href='#' data-met-name='edit' data-met-id=" . $value['id'] . " name='edit' onclick='setRequestParam(this);'>Edit</a> / ";
+                                                    $returnResponse = $returnResponse . "<a href='#' data-toggle='modal' data-target='#delete' data-met-id=" . $value['id'] . " onclick='setIdOnDelete(this);'>Delete</a>";
+                                                    $returnResponse = $returnResponse . "</td></tr>";
+                                                }
+                                            }
+
+                                            echo $returnResponse;
+
+                                            ?>
                                         </table>
                                         <div class="box-body">
                                             <div class="form-group">
