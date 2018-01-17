@@ -10,7 +10,6 @@ $error = null;
 $success = null;
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
-
     $requestStatus = requestOperation("register", $_POST);
     $requestStatus = json_decode($requestStatus, true);
     if($requestStatus['status'] == "success"){
