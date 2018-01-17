@@ -32,14 +32,13 @@ if(isset($_POST['action'])) {
         $marriedCondition = "points_without_spouse";
     }
 
-    if ($action == "sectionc") {
+    if ($action == "sectiond") {
         $points = $_POST['points'];
-        $points += $pointsArray[ $_POST['group_20'] - 1 ][$marriedCondition];
-        $points += $pointsArray[ $_POST['group_21'] - 1 ][$marriedCondition];
-        $points += $pointsArray[ $_POST['group_22'] - 1 ][$marriedCondition];
-        $points += $pointsArray[ $_POST['group_23'] - 1 ][$marriedCondition];
-        $points += $pointsArray[ $_POST['group_24'] - 1 ][$marriedCondition];
         $points += $pointsArray[ $_POST['group_25'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_26'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_27'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_28'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_29'] - 1 ][$marriedCondition];
     }
 
 }
@@ -52,7 +51,7 @@ if(isset($_POST['action'])) {
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Additional points
+                Results
                 <small>Calculate Express Entry Points</small>
             </h1>
             <h4>
@@ -64,7 +63,7 @@ if(isset($_POST['action'])) {
             }
             ?>
             </h4>
-            <h4>
+            <h3>
                 <?php
                 if ($points == "") {
                     echo "Calculate your points below.";
@@ -72,58 +71,7 @@ if(isset($_POST['action'])) {
                     echo "You have " . $points;
                 }
                 ?>
-            </h4>
-        </section>
-        <!-- Main content -->
-        <section class="content">
-            <form class="form-horizontal">
-                <?php
-                $response = getData('section', '3');
-
-                foreach ($response['factor'] as $factor) {
-                    echo "<div class=\"col-sm-12\">
-                        <div class=\"box\">
-                            <div class=\"box-header with-border\">
-                                <h3 class=\"box-title\">$factor[name]</h3>
-                                <div class=\"box-tools pull-right\">
-                                    <button type=\"button\" class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-minus\"></i>
-                                    </button>
-                                </div>
-                            </div>";
-                    foreach ($factor['subfactor'] as $subfactor) {
-                        foreach ($subfactor['group'] as $group) {
-                            echo "<div class=\"box-body\">
-                                        <div class=\"form-group\">
-                                            <label class=\"col-sm-3 control-label\">$group[name]</label>
-                                            <div class=\"col-sm-9\">
-                                                <select class=\"form-control\" data-met-addOption=\"$group[id]\" onChange=\"showDescription(this)\" required>";
-                            //echo "$group[name]</br>";
-                            foreach ($group['option'] as $option) {
-                                echo "<option value=\"$option[id]\" data-met-groupId=\"$group[id]\" data-met-desc=\"$option[description]\">$option[name]</option>";
-                                //echo "$option[id] - $option[name]</br>";
-                            }
-
-                            echo "</select>
-                                        <label id=\"lblDesc_$group[id]\" style='display: none;' class='col-sm-12'>Description label</label>
-                                    </div>
-                                </div>
-                            </div>";
-                        }
-                    }
-
-                    echo "</div>
-                            </div>";
-                }
-
-                ?>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <button type="submit" class="btn btn-primary pull-right" type="submit">Submit</button>
-                        <button type="reset" class="btn btn-link btn-grey pull-right" onclick="hideDescriptionLabel();">Cancel</button>
-                    </div>
-                </div>
-
-            </form>
+            </h3>
         </section>
     </div>
     <!-- /.content -->

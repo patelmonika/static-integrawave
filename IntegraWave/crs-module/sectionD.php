@@ -39,7 +39,6 @@ if(isset($_POST['action'])) {
         $points += $pointsArray[ $_POST['group_22'] - 1 ][$marriedCondition];
         $points += $pointsArray[ $_POST['group_23'] - 1 ][$marriedCondition];
         $points += $pointsArray[ $_POST['group_24'] - 1 ][$marriedCondition];
-        $points += $pointsArray[ $_POST['group_25'] - 1 ][$marriedCondition];
     }
 
 }
@@ -76,9 +75,9 @@ if(isset($_POST['action'])) {
         </section>
         <!-- Main content -->
         <section class="content">
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="post" action="results.php">
                 <?php
-                $response = getData('section', '3');
+                $response = getData('section', '4');
 
                 foreach ($response['factor'] as $factor) {
                     echo "<div class=\"col-sm-12\">
@@ -96,7 +95,7 @@ if(isset($_POST['action'])) {
                                         <div class=\"form-group\">
                                             <label class=\"col-sm-3 control-label\">$group[name]</label>
                                             <div class=\"col-sm-9\">
-                                                <select class=\"form-control\" data-met-addOption=\"$group[id]\" onChange=\"showDescription(this)\" required>";
+                                                <select class=\"form-control\" data-met-addOption=\"$group[id]\" onChange=\"showDescription(this)\" name=\"group_$group[id]\" required>";
                             //echo "$group[name]</br>";
                             foreach ($group['option'] as $option) {
                                 echo "<option value=\"$option[id]\" data-met-groupId=\"$group[id]\" data-met-desc=\"$option[description]\">$option[name]</option>";
@@ -120,6 +119,9 @@ if(isset($_POST['action'])) {
                     <div class="col-sm-12">
                         <button type="submit" class="btn btn-primary pull-right" type="submit">Submit</button>
                         <button type="reset" class="btn btn-link btn-grey pull-right" onclick="hideDescriptionLabel();">Cancel</button>
+                        <input type="hidden" name="points" value="<?php echo $points; ?>" />
+                        <input type="hidden" name="married" value="<?php echo $married; ?>" />
+                        <input type="hidden" name="action" value="sectiond" />
                     </div>
                 </div>
 

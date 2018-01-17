@@ -50,6 +50,24 @@ if(isset($_POST['action'])) {
                 Spouse Details
                 <small>Calculate Express Entry Points</small>
             </h1>
+            <h4>
+                <?php
+                if ($married == 1) {
+                    echo "Married profile";
+                } else {
+                    echo "Single profile";
+                }
+                ?>
+            </h4>
+            <h4>
+                <?php
+                if ($points == "") {
+                    echo "Calculate your points below.";
+                } else {
+                    echo "You have " . $points;
+                }
+                ?>
+            </h4>
         </section>
         <!-- Main content -->
         <section class="content">
@@ -73,7 +91,7 @@ if(isset($_POST['action'])) {
                                         <div class=\"form-group\">
                                             <label class=\"col-sm-3 control-label\">$group[name]</label>
                                             <div class=\"col-sm-9\">
-                                                <select class=\"form-control\" data-met-addOption=\"$group[id]\" onChange=\"showDescription(this)\" required>";
+                                                <select class=\"form-control\" data-met-addOption=\"$group[id]\" onChange=\"showDescription(this)\" name=\"group_$group[id]\" required>";
                             //echo "$group[name]</br>";
                             foreach ($group['option'] as $option) {
                                 echo "<option value=\"$option[id]\" data-met-groupId=\"$group[id]\" data-met-desc=\"$option[description]\">$option[name]</option>";
