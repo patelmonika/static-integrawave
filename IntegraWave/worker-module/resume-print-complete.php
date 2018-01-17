@@ -18,7 +18,54 @@ if (isset($_POST['action'])) {
     foreach ($response['resume_fields'] as $field) {
         $workerFields[$field["name"]] = $field["pivot"]["value"];
     }
-    $str = "<div class=\"resume-container\">
+    $str = "<html>
+<head>
+<style>
+.resume-container {
+background-color: gray;
+padding: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.resume-page {
+max-width: 800px;
+margin: 20px auto;
+padding: 40px;
+border: 2px solid dimgray;
+background-color: whitesmoke;
+}
+
+.subtitle{
+
+margin-top: 2px;
+margin-bottom: 2px;
+font-size: 20px;
+
+}
+
+.name{
+text-align: center;
+}
+
+.candidate-name {
+font-weight: bold;
+text-transform: capitalize;
+color: black;
+text-align: center;
+}
+
+.category{
+font-weight: bold;
+}
+
+.description{
+text-align: justify;
+}
+</style>
+</head>
+<body>
+<div class=\"resume-container\">
     <article class=\"resume-page\">
         <section class=\"title\">
             <h1 class=\"candidate-name name\">
@@ -105,8 +152,8 @@ if (isset($_POST['action'])) {
             </ul>
         </section>
     </article>
-</div>";
-
+</div></body>
+</html>";
 
     $pdfWriter = new PDFWriter();
     $outputFilePath = $pdfWriter->write($str);
