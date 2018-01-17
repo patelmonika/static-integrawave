@@ -7,7 +7,7 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-$title = "Spouse Details";
+$title = "Skill Transferability factors";
 $selectedOption = "CRS,Calculator";
 
 require_once "../Private/functions.php";
@@ -21,14 +21,42 @@ $pointsArray = getAll('option');
 
 //echo $pointsArray[0]['value'];
 
-$points = $_POST['points'];
 $married = $_POST['married'];
 
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
-    $marriedCondition = "points_with_spouse";
+
+    if($married){
+        $marriedCondition = "points_with_spouse";
+    } else{
+        $marriedCondition = "points_without_spouse";
+    }
+
+    if ($action == "spouse") {
+        $points = $_POST['points'];
+        $points += $pointsArray[ $_POST['group_14'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_15'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_16'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_17'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_18'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_19'] - 1 ][$marriedCondition];
+    } else {
+        $points += $pointsArray[ $_POST['group_1'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_2'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_3'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_4'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_5'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_6'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_7'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_8'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_9'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_10'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_11'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_12'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_13'] - 1 ][$marriedCondition];
+    }
+
 }
-//$points = "430";
 ?>
 
 ?>
@@ -38,10 +66,10 @@ if(isset($_POST['action'])) {
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Section C
+                Skill Transferability factors
                 <small>Calculate Express Entry Points</small>
             </h1>
-            h4>
+            <h4>
             <?php
             if ($married == 1) {
                 echo "Married profile";
@@ -62,7 +90,7 @@ if(isset($_POST['action'])) {
         </section>
         <!-- Main content -->
         <section class="content">
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="post" action="sectionD.php">
                 <?php
                 $response = getData('section', '3');
 
@@ -106,6 +134,9 @@ if(isset($_POST['action'])) {
                     <div class="col-sm-12">
                         <button type="submit" class="btn btn-primary pull-right" type="submit">Submit</button>
                         <button type="reset" class="btn btn-link btn-grey pull-right" onclick="hideDescriptionLabel();">Cancel</button>
+                        <input type="hidden" name="points" value="<?php echo $points; ?>" />
+                        <input type="hidden" name="married" value="<?php echo $married; ?>" />
+                        <input type="hidden" name="action" value="sectionc" />
                     </div>
                 </div>
 

@@ -19,25 +19,7 @@ $pointsArray = getAll('option');
 
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
-    $marriedCondition;
-    if($married){
-        $marriedCondition = "points_with_spouse";        
-    } else{
-        $marriedCondition = "points_without_spouse";
-    }
-    $points += $pointsArray[ $_POST['group_1'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_2'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_3'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_4'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_5'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_6'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_7'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_8'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_9'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_10'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_11'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_12'] - 1 ][$marriedCondition];
-    $points += $pointsArray[ $_POST['group_13'] - 1 ][$marriedCondition];
+
 
 }
 //$points = "430";
@@ -118,7 +100,6 @@ if(isset($_POST['action'])) {
                     <div class="col-sm-12">
                         <button type="submit" class="btn btn-primary pull-right" name="action">Submit</button>
                         <button type="reset" class="btn btn-link btn-grey pull-right" onclick="hideDescriptionLabel();">Cancel</button>
-                        <input type="hidden" name="points" value="<?php echo $points; ?>" />
                         <input type="hidden" name="married" value="<?php echo $married; ?>" />
                         <input type="hidden" name="action" value="calculate" />
                     </div>

@@ -8,8 +8,8 @@ function url_for($script_path){
 }
 
 function getPreUrl(){
-	$preUrl = "http://php-integrawave.azurewebsites.net/";
-	$preUrl = "http://localhost:8090/php-integrawave/web-api/public/";
+    $preUrl = "http://localhost:8090/php-integrawave/web-api/public/";
+    $preUrl = "http://php-integrawave.azurewebsites.net/";
 	return $preUrl;
 }
 

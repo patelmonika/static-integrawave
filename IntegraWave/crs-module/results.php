@@ -1,6 +1,13 @@
 <?php
+/**
+ * Copyright (c) 2018. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
+ * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
+ * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
+ * Vestibulum commodo. Ut rhoncus gravida arcu.
+ */
 
-$title = "Spouse Details";
+$title = "CRS Results";
 $selectedOption = "CRS,Calculator";
 
 require_once "../Private/functions.php";
@@ -14,30 +21,28 @@ $pointsArray = getAll('option');
 
 //echo $pointsArray[0]['value'];
 
-$points = $_POST['points'];
 $married = $_POST['married'];
 
 if(isset($_POST['action'])) {
-    if($_POST['action'] == 'calculate') {
-        $action = $_POST['action'];
-        $marriedCondition;
-        $marriedCondition = "points_with_spouse";
-        $points += $pointsArray[$_POST['group_1'] - 1][$marriedCondition];
-        $points += $pointsArray[$_POST['group_2'] - 1][$marriedCondition];
-        $points += $pointsArray[$_POST['group_3'] - 1][$marriedCondition];
-        $points += $pointsArray[$_POST['group_4'] - 1][$marriedCondition];
-        $points += $pointsArray[$_POST['group_5'] - 1][$marriedCondition];
-        $points += $pointsArray[$_POST['group_6'] - 1][$marriedCondition];
-        $points += $pointsArray[$_POST['group_7'] - 1][$marriedCondition];
-        $points += $pointsArray[$_POST['group_8'] - 1][$marriedCondition];
-        $points += $pointsArray[$_POST['group_9'] - 1][$marriedCondition];
-        $points += $pointsArray[$_POST['group_10'] - 1][$marriedCondition];
-        $points += $pointsArray[$_POST['group_11'] - 1][$marriedCondition];
-        $points += $pointsArray[$_POST['group_12'] - 1][$marriedCondition];
-        $points += $pointsArray[$_POST['group_13'] - 1][$marriedCondition];
-    }
-}
+    $action = $_POST['action'];
 
+    if($married){
+        $marriedCondition = "points_with_spouse";
+    } else{
+        $marriedCondition = "points_without_spouse";
+    }
+
+    if ($action == "sectionc") {
+        $points = $_POST['points'];
+        $points += $pointsArray[ $_POST['group_20'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_21'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_22'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_23'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_24'] - 1 ][$marriedCondition];
+        $points += $pointsArray[ $_POST['group_25'] - 1 ][$marriedCondition];
+    }
+
+}
 ?>
 
 ?>
@@ -47,15 +52,33 @@ if(isset($_POST['action'])) {
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Spouse Details
+                Additional points
                 <small>Calculate Express Entry Points</small>
             </h1>
+            <h4>
+            <?php
+            if ($married == 1) {
+                echo "Married profile";
+            } else {
+                echo "Single profile";
+            }
+            ?>
+            </h4>
+            <h4>
+                <?php
+                if ($points == "") {
+                    echo "Calculate your points below.";
+                } else {
+                    echo "You have " . $points;
+                }
+                ?>
+            </h4>
         </section>
         <!-- Main content -->
         <section class="content">
-            <form class="form-horizontal" method="post" action="sectionC.php">
+            <form class="form-horizontal">
                 <?php
-                $response = getData('section', '2');
+                $response = getData('section', '3');
 
                 foreach ($response['factor'] as $factor) {
                     echo "<div class=\"col-sm-12\">
@@ -97,9 +120,6 @@ if(isset($_POST['action'])) {
                     <div class="col-sm-12">
                         <button type="submit" class="btn btn-primary pull-right" type="submit">Submit</button>
                         <button type="reset" class="btn btn-link btn-grey pull-right" onclick="hideDescriptionLabel();">Cancel</button>
-                        <input type="hidden" name="points" value="<?php echo $points; ?>" />
-                        <input type="hidden" name="married" value="<?php echo $married; ?>" />
-                        <input type="hidden" name="action" value="spouse" />
                     </div>
                 </div>
 
