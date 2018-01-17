@@ -14,7 +14,7 @@ $pointsArray = getAll('option');
 
 //echo $pointsArray[0]['value'];
 
-$points = $_POST['points'];
+$points=0;
 $married = $_POST['married'];
 
 if(isset($_POST['action'])) {
@@ -61,7 +61,7 @@ if(isset($_POST['action'])) {
             </h4>
             <h4>
                 <?php
-                if ($points == "") {
+                if ($points == 0) {
                     echo "Calculate your points below.";
                 } else {
                     echo "You have " . $points;

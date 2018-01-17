@@ -1,10 +1,12 @@
 <?php
+$title = "calculator";
+$selectedOption = "CRS,Calculator";
+
 require_once "../Private/functions.php";
 include_once "../Shared/header.php";
 include_once "../Shared/left-navigation.php";
 
-$title = "calculator";
-$selectedOption = "CRS,Calculator";
+
 $requestStatus;
 
 //if (isset($_POST['action'])) {

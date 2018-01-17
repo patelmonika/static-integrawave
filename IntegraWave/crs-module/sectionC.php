@@ -20,7 +20,7 @@ $pointsArray = getAll('option');
 //print_r($pointsArray);
 
 //echo $pointsArray[0]['value'];
-
+$points = 0;
 $married = $_POST['married'];
 
 if(isset($_POST['action'])) {
@@ -33,18 +33,14 @@ if(isset($_POST['action'])) {
     }
 
     if ($action == "spouse") {
-        echo "it is!";
         $points = $_POST['points'];
-        echo "points before $points";
         $points += $pointsArray[ $_POST['group_14'] - 1 ][$marriedCondition];
         $points += $pointsArray[ $_POST['group_15'] - 1 ][$marriedCondition];
         $points += $pointsArray[ $_POST['group_16'] - 1 ][$marriedCondition];
         $points += $pointsArray[ $_POST['group_17'] - 1 ][$marriedCondition];
         $points += $pointsArray[ $_POST['group_18'] - 1 ][$marriedCondition];
         $points += $pointsArray[ $_POST['group_19'] - 1 ][$marriedCondition];
-        echo "points after $points";
     } else {
-        echo "it is not";
         $points += $pointsArray[ $_POST['group_1'] - 1 ][$marriedCondition];
         $points += $pointsArray[ $_POST['group_2'] - 1 ][$marriedCondition];
         $points += $pointsArray[ $_POST['group_3'] - 1 ][$marriedCondition];
