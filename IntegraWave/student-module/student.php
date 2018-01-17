@@ -404,6 +404,7 @@ if(isset($_POST['action'])) {
                         </div>
                     </div>
                 </form>
+                    </div>
             </div>
 
             <!-- /.box -->
